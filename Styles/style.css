@@ -212,6 +212,28 @@ button:hover {
   transform: translateX(-50%) scale(1.1);
 }
 
+/* Added the same button behavior for doshokorma section */
+.doshokorma-section button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: #272525;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.doshokorma-section button:hover {
+  background-color: #b87149;
+  transform: translateX(-50%) scale(1.1);
+}
+
 .home-link {
   color: white;
   text-decoration: none;
@@ -242,12 +264,12 @@ button:hover {
   .banner-section,
   .chal-section,
   .achar-section,
-  .nolen-gur-section,
-  .doshokorma-section {
+  .nolen-gur-section {
     height: 26vh;
   }
 
-  .nolen-gur-section1 {
+  .nolen-gur-section1,
+  .doshokorma-section {
     height: 30vh;
   }
 
@@ -262,12 +284,12 @@ button:hover {
 @media (max-width: 576px) {
   .banner-section,
   .chal-section,
-  .achar-section {
+  .achar-section,
+  .doshokorma-section {
     height: auto;
   }
 
-  .nolen-gur-section,
-  .doshokorma-section {
+  .nolen-gur-section{
     height: 15vh;
   }
 
@@ -280,6 +302,27 @@ button:hover {
   .chutney-section,
   .kasundi-section {
     height: 20vh;
+  }
+
+  .doshokorma-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures that the image maintains its aspect ratio */
+  }
+  .doshokorma-section button {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: #272525;
+    color: white;
+    border: none;
+    padding: 5px 10px; /* Reduced padding for mobile */
+    border-radius: 5px;
+    font-size: 0.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
   }
 
   button {

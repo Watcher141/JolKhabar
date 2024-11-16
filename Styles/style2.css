@@ -1,38 +1,123 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+/* Global font and background */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
   --color-1: #0f1016;
   --text-color: #f0f0f0;
   --accent-color: #92a2b8;
+  --button-bg: #272525;
+  --button-hover-bg: #b87149;
+  --footer-bg: #1b1c24;
+  --footer-text: #d1d1d1;
+  --footer-link: #f0f0f0;
+  --footer-link-hover: #b87149;
 }
 
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Ensures padding and border are included in total width and height */
+  box-sizing: border-box;
 }
 
-html {
-  font-size: 10pt;
-  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
-  background-color: var(--color-1); /* Changed to match nav */
-}
-
-body {
-  background-color: #f4f4f9; /* Keep this if you want a separate background from nav */
+/* Ensure the body takes full height */
+html, body {
+  height: 100%;  /* Full height */
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center align items */
+  flex-direction: column; /* Vertical layout */
 }
 
+/* Main content section */
+body {
+  background-color: #f4f4f9;
+  flex: 1;  /* Takes available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--footer-bg);
+  padding: 20px 10px;
+  text-align: center;
+  width: 100%;  /* Stretch across the entire width */
+  margin-top: auto;  /* This pushes the footer to the bottom */
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  color: var(--footer-text);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer-content .social-icons {
+  margin: 10px 0;
+  display: flex;  /* Flexbox to align items in a row */
+  justify-content: center;  /* Center the icons horizontally */
+  align-items: center;  /* Vertically center the icons */
+}
+
+.footer-content .social-icons a {
+  margin: 0 15px;  /* Add some space between the icons */
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.footer-content .social-icons img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.footer-content .social-icons img:hover {
+  transform: scale(1.2);  /* Slightly enlarge the icon on hover */
+}
+
+/* Footer Links Styling */
+.footer-content a {
+  color: var(--footer-link);  /* Ensure footer links are the correct color */
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  color: var(--footer-link-hover);
+}
+
+/* Footer Media Queries */
+@media (max-width: 576px) {
+  .footer-content p {
+    font-size: 0.8rem;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Checkboxes Styling */
+input[type="checkbox"] {
+  accent-color: var(--button-bg);  /* Change checkbox color to match button */
+  border: none;  /* Remove border if any */
+  margin-right: 10px;  /* Space between checkbox and label */
+}
+
+/* Responsive Sidebar */
 nav {
   height: 60px;
   background-color: var(--color-1);
   display: flex;
-  justify-content: space-between; /* Adjusted for spacing */
+  justify-content: space-between;
   align-items: center;
-  width: 100%; /* Ensure nav takes full width */
-  padding: 0 20px; /* Added padding for better spacing */
+  width: 100%;
+  padding: 0 20px;
 }
 
 .links-container {
@@ -44,174 +129,51 @@ nav a {
   padding: 0 20px;
   text-decoration: none;
   color: var(--text-color);
-  transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
   background-color: var(--accent-color);
-  transform: scale(1.05); /* Slightly scale on hover */
+  transform: scale(1.05);
 }
 
-nav .home-link {
-  margin-right: auto; /* Push the home link to the left */
-}
-
-nav svg {
-  fill: var(--text-color);
-}
-
-#sidebar-active {
-  display: none;
-}
-
-.open-sidebar-button,
-.close-sidebar-button {
-  display: none;
-}
-
-@media (max-width: 450px) {
-  .links-container {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    z-index: 10;
-    width: 300px;
-    height: 100%; /* Ensure sidebar covers full height */
-    background-color: var(--color-1);
-    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
-    transition: 0.75s ease-out;
-  }
-
-  nav a {
-    width: 100%;
-    padding: 20px 30px;
-    justify-content: flex-start;
-  }
-
-  .open-sidebar-button,
-  .close-sidebar-button {
-    display: block;
-    padding: 20px; /* Maintain padding for the button */
-  }
-
-  #sidebar-active:checked ~ .links-container {
-    right: 0;
-  }
-
-  #sidebar-active:checked ~ #overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-  }
-}
-
+/* Dropdown and Form Styling */
 .container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Gap between items */
-  width: 80%; /* Center the container */
-  margin: 15px auto; /* Slightly reduced space from the nav */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin: 15px auto;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+select, button {
+  padding: 10px;
+  font-size: 1rem;
+}
 
-
-
+select {
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  background-color: #fff;
+}
 
 button {
-  position: absolute;
-  bottom: 10px; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1; /* Above image */
-  background-color: #272525; /* Button background color */
-  color: white; /* Text color */
+  background-color: var(--button-bg);
+  color: var(--text-color);
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-  background-color: #b87149; /* Darker on hover */
-  transform: translateX(-50%) scale(1.1); /* Scale effect */
-}
-
-.home-link {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1200px) {
-  .banner-section,
-  .chal-section,
-  .achar-section,
-  .nolen-gur-section,
-  .nolen-gur-section1 {
-    height: 28vh; /* Adjust height */
-  }
-
-  .aamsotto-section,
-  .chanachur-section,
-  .chutney-section,
-  .kasundi-section {
-    height: 45vh; /* Adjust height */
-  }
-}
-
-@media (max-width: 992px) {
-  .banner-section,
-  .chal-section,
-  .achar-section,
-  .nolen-gur-section {
-    height: 26vh; /* Adjust height */
-  }
-
-  .nolen-gur-section1 {
-    height: 30vh; /* Adjust height */
-  }
-
-  .aamsotto-section,
-  .chanachur-section,
-  .chutney-section,
-  .kasundi-section {
-    height: 40vh; /* Adjust height */
-  }
-}
-
-@media (max-width: 576px) {
-  .banner-section,
-  .chal-section,
-  .achar-section {
-    height: auto; /* Allow auto height */
-  }
-
-  .nolen-gur-section {
-    height: 15vh; /* Adjust height */
-  }
-
-  .nolen-gur-section1 {
-    height: 20vh; /* Adjust height */
-  }
-
-  .aamsotto-section,
-  .chanachur-section,
-  .chutney-section,
-  .kasundi-section {
-    height: 20vh; /* Adjust height */
-  }
-
-  button {
-    padding: 5px 10px; /* Smaller padding */
-    font-size: 0.8rem; /* Smaller font size */
-    bottom: 5px; /* Adjust position */
-  }
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
 }

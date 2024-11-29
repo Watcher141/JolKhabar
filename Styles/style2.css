@@ -1,0 +1,179 @@
+/* Global font and background */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --color-1: #0f1016;
+  --text-color: #f0f0f0;
+  --accent-color: #92a2b8;
+  --button-bg: #272525;
+  --button-hover-bg: #b87149;
+  --footer-bg: #1b1c24;
+  --footer-text: #d1d1d1;
+  --footer-link: #f0f0f0;
+  --footer-link-hover: #b87149;
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the body takes full height */
+html, body {
+  height: 100%;  /* Full height */
+  display: flex;
+  flex-direction: column; /* Vertical layout */
+}
+
+/* Main content section */
+body {
+  background-color: #f4f4f9;
+  flex: 1;  /* Takes available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--footer-bg);
+  padding: 20px 10px;
+  text-align: center;
+  width: 100%;  /* Stretch across the entire width */
+  margin-top: auto;  /* This pushes the footer to the bottom */
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  color: var(--footer-text);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.footer-content .social-icons {
+  margin: 10px 0;
+  display: flex;  /* Flexbox to align items in a row */
+  justify-content: center;  /* Center the icons horizontally */
+  align-items: center;  /* Vertically center the icons */
+}
+
+.footer-content .social-icons a {
+  margin: 0 15px;  /* Add some space between the icons */
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.footer-content .social-icons img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.footer-content .social-icons img:hover {
+  transform: scale(1.2);  /* Slightly enlarge the icon on hover */
+}
+
+/* Footer Links Styling */
+.footer-content a {
+  color: var(--footer-link);  /* Ensure footer links are the correct color */
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  color: var(--footer-link-hover);
+}
+
+/* Footer Media Queries */
+@media (max-width: 576px) {
+  .footer-content p {
+    font-size: 0.8rem;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Checkboxes Styling */
+input[type="checkbox"] {
+  accent-color: var(--button-bg);  /* Change checkbox color to match button */
+  border: none;  /* Remove border if any */
+  margin-right: 10px;  /* Space between checkbox and label */
+}
+
+/* Responsive Sidebar */
+nav {
+  height: 60px;
+  background-color: var(--color-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.links-container {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  padding: 0 20px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Dropdown and Form Styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin: 15px auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+select, button {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+select {
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  transform: scale(1.05);
+}

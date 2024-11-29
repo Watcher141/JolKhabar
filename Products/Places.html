@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Dropdowns with Result</title>
+    <link rel="stylesheet" href="../Styles/style2.css" />
+    <script src="../js/script1.js" defer></script>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+          </svg>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+          <label for="sidebar-active" class="close-sidebar-button">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+          </label>
+          <!-- Links -->
+          <a class="home-link" href="../index.html">JOLKHABAR</a>
+          <a href="../Products/Product1.html">Achar</a>
+          <a href="../Products/Product2.html">Aamsotto</a>
+          <a href="../Products/Product3.html">Chanachur</a>
+          <a href="../Products/Product4.html">Chutney</a>
+          <a href="../Products/Product5.html">Kasundi</a>
+          <a href="../Products/Product7.html">Chal</a>
+          <a href="../Products/Product6.html">Delicacies</a>
+          <a href="../Products/Places.html">About Us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Find Us Anywhere acroess Places</h1>
+        <form id="dropdownForm">
+            <label for="firstDropdown">Select a category:</label>
+            <select id="firstDropdown" onchange="updateSecondDropdown()">
+                <option value="" disabled selected>Select an option</option>
+                <option value="fruits">Global</option>
+                <option value="vehicles">India</option>
+            </select>
+
+            <label for="secondDropdown">Select an option:</label>
+            <select id="secondDropdown">
+                <option value="" disabled selected>Select an option</option>
+            </select>
+
+            <button type="button" onclick="showResult()">Show Result</button>
+            <div id="result" class="hidden"></div>
+        </form>
+    </div>
+    <footer>
+        <div class="footer-content">
+          <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><img src="../facebook-icon.png" alt="Facebook"></a>
+            <a href="https://twitter.com" target="_blank"><img src="../twitter-icon.png" alt="Twitter"></a>
+            <a href="https://instagram.com" target="_blank"><img src="../instagram-icon.png" alt="Instagram"></a>
+          </div>
+          <p>
+            <a href="#privacy-policy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+          </p>
+        </div>
+      </footer>
+
+    <script>
+        function updateSecondDropdown() {
+            const firstDropdown = document.getElementById("firstDropdown").value;
+            const secondDropdown = document.getElementById("secondDropdown");
+    
+            // Clear previous options
+            secondDropdown.innerHTML = '<option value="" disabled selected>Select an option</option>';
+    
+            // Define options for each category
+            const options = {
+                fruits: ['Global'],
+                vehicles: ['Kolkata', 'Guwahati', 'Bengaluru', 'Varoda', 'Ahmedabad', 'Hyderabad', 'Pune']
+            };
+    
+            // Add new options based on the first dropdown selection
+            if (firstDropdown && options[firstDropdown]) {
+                options[firstDropdown].forEach(option => {
+                    const newOption = document.createElement("option");
+                    newOption.value = option.toLowerCase(); // Use lowercase for consistent mapping
+                    newOption.text = option;
+                    secondDropdown.add(newOption);
+                });
+            }
+        }
+    
+        function showResult() {
+            const firstDropdown = document.getElementById("firstDropdown");
+            const secondDropdown = document.getElementById("secondDropdown");
+            const resultDiv = document.getElementById("result");
+    
+            // Get the selected values safely
+            const firstSelection = firstDropdown.options[firstDropdown.selectedIndex]?.text;
+            const secondSelection = secondDropdown.options[secondDropdown.selectedIndex]?.text;
+    
+            // Map of selections to places with arrays of names and URLs
+            const places = {
+                global: {
+                    names: ["Amazon"],
+                    urls: ["https://www.amazon.com"]
+                },
+                kolkata: {
+                    names: ["Big Basket", "Zepto", "Dealshare"],
+                    urls: ["https://www.bigbasket.com", "https://www.zepto.com", "https://www.dealshare.in"]
+                },
+                guwahati: {
+                    names: ["Big Basket"],
+                    urls: ["https://www.bigbasket.com"]
+                },
+                bengaluru: {
+                    names: ["Manju's Bengali Store", "Kolkata Sholoana"],
+                    urls: ["#", "#"]
+                },
+                varoda: {
+                    names: ["The Bengali Puja Store"],
+                    urls: ["#"]
+                },
+                ahmedabad: {
+                    names: ["Bengal Delights", "Kolkata Haat"],
+                    urls: ["#", "#"]
+                },
+                hyderabad: {
+                    names: ["Gramer Bangla"],
+                    urls: ["#"]
+                },
+                pune: {
+                    names: ["Ishita Mart"],
+                    urls: ["#"]
+                }
+            };
+    
+            // Get the place corresponding to the second dropdown selection
+            const selectedPlace = places[secondSelection?.toLowerCase()];
+    
+            // Display result if both dropdowns have valid selections
+            if (firstSelection && secondSelection && selectedPlace) {
+                // Create a string of links for the selected place
+                const links = selectedPlace.names.map((name, index) => `<a href="${selectedPlace.urls[index]}" target="_blank">${name}</a>`).join(", ");
+                resultDiv.innerHTML = `You selected: ${firstSelection} - ${secondSelection}. We are available in: ${links}.`;
+                resultDiv.classList.remove('hidden');
+            } else {
+                resultDiv.innerHTML = 'Please make a valid selection in both dropdowns.';
+                resultDiv.classList.remove('hidden');
+            }
+        }
+    </script>    
+</body>
+</html>

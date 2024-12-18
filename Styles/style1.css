@@ -18,11 +18,11 @@ html {
 }
 
 body {
-  background: #000000;
+  background: #fff8dc;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1700px;
   margin: 0 auto;
   padding: 3rem 2rem;
   display: flex;
@@ -43,7 +43,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Set to 2 columns */
   gap: 2rem;
-  justify-content: center;
+  justify-content:space-evenly
 }
 
 .container .products-container .product {

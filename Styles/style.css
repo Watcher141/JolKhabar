@@ -109,7 +109,7 @@ nav svg {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -197,8 +197,8 @@ button {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-  background-color: #272525;
-  color: white;
+  background-color:#c4bfbe;
+  color: whitesmoke;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -235,7 +235,7 @@ button:hover {
 }
 
 .home-link {
-  color: 503530;
+  color: #503530;
   text-decoration: none;
   font-size: 1rem;
 }

@@ -6,11 +6,12 @@
   --accent-color: #92a2b8;
   --button-bg: #272525;
   --button-hover-bg: #b87149;
-  --footer-bg: #1b1c24;
-  --footer-text: #d1d1d1;
+  --footer-bg: #c4bfbe;
+  --footer-text: #503530;
   --footer-link: #f0f0f0;
   --footer-link-hover: #b87149;
 }
+
 
 * {
   margin: 0;

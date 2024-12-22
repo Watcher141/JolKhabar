@@ -109,77 +109,77 @@
 }
 
 function showResult() {
-    const firstDropdown = document.getElementById("firstDropdown");
-    const secondDropdown = document.getElementById("secondDropdown");
-    const resultDiv = document.getElementById("result");
+  const firstDropdown = document.getElementById("firstDropdown");
+  const secondDropdown = document.getElementById("secondDropdown");
+  const resultDiv = document.getElementById("result");
 
-    const firstSelection = firstDropdown.options[firstDropdown.selectedIndex]?.text;
-    const secondSelection = secondDropdown.options[secondDropdown.selectedIndex]?.text;
+  const firstSelection = firstDropdown.options[firstDropdown.selectedIndex]?.text;
+  const secondSelection = secondDropdown.options[secondDropdown.selectedIndex]?.text;
 
-    const places = {
-        global: {
-            names: ["Amazon"],
-            urls: ["https://www.amazon.com"],
-            types: ["website"] // Icon type: 'website' or 'location'
-        },
-        kolkata: {
-            names: ["Big Basket", "Zepto", "Dealshare"],
-            urls: ["https://www.bigbasket.com", "https://www.zepto.com", "https://www.dealshare.in"],
-            types: ["website", "website", "website"]
-        },
-        guwahati: {
-            names: ["Big Basket"],
-            urls: ["https://www.bigbasket.com"],
-            types: ["website"]
-        },
-        bengaluru: {
-            names: ["Manju's Bengali Store", "Kolkata Sholoana"],
-            urls: ["#", "#"],
-            types: ["location", "location"]
-        },
-        varoda: {
-            names: ["The Bengali Puja Store"],
-            urls: ["#"],
-            types: ["location"]
-        },
-        ahmedabad: {
-            names: ["Bengal Delights\n", "Kolkata Haat"],
-            urls: ["#", "#"],
-            types: ["location", "location"]
-        },
-        hyderabad: {
-            names: ["Gramer Bangla"],
-            urls: ["#"],
-            types: ["location"]
-        },
-        pune: {
-            names: ["Ishita Mart"],
-            urls: ["#"],
-            types: ["location"]
-        }
-    };
-
-    const selectedPlace = places[secondSelection?.toLowerCase()];
-
-    if (firstSelection && secondSelection && selectedPlace) {
-        const links = selectedPlace.names.map((name, index) => {
-            const url = selectedPlace.urls[index];
-            const type = selectedPlace.types[index];
-            const icon = type === "website"
-                ? `<img src="../globe.png" alt="Website" class="result-icon" />`
-                : `<img src="../location.png" alt="Location" class="result-icon" />`;
-
-            return `<a href="${url}" target="_blank">${icon} ${name}</a>`;
-        }).join(", ");
-
-        resultDiv.innerHTML = `We are available at: ${links}.`;
-        resultDiv.classList.remove('hidden');
-    } else {
-        resultDiv.innerHTML = 'Please make a valid selection in both dropdowns.';
-        resultDiv.classList.remove('hidden');
+  const places = {
+    global: {
+      names: ["Amazon"],
+      urls: ["https://www.amazon.com"],
+      types: ["website"] // Icon type: 'website' or 'location'
+    },
+    kolkata: {
+      names: ["Big Basket", "Zepto", "Dealshare"],
+      urls: ["https://www.bigbasket.com", "https://www.zepto.com", "https://www.dealshare.in"],
+      types: ["website", "website", "website"]
+    },
+    guwahati: {
+      names: ["Big Basket"],
+      urls: ["https://www.bigbasket.com"],
+      types: ["website"]
+    },
+    bengaluru: {
+      names: ["Manju's Bengali Store", "Kolkata Sholoana"],
+      urls: ["#", "#"],
+      types: ["location", "location"]
+    },
+    varoda: {
+      names: ["The Bengali Puja Store"],
+      urls: ["#"],
+      types: ["location"]
+    },
+    ahmedabad: {
+      names: ["Bengal Delights\n", "Kolkata Haat"],
+      urls: ["#", "#"],
+      types: ["location", "location"]
+    },
+    hyderabad: {
+      names: ["Gramer Bangla"],
+      urls: ["#"],
+      types: ["location"]
+    },
+    pune: {
+      names: ["Ishita Mart"],
+      urls: ["#"],
+      types: ["location"]
     }
+  };
+
+  const selectedPlace = places[secondSelection?.toLowerCase()];
+
+  if (firstSelection && secondSelection && selectedPlace) {
+    const links = selectedPlace.names.map((name, index) => {
+      const url = selectedPlace.urls[index];
+      const type = selectedPlace.types[index];
+      const icon = type === "website"
+        ? `<img src="../globe.png" alt="Website" class="result-icon" />`
+        : `<img src="../location.png" alt="Location" class="result-icon" />`;
+
+      return `<a href="${url}" target="_blank">${icon} ${name}</a>`;
+    }).join(", ");
+
+    resultDiv.innerHTML = `We are available at: ${links}.`;
+    resultDiv.classList.remove('hidden');
+  } else {
+    resultDiv.innerHTML = 'Please make a valid selection in both dropdowns.';
+    resultDiv.classList.remove('hidden');
+  }
 }
 
-    </script>
+  </script>
 </body>
 </html>

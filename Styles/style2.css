@@ -173,9 +173,15 @@ button:hover {
 
 #result {
   margin-top: 20px;
-  font-size: 1rem;
+  font-size: 1.25rem; /* Set the font size to 1.5rem */
   color: var(--color-1);
   white-space: pre-line;
+}
+
+.result-icon {
+  width: 1.25rem; /* Set the width of the icons to 1.5rem */
+  height: auto;
+  vertical-align: middle;
 }
 
 .hidden {
@@ -238,12 +244,6 @@ footer {
   .footer-content p {
     font-size: 0.8rem;
   }
-}
-.result-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 5px;
-  vertical-align: middle;
 }
 
 #result a {

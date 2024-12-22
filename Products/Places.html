@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dynamic Dropdowns with Responsive Nav</title>
     <link rel="stylesheet" href="../Styles/style2.css" />
     <script src="../js/script1.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <input type="checkbox" id="sidebar-active" />
-        <label for="sidebar-active" class="open-sidebar-button">
+      <input type="checkbox" id="sidebar-active" />
+      <label for="sidebar-active" class="open-sidebar-button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="32"
+          viewBox="0 -960 960 960"
+          width="32"
+        >
+          <path
+            d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+          />
+        </svg>
+      </label>
+      <label id="overlay" for="sidebar-active"></label>
+      <div class="links-container">
+        <label for="sidebar-active" class="close-sidebar-button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="32"
@@ -18,168 +32,249 @@
             width="32"
           >
             <path
-              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
             />
           </svg>
         </label>
-        <label id="overlay" for="sidebar-active"></label>
-        <div class="links-container">
-          <label for="sidebar-active" class="close-sidebar-button">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="32"
-              viewBox="0 -960 960 960"
-              width="32"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              />
-            </svg>
-          </label>
-  
-          <a class="home-link" href="../index.html">JOLKHABAR</a>
-          <!-- link back to homepage -->
-         
-          <a href="../Products/Product1.html">Aachaar</a>
-          <a href="../Products/Product2.html">Aamsotto</a>
-          <a href="../Products/Product3.html">Chanachur</a>
-          <a href="../Products/Product4.html">Chutney</a>
-          <a href="../Products/Product5.html">Kasundi</a>
-          <a href="../Products/Product7.html">Rice</a>
-          <a href="../Products/Product8.html">Dashakarma</a>
-          <a href="../Products/Product6.html">Delicacies</a>
-        </div>
-      </nav>
+
+        <a class="home-link" href="../index.html">JOLKHABAR</a>
+        <!-- link back to homepage -->
+
+        <a href="../Products/Product1.html">Aachaar</a>
+        <a href="../Products/Product2.html">Aamsotto</a>
+        <a href="../Products/Product3.html">Chanachur</a>
+        <a href="../Products/Product4.html">Chutney</a>
+        <a href="../Products/Product5.html">Kasundi</a>
+        <a href="../Products/Product7.html">Rice</a>
+        <a href="../Products/Product8.html">Dashakarma</a>
+        <a href="../Products/Product6.html">Delicacies</a>
+      </div>
+    </nav>
 
     <div class="container">
-        <h1>Find Us Anywhere Across Places</h1>
-        <form id="dropdownForm">
-            <label for="firstDropdown">Select a category:</label>
-            <select id="firstDropdown" onchange="updateSecondDropdown()">
-                <option value="" disabled selected>Select an option</option>
-                <option value="fruits">Global Platforms</option>
-                <option value="vehicles">Indian Platforms</option>
-            </select>
+      <h1>Find Us Anywhere Across Places</h1>
+      <form id="dropdownForm">
+        <label for="firstDropdown">Select a category:</label>
+        <select id="firstDropdown" onchange="updateSecondDropdown()">
+          <option value="" disabled selected>Select an option</option>
+          <option value="fruits">Global Platforms</option>
+          <option value="vehicles">Indian Platforms</option>
+        </select>
 
-            <label for="secondDropdown">Select an option:</label>
-            <select id="secondDropdown">
-                <option value="" disabled selected>Select an option</option>
-            </select>
+        <label for="secondDropdown">Select an option:</label>
+        <select id="secondDropdown">
+          <option value="" disabled selected>Select an option</option>
+        </select>
 
-            <button type="button" onclick="showResult()">Show Result</button>
-            <div id="result" class="hidden"></div>
-        </form>
+        <button type="button" onclick="showResult()">Show Result</button>
+        <div id="result" class="hidden"></div>
+      </form>
     </div>
 
     <footer>
-        <div class="footer-content">
-          <a href="/index.html" class="footer-button">Return to homepage</a>
-          <p>&copy; 2024 SIBLINGS EXIM PRIVATE LIMITED. All rights reserved.</p>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/amaderjolkhabar" target="_blank"><img src="../facebook-icon.png" alt="Facebook"></a>
-            <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank"><img src="../YoutubeLogo.png" alt="Youtube"></a>
-            <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="../instagram-icon.png" alt="Instagram"></a>
-          </div>
-          <p>
-            <a href="#privacy-policy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
-          </p>
+      <div class="footer-content">
+        <a href="/index.html" class="footer-button">Return to homepage</a>
+        <p>&copy; 2024 SIBLINGS EXIM PRIVATE LIMITED. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank"
+            ><img src="../facebook-icon.png" alt="Facebook"
+          /></a>
+          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank"
+            ><img src="../YoutubeLogo.png" alt="Youtube"
+          /></a>
+          <a
+            href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            ><img src="../instagram-icon.png" alt="Instagram"
+          /></a>
         </div>
-      </footer>
+        <p>
+          <a href="#privacy-policy">Privacy Policy</a> |
+          <a href="#terms">Terms of Service</a>
+        </p>
+      </div>
+    </footer>
 
     <script>
-        function updateSecondDropdown() {
-    const firstDropdown = document.getElementById("firstDropdown").value;
-    const secondDropdown = document.getElementById("secondDropdown");
+      function updateSecondDropdown() {
+        const firstDropdown = document.getElementById("firstDropdown").value;
+        const secondDropdown = document.getElementById("secondDropdown");
 
-    secondDropdown.innerHTML = '<option value="" disabled selected>Select an option</option>';
+        secondDropdown.innerHTML =
+          '<option value="" disabled selected>Select an option</option>';
 
-    const options = {
-        fruits: ['Global'],
-        vehicles: ['Kolkata', 'Guwahati', 'Bengaluru', 'Varoda', 'Ahmedabad', 'Hyderabad', 'Pune']
-    };
+        const options = {
+          fruits: ["Global"],
+          vehicles: [
+            "Kolkata",
+            "Guwahati",
+            "Bengaluru",
+            "Varoda",
+            "Ahmedabad",
+            "Hyderabad",
+            "Pune",
+          ],
+        };
 
-    if (firstDropdown && options[firstDropdown]) {
-        options[firstDropdown].forEach(option => {
+        if (firstDropdown && options[firstDropdown]) {
+          options[firstDropdown].forEach((option) => {
             const newOption = document.createElement("option");
             newOption.value = option.toLowerCase();
             newOption.text = option;
             secondDropdown.add(newOption);
-        });
-    }
-}
+          });
+        }
+      }
 
-function showResult() {
-  const firstDropdown = document.getElementById("firstDropdown");
-  const secondDropdown = document.getElementById("secondDropdown");
-  const resultDiv = document.getElementById("result");
+      function showResult() {
+        const firstDropdown = document.getElementById("firstDropdown");
+        const secondDropdown = document.getElementById("secondDropdown");
+        const resultDiv = document.getElementById("result");
 
-  const firstSelection = firstDropdown.options[firstDropdown.selectedIndex]?.text;
-  const secondSelection = secondDropdown.options[secondDropdown.selectedIndex]?.text;
+        const firstSelection =
+          firstDropdown.options[firstDropdown.selectedIndex]?.text;
+        const secondSelection =
+          secondDropdown.options[secondDropdown.selectedIndex]?.text;
 
-  const places = {
-    global: {
-      names: ["Amazon"],
-      urls: ["https://www.amazon.com"],
-      types: ["website"] // Icon type: 'website' or 'location'
-    },
-    kolkata: {
-      names: ["Big Basket", "Zepto", "Dealshare"],
-      urls: ["https://www.bigbasket.com", "https://www.zepto.com", "https://www.dealshare.in"],
-      types: ["website", "website", "website"]
-    },
-    guwahati: {
-      names: ["Big Basket"],
-      urls: ["https://www.bigbasket.com"],
-      types: ["website"]
-    },
-    bengaluru: {
-      names: ["Manju's Bengali Store", "Kolkata Sholoana"],
-      urls: ["#", "#"],
-      types: ["location", "location"]
-    },
-    varoda: {
-      names: ["The Bengali Puja Store"],
-      urls: ["#"],
-      types: ["location"]
-    },
-    ahmedabad: {
-      names: ["Bengal Delights\n", "Kolkata Haat"],
-      urls: ["#", "#"],
-      types: ["location", "location"]
-    },
-    hyderabad: {
-      names: ["Gramer Bangla"],
-      urls: ["#"],
-      types: ["location"]
-    },
-    pune: {
-      names: ["Ishita Mart"],
-      urls: ["#"],
-      types: ["location"]
-    }
-  };
+        const places = {
+          global: {
+            names: ["Amazon", "ETSY"],
+            urls: [
+              "https://www.amazon.com/stores/JOLKHABAR/Homepage/page/1E160EA0-DC29-415C-91C8-EB1E168CFCC3?ref_=cm_sw_r_ud_ast_store_1EPQVBRTAP43C4ESMGZ5&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.etsy.com/shop/JOLKHABARnDASHAKARMA",
+            ],
+            types: ["amazon", "etsy"],
+          },
+          kolkata: {
+            names: [
+              "Amazon",
+              "Flipkart",
+              "Bigbasket",
+              "Zepto",
+              "Dealshare",
+              "Blinkit",
+            ],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "https://www.bigbasket.com/ps/?q=jolkhabar&nc=as",
+              "https://www.zeptonow.com/search?query=jolkhabar",
+              "https://www.dealshare.in/",
+              "https://blinkit.com/brand/jolkhabar/23552",
+            ],
+            types: [
+              "amazon",
+              "flipkart",
+              "bigbasket",
+              "zepto",
+              "dealshare",
+              "blinkit",
+            ],
+          },
+          guwahati: {
+            names: ["Amazon", "Flipkart", "Bigbasket"],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "https://www.bigbasket.com/ps/?q=jolkhabar&nc=as",
+            ],
+            types: ["amazon", "flipkart", "bigbasket"], 
+          },
+          bengaluru: {
+            names: [
+              "Amazon",
+              "Flipkart",
+              "Manju's Bengali Store",
+              "Kolkata Sholoana",
+            ],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "https://maps.app.goo.gl/MFzJVN1pFeDdCEUX9",
+              "https://maps.app.goo.gl/uxPKGQYBkhvgvLwZ9",
+            ],
+            types: ["amazon", "flipkart", "maps", "maps"],
+          },
+          varoda: {
+            names: ["Amazon", "Flipkart", "The Bengali Puja Store"],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "#",
+            ],
+            types: ["amazon", "flipkart", "location"],
+          },
+          ahmedabad: {
+            names: ["Amazon", "Flipkart", "Bengal Delights", "Kolkata Haat"],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "https://maps.app.goo.gl/E9a5kU66MFmHtjv27",
+              "https://maps.app.goo.gl/XfGQ6PuhVE7rJhHJA",
+            ],
+            types: ["amazon", "flipkart", "maps", "maps"],
+          },
+          hyderabad: {
+            names: ["Amazon", "Flipkart", "Gramer Bangla"],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "https://maps.app.goo.gl/Kw1hGtYyL95isht67",
+            ],
+            types: ["amazon", "flipkart", "maps"],
+          },
+          pune: {
+            names: ["Amazon", "Flipkart", "Ishita Mart"],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
+              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "https://maps.app.goo.gl/Pwhuyy95nPPe4hVk6",
+            ],
+            types: ["amazon", "flipkart", "maps"],
+          },
+        };
 
-  const selectedPlace = places[secondSelection?.toLowerCase()];
+        const selectedPlace = places[secondSelection?.toLowerCase()];
 
-  if (firstSelection && secondSelection && selectedPlace) {
-    const links = selectedPlace.names.map((name, index) => {
-      const url = selectedPlace.urls[index];
-      const type = selectedPlace.types[index];
-      const icon = type === "website"
-        ? `<img src="../globe.png" alt="Website" class="result-icon" />`
-        : `<img src="../location.png" alt="Location" class="result-icon" />`;
+        if (firstSelection && secondSelection && selectedPlace) {
+          const links = selectedPlace.names
+            .map((name, index) => {
+              const url = selectedPlace.urls[index];
+              const type = selectedPlace.types[index];
+              let icon;
 
-      return `<a href="${url}" target="_blank">${icon} ${name}</a>`;
-    }).join(", ");
+              if (type === "amazon") {
+                        icon = `<img src="../images/AmazonLogo.png" alt="Amazon" class="result-icon" />`;
+                    } else if (type === "flipkart") {
+                        icon = `<img src="../images/FlipkartLogo.png" alt="Flipkart" class="result-icon" />`;
+                    } else if (type === "bigbasket") {
+                        icon = `<img src="../images/BigbasketLOgo.png" alt="Bigbasket" class="result-icon" />`;
+                    } else if (type === "zepto") {
+                        icon = `<img src="../images/ZeptoLogo.png" alt="Zepto" class="result-icon" />`;
+                    } else if (type === "dealshare") {
+                        icon = `<img src="../images/DealshareLogo.jpg" alt="Dealshare" class="result-icon" />`;
+                    } else if (type === "blinkit") {
+                        icon = `<img src="../images/BlinkitLogo.png" alt="Blinkit" class="result-icon" />`;
+                    } else if (type === "maps") {
+                        icon = `<img src="../images/GMAPSLOGO.png" alt="Location" class="result-icon" />`;
+                    } else if (type === "etsy") {
+                        icon = `<img src="../images/EtsyLogo.png" alt="Etsy" class="result-icon" />`;
+                    } else {
+                        icon = `<img src="../images/default.png" alt="Default" class="result-icon" />`;
+                    }
 
-    resultDiv.innerHTML = `We are available at: ${links}.`;
-    resultDiv.classList.remove('hidden');
-  } else {
-    resultDiv.innerHTML = 'Please make a valid selection in both dropdowns.';
-    resultDiv.classList.remove('hidden');
-  }
-}
+              return `<a href="${url}" target="_blank">${icon} ${name}</a>`;
+            })
+            .join("<br>");
 
-  </script>
-</body>
+          resultDiv.innerHTML = `We are available at: <br>${links}`;
+          resultDiv.classList.remove("hidden");
+        } else {
+          resultDiv.innerHTML =
+            "Please make a valid selection in both dropdowns.";
+          resultDiv.classList.remove("hidden");
+        }
+      }
+    </script>
+  </body>
 </html>

@@ -175,6 +175,7 @@ button:hover {
   margin-top: 20px;
   font-size: 1rem;
   color: var(--color-1);
+  white-space: pre-line;
 }
 
 .hidden {

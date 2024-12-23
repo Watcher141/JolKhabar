@@ -316,8 +316,6 @@ button:hover {
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
-    background-color: #272525;
     color: white;
     border: none;
     padding: 5px 10px; /* Reduced padding for mobile */

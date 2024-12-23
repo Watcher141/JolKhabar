@@ -422,7 +422,7 @@ footer {
 .available-at-section {
   text-align: center;
   margin: 40px 2px;
-  background: linear-gradient(145deg, #f3f3f3, #e4e4e4);
+  background: linear-gradient(145deg, #fff8dc, #dbdad2);
   box-shadow: 4px 4px 8px #cccccc, -4px -4px 8px #ffffff;
   border-radius: 15px;
   padding: 20px;
@@ -466,7 +466,7 @@ footer {
   }
 
   .available-logo {
-    max-width: 80px;
+    max-width: 100px;
   }
 }
 

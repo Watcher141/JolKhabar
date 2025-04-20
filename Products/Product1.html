@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JOLKHABAR</title>
+    <title>Bengali Achar & Pickles | Traditional Bengali Pickles - JOLKHABAR</title>
+    <meta name="description" content="Shop authentic Bengali Achar (pickles) at JOLKHABAR. Wide variety including Tentul Achar, Aam Achar, Lonka Achar & more. Traditional Bengali pickles made with love." />
+    <meta name="keywords" content="Bengali pickles, Achar, Tentul Achar, Aam Achar, Bengali food, traditional pickles" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Bengali Achar & Pickles | JOLKHABAR" />
+    <meta property="og:description" content="Authentic Bengali pickles and Achar varieties at JOLKHABAR." />
+    <meta property="og:image" content="../Assets/achar.png" />
+    <meta property="og:url" content="https://jolkhabar.com/Products/Product1.html" />
+    <link rel="canonical" href="https://jolkhabar.com/Products/Product1.html" />
 
     <!-- font awesome cdn link  -->
     <link
@@ -15,6 +23,30 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="../Styles/style1.css" />
     <link rel="stylesheet" href="../Styles/style.css" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Bengali Achar Collection",
+      "description": "Traditional Bengali pickles including Tentul Achar, Aam Achar, and more",
+      "brand": {
+        "@type": "Brand",
+        "name": "JOLKHABAR"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "INR",
+        "seller": {
+          "@type": "Organization",
+          "name": "JOLKHABAR"
+        }
+      }
+    }
+    </script>
+    
     <!-- custom js file link  -->
     <script src="../js/script.js" defer></script>
   </head>
@@ -50,73 +82,62 @@
 
         <a class="home-link" href="../index.html">Home</a>
         <!-- link back to homepage -->
-       
+        
         <a href="../Products/Product1.html">Achar</a>
         <a href="../Products/Product2.html">Aamsotto</a>
         <a href="../Products/Product3.html">Chanachur</a>
-        <a href="../Products/Product4.html">Chutney</a>
+        <a href="../Products/Product4.html">Chatni</a>
         <a href="../Products/Product5.html">Kasundi</a>
         <a href="../Products/Product7.html">Rice</a>
-        <a href="../Products/Product8.html">Dashakarma</a>
         <a href="../Products/Product6.html">Delicacies</a>
+        <a href="../Products/Product8.html">Dashakarma</a>
       </div>
     </nav>
 
     <div class="container">
       <div class="banner">
             <img src="../Assets/achar.png" alt="Banner">
-        </div>
+      </div>
       
-
       <div class="products-container">
         <div class="product" data-name="p-1">
-          <img src="../images/Misti Achar Tentul.png" alt="" />
-          <h3>TENTUL ACHAR</h3>
-          
+          <img src="../images/Misti Achar Aam.png" alt="" />
+          <h3>AAM MISTI ACHAR</h3>
         </div>
 
         <div class="product" data-name="p-2">
-          <img src="../images/Achar Lonka.png" alt="" />
-          <h3>LONKA ACHAR</h3>
-          
+          <img src="../images/Misti Achar Kul.png" alt="" />
+          <h3>KUL ACHAR</h3>
         </div>
 
-     
-
         <div class="product" data-name="p-3">
-          <img src="../images/Achar Lebu.png" alt="" />
-          <h3>LEBU ACHAR</h3>
-          
+          <img src="../images/Misti Achar Tentul.png" alt="" />
+          <h3>TENTUL ACHAR</h3>
         </div>
 
         <div class="product" data-name="p-4">
-          <img src="../images/Misti Achar Kul.png" alt="" />
-          <h3>KUL ACHAR</h3>
-          
-        </div>
-
-        <div class="product" data-name="p-5">
           <img src="../images/Misti Achar Chalta.png" alt="" />
           <h3>CHALTA ACHAR</h3>
         </div>
 
+        <div class="product" data-name="p-5">
+          <img src="../images/Achar Jalpai.png" alt="" />
+          <h3>JALPAI ACHAR</h3>
+        </div>
+
         <div class="product" data-name="p-6">
-          <img src="../images/Misti Achar Aam.png" alt="" />
-          <h3>AAM MISTI ACHAR</h3>
-         
+          <img src="../images/Achar Aam Tok-Jhal.png" alt="" />
+          <h3>AAM TOK-JHAL ACHAR</h3>
         </div>
 
         <div class="product" data-name="p-7">
-          <img src="../images/Achar Aam Tok-Jhal.png" alt="" />
-          <h3>AAM ACHAR</h3>
-          
+          <img src="../images/Achar Lonka.png" alt="" />
+          <h3>LONKA ACHAR</h3>
         </div>
 
-
         <div class="product" data-name="p-8">
-          <img src="../images/Achar Jalpai.png" alt="" />
-          <h3>JALPAI ACHAR</h3>
-          
+          <img src="../images/Achar Lebu.png" alt="" />
+          <h3>LEBU ACHAR</h3>
         </div>
 
       </div>
@@ -372,7 +393,7 @@
     </div>
     <footer>
       <div class="footer-content">
-        <a href="./Products/Places.html" class="footer-button">Places to find us</a>
+        <a href="../Products/Places.html" class="footer-button" style="display: inline-block; margin-top: 15px; background-color: #503530; color: #FFFFFF; text-transform: uppercase; font-size: 1rem; font-weight: 700; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">Places to find us</a>
         <p>&copy; 2024 SIBLINGS EXIM PRIVATE LIMITED. All rights reserved.</p>
         <div class="social-icons">
           <a href="https://www.facebook.com/amaderjolkhabar" target="_blank"><img src="./facebook-icon.png" alt="Facebook"></a>
@@ -386,3 +407,4 @@
     </footer> 
   </body>
 </html>
+``` 

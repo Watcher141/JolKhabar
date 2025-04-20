@@ -15,6 +15,7 @@ html {
   font-size: 12pt;
   font-family: Poppins, Segoe UI, Tahoma, sans-serif;
   background-color: #fff8dc;
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -40,6 +41,23 @@ nav a {
   align-items: center;
   text-decoration: none;
   color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
@@ -64,6 +82,15 @@ nav svg {
 }
 
 @media (max-width: 450px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: transparent;
+  }
+
   .links-container {
     flex-direction: column;
     align-items: flex-start;
@@ -75,6 +102,7 @@ nav svg {
     background-color: var(--color-1);
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
     transition: 0.75s ease-out;
+    padding-top: 60px;
   }
 
   nav a {
@@ -91,6 +119,16 @@ nav svg {
     display: block;
   }
 
+  .open-sidebar-button {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    z-index: 101;
+    background-color: rgba(255, 248, 220, 0.6);
+    border-radius: 5px;
+    padding: 8px;
+  }
+
   #sidebar-active:checked ~ .links-container {
     right: 0;
   }
@@ -102,6 +140,15 @@ nav svg {
     top: 0;
     left: 0;
     z-index: 9;
+  }
+
+  .container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .banner-section {
+    margin-top: 0;
   }
 }
 
@@ -122,6 +169,28 @@ nav svg {
   position: relative;
   overflow: hidden;
   aspect-ratio: 5 / 1;
+  animation: scaleIn 1s ease-out;
+}
+
+.chal-section button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: #c4bfbe;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.chal-section button:hover {
+  background-color: #b87149;
+  transform: translateX(-50%) scale(1.1);
 }
 
 .achar-section {
@@ -159,7 +228,7 @@ nav svg {
 
 .aamsotto-section,
 .chanachur-section,
-.chutney-section,
+.chatni-section,
 .kasundi-section {
   flex: 1 1 calc(50% - 10px);
   height: 100vh;
@@ -176,7 +245,7 @@ nav svg {
 .kasundi-image,
 .aamsotto-image,
 .chanachur-image,
-.chutney-image,
+.chatni-image,
 .nolen-gur-image,
 .nolen-gur-image1,
 .doshokorma-image {
@@ -256,7 +325,7 @@ button:hover {
 
   .aamsotto-section,
   .chanachur-section,
-  .chutney-section,
+  .chatni-section,
   .kasundi-section {
     height: 45vh;
   }
@@ -277,7 +346,7 @@ button:hover {
 
   .aamsotto-section,
   .chanachur-section,
-  .chutney-section,
+  .chatni-section,
   .kasundi-section {
     height: 40vh;
   }
@@ -301,7 +370,7 @@ button:hover {
 
   .aamsotto-section,
   .chanachur-section,
-  .chutney-section,
+  .chatni-section,
   .kasundi-section {
     height: 20vh;
   }
@@ -323,6 +392,11 @@ button:hover {
     font-size: 0.2rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .chal-section button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 
   button {
@@ -387,21 +461,24 @@ footer {
 .footer-button {
   display: inline-block;
   margin-top: 15px;
-  background-color: var(--accent-color);
-  color: var(--text-color);
+  background-color: #503530;
+  color: #FFFFFF;
   text-transform: uppercase;
   font-size: 1rem;
-  font-weight: 500;
-  padding: 10px 20px;
+  font-weight: 700;
+  padding: 12px 24px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .footer-button:hover {
-  background-color: var(--footer-link-hover);
-  transform: scale(1.1);
+  background-color: #614540;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Media Queries for Footer */
@@ -448,12 +525,19 @@ footer {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  animation: slideInRight 0.5s ease-out;
+  animation-fill-mode: both;
 }
 
 .available-logo:hover {
   transform: scale(1.1);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.available-logo:nth-child(2) { animation-delay: 0.1s; }
+.available-logo:nth-child(3) { animation-delay: 0.2s; }
+.available-logo:nth-child(4) { animation-delay: 0.3s; }
+.available-logo:nth-child(5) { animation-delay: 0.4s; }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
@@ -482,4 +566,82 @@ footer {
   .available-logo {
     max-width: 60px;
   }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to elements */
+.product {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.product:nth-child(2) { animation-delay: 0.2s; }
+.product:nth-child(3) { animation-delay: 0.4s; }
+.product:nth-child(4) { animation-delay: 0.6s; }
+
+/* Enhanced hover effects */
+.product {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.banner img {
+    transition: transform 0.5s ease;
+}
+
+.banner:hover img {
+    transform: scale(1.02);
+}
+
+/* Loading animation */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
 }

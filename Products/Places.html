@@ -3,8 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dynamic Dropdowns with Responsive Nav</title>
+    <title>Find JOLKHABAR Products Near You | Store Locations & Online Platforms</title>
+    <meta name="description" content="Find JOLKHABAR's authentic Bengali food products at stores near you or shop online. Available on Amazon, Flipkart, BigBasket, Blinkit, and other major platforms." />
+    <meta name="keywords" content="JOLKHABAR locations, Bengali food stores, Bengali products online, buy Bengali food" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Find JOLKHABAR Products Near You" />
+    <meta property="og:description" content="Discover where to buy authentic Bengali food products from JOLKHABAR." />
+    <meta property="og:url" content="https://jolkhabar.com/Products/Places.html" />
+    <link rel="canonical" href="https://jolkhabar.com/Products/Places.html" />
+    
     <link rel="stylesheet" href="../Styles/style2.css" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "JOLKHABAR Store Locations",
+      "description": "Find JOLKHABAR products in stores and online platforms",
+      "url": "https://jolkhabar.com/Products/Places.html",
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "availableDeliveryMethod": [
+        "Shipping",
+        "Pickup"
+      ],
+      "potentialAction": {
+        "@type": "FindAction",
+        "target": "https://jolkhabar.com/Products/Places.html"
+      }
+    }
+    </script>
+    
     <script src="../js/script1.js" defer></script>
   </head>
   <body>
@@ -40,14 +72,14 @@
         <a class="home-link" href="../index.html">JOLKHABAR</a>
         <!-- link back to homepage -->
 
-        <a href="../Products/Product1.html">Aachaar</a>
+        <a href="../Products/Product1.html">Achar</a>
         <a href="../Products/Product2.html">Aamsotto</a>
         <a href="../Products/Product3.html">Chanachur</a>
-        <a href="../Products/Product4.html">Chutney</a>
+        <a href="../Products/Product4.html">Chatni</a>
         <a href="../Products/Product5.html">Kasundi</a>
         <a href="../Products/Product7.html">Rice</a>
-        <a href="../Products/Product8.html">Dashakarma</a>
         <a href="../Products/Product6.html">Delicacies</a>
+        <a href="../Products/Product8.html">Dashakarma</a>
       </div>
     </nav>
 
@@ -97,11 +129,12 @@
     
     <script>
       function updateSecondDropdown() {
-        const firstDropdown = document.getElementById("firstDropdown").value;
+        const firstDropdown = document.getElementById("firstDropdown");
         const secondDropdown = document.getElementById("secondDropdown");
-
-        secondDropdown.innerHTML =
-          '<option value="" disabled selected>Select an option</option>';
+        const result = document.getElementById("result");
+        
+        result.classList.add("hidden");
+        secondDropdown.innerHTML = '<option value="" disabled selected>Select an option</option>';
 
         const options = {
           fruits: ["Global"],
@@ -109,15 +142,19 @@
             "Kolkata",
             "Guwahati",
             "Bengaluru",
-            "Varoda",
+            "Vadodara",
             "Ahmedabad",
             "Hyderabad",
             "Pune",
+            "Mumbai",
+            "Gurgaon",
+            "Delhi",
+            "All Over India"
           ],
         };
 
-        if (firstDropdown && options[firstDropdown]) {
-          options[firstDropdown].forEach((option) => {
+        if (firstDropdown && options[firstDropdown.value]) {
+          options[firstDropdown.value].forEach((option) => {
             const newOption = document.createElement("option");
             newOption.value = option.toLowerCase();
             newOption.text = option;
@@ -126,117 +163,189 @@
         }
       }
 
-      function showResult() {
+      async function showResult() {
         const firstDropdown = document.getElementById("firstDropdown");
         const secondDropdown = document.getElementById("secondDropdown");
         const resultDiv = document.getElementById("result");
 
-        const firstSelection =
-          firstDropdown.options[firstDropdown.selectedIndex]?.text;
-        const secondSelection =
-          secondDropdown.options[secondDropdown.selectedIndex]?.text;
+        const firstSelection = firstDropdown.options[firstDropdown.selectedIndex]?.text;
+        const secondSelection = secondDropdown.options[secondDropdown.selectedIndex]?.text;
+
+        if (!firstSelection || !secondSelection) {
+          resultDiv.innerHTML = "Please make a valid selection in both dropdowns.";
+          resultDiv.classList.remove("hidden");
+          return;
+        }
 
         const places = {
           global: {
-            names: ["Amazon", "ETSY"],
+            names: ["Etsy", "Ebay"],
             urls: [
-              "https://www.amazon.com/stores/JOLKHABAR/Homepage/page/1E160EA0-DC29-415C-91C8-EB1E168CFCC3?ref_=cm_sw_r_ud_ast_store_1EPQVBRTAP43C4ESMGZ5&store_ref=bl_ast_dp_brandLogo_sto",
               "https://www.etsy.com/shop/JOLKHABARnDASHAKARMA",
+              "https://www.ebay.com/usr/jolkhabarndashakarmka"
             ],
-            types: ["amazon", "etsy"],
+            types: ["etsy", "ebay"]
+          },
+          "all over india": {
+            names: ["Amazon", "Flipkart"],
+            urls: [
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
+            ],
+            types: ["amazon", "flipkart"]
           },
           kolkata: {
             names: [
-              "Amazon",
-              "Flipkart",
-              "Bigbasket",
-              "Zepto",
-              "Dealshare",
               "Blinkit",
+              "Big Basket",
+              "Instamart",
+              "Zepto",
+              "Amazon",
+              "Flipkart"
             ],
             urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
-              "https://www.bigbasket.com/ps/?q=jolkhabar&nc=as",
-              "https://www.zeptonow.com/search?query=jolkhabar",
-              "https://www.dealshare.in/",
               "https://blinkit.com/brand/jolkhabar/23552",
+              "https://www.bigbasket.com/ps/?q=jolkhabar&nc=as",
+              "#",
+              "https://www.zeptonow.com/search?query=jolkhabar",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
             ],
             types: [
-              "amazon",
-              "flipkart",
-              "bigbasket",
-              "zepto",
-              "dealshare",
               "blinkit",
-            ],
+              "bigbasket",
+              "swiggy",
+              "zepto",
+              "amazon",
+              "flipkart"
+            ]
           },
           guwahati: {
-            names: ["Amazon", "Flipkart", "Bigbasket"],
+            names: ["Big Basket", "Amazon", "Flipkart"],
             urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
               "https://www.bigbasket.com/ps/?q=jolkhabar&nc=as",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
             ],
-            types: ["amazon", "flipkart", "bigbasket"], 
+            types: ["bigbasket", "amazon", "flipkart"]
           },
           bengaluru: {
             names: [
-              "Amazon",
-              "Flipkart",
+              "Instamart",
               "Manju's Bengali Store",
               "Kolkata Sholoana",
+              "Amazon",
+              "Flipkart"
             ],
             urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+              "#",
               "https://maps.app.goo.gl/MFzJVN1pFeDdCEUX9",
               "https://maps.app.goo.gl/uxPKGQYBkhvgvLwZ9",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
             ],
-            types: ["amazon", "flipkart", "maps", "maps"],
+            types: ["swiggy", "maps", "maps", "amazon", "flipkart"]
           },
-          varoda: {
-            names: ["Amazon", "Flipkart", "The Bengali Puja Store"],
+          vadodara: {
+            names: ["Bengoli Puja Store", "Amazon", "Flipkart"],
             urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
-              "#",
+              "https://maps.app.goo.gl/6pQLxqw4QdwRDdi16",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
             ],
-            types: ["amazon", "flipkart", "location"],
+            types: ["maps", "amazon", "flipkart"]
           },
           ahmedabad: {
-            names: ["Amazon", "Flipkart", "Bengal Delights", "Kolkata Haat"],
+            names: [
+              "Bengal Delights",
+              "Kolkata Haat",
+              "Amazon",
+              "Flipkart"
+            ],
             urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
               "https://maps.app.goo.gl/E9a5kU66MFmHtjv27",
               "https://maps.app.goo.gl/XfGQ6PuhVE7rJhHJA",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
             ],
-            types: ["amazon", "flipkart", "maps", "maps"],
+            types: ["maps", "maps", "amazon", "flipkart"]
           },
           hyderabad: {
-            names: ["Amazon", "Flipkart", "Gramer Bangla"],
-            urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
-              "https://maps.app.goo.gl/Kw1hGtYyL95isht67",
+            names: [
+              "Gramer Bangla",
+              "Instamart",
+              "Amazon",
+              "Flipkart"
             ],
-            types: ["amazon", "flipkart", "maps"],
+            urls: [
+              "https://maps.app.goo.gl/Kw1hGtYyL95isht67",
+              "#",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
+            ],
+            types: ["maps", "swiggy", "amazon", "flipkart"]
           },
           pune: {
-            names: ["Amazon", "Flipkart", "Ishita Mart"],
-            urls: [
-              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5?ref_=cm_sw_r_ud_ast_store_82QWD2TQA3GHBC7WWHSA&store_ref=bl_ast_dp_brandLogo_sto",
-              "https://www.flipkart.com/search?q=jolkhabar&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
-              "https://maps.app.goo.gl/Pwhuyy95nPPe4hVk6",
+            names: [
+              "Ishita Mart",
+              "Instamart",
+              "Amazon",
+              "Flipkart"
             ],
-            types: ["amazon", "flipkart", "maps"],
+            urls: [
+              "https://maps.app.goo.gl/Pwhuyy95nPPe4hVk6",
+              "#",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
+            ],
+            types: ["maps", "swiggy", "amazon", "flipkart"]
           },
+          mumbai: {
+            names: [
+              "Jolkhabar on eBay",
+              "Bengal Delights",
+              "Amazon",
+              "Flipkart"
+            ],
+            urls: [
+              "https://www.ebay.com/usr/jolkhabarndashakarmka",
+              "https://maps.app.goo.gl/E9a5kU66MFmHtjv27",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
+            ],
+            types: ["ebay", "maps", "amazon", "flipkart"]
+          },
+          gurgaon: {
+            names: [
+              "Instamart",
+              "Amazon",
+              "Flipkart"
+            ],
+            urls: [
+              "#",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
+            ],
+            types: ["swiggy", "amazon", "flipkart"]
+          },
+          delhi: {
+            names: [
+              "Instamart",
+              "Amazon",
+              "Flipkart"
+            ],
+            urls: [
+              "#",
+              "https://www.amazon.in/stores/JOLKHABAR/JOLKHABAR/page/575AAFEE-3B7F-45FB-BA9F-75F2866CD8C5",
+              "https://www.flipkart.com/search?q=jolkhabar"
+            ],
+            types: ["swiggy", "amazon", "flipkart"]
+          }
         };
 
         const selectedPlace = places[secondSelection?.toLowerCase()];
 
-        if (firstSelection && secondSelection && selectedPlace) {
+        if (selectedPlace) {
           const links = selectedPlace.names
             .map((name, index) => {
               const url = selectedPlace.urls[index];
@@ -244,31 +353,72 @@
               let icon;
 
               if (type === "amazon") {
-                        icon = `<img src="../Assets/AmazonLogo.png" alt="Amazon" class="result-icon" />`;
-                    } else if (type === "flipkart") {
-                        icon = `<img src="../Assets/FlipkartLogo.png" alt="Flipkart" class="result-icon" />`;
-                    } else if (type === "bigbasket") {
-                        icon = `<img src="../Assets/BigbasketLOgo.png" alt="Bigbasket" class="result-icon" />`;
-                    } else if (type === "zepto") {
-                        icon = `<img src="../Assets/ZeptoLogo.png" alt="Zepto" class="result-icon" />`;
-                    } else if (type === "dealshare") {
-                        icon = `<img src="../Assets/DealshareLogo.jpg" alt="Dealshare" class="result-icon" />`;
-                    } else if (type === "blinkit") {
-                        icon = `<img src="../Assets/BlinkitLogo.png" alt="Blinkit" class="result-icon" />`;
-                    } else if (type === "maps") {
-                        icon = `<img src="../Assets/GMAPSLOGO.png" alt="Location" class="result-icon" />`;
-                    } else if (type === "etsy") {
-                        icon = `<img src="../Assets/EtsyLogo.png" alt="Etsy" class="result-icon" />`;
-                    } else {
-                        icon = `<img src="../Assets/default.png" alt="Default" class="result-icon" />`;
-                    }
+                icon = `<img src="../Assets/AmazonLogo.png" alt="Amazon" class="result-icon" />`;
+              } else if (type === "flipkart") {
+                icon = `<img src="../Assets/FlipkartLogo.png" alt="Flipkart" class="result-icon" />`;
+              } else if (type === "bigbasket") {
+                icon = `<img src="../Assets/BigbasketLOgo.png" alt="Bigbasket" class="result-icon" />`;
+              } else if (type === "zepto") {
+                icon = `<img src="../Assets/ZeptoLogo.png" alt="Zepto" class="result-icon" />`;
+              } else if (type === "blinkit") {
+                icon = `<img src="../Assets/BlinkitLogo.png" alt="Blinkit" class="result-icon" />`;
+              } else if (type === "swiggy") {
+                icon = `<img src="../Assets/Instamart logo.avif" alt="Swiggy Instamart" class="result-icon" />`;
+              } else if (type === "maps") {
+                icon = `<img src="../Assets/GMAPSLOGO.png" alt="Location" class="result-icon" />`;
+              } else if (type === "etsy") {
+                icon = `<img src="../Assets/EtsyLogo.png" alt="Etsy" class="result-icon" />`;
+              } else if (type === "ebay") {
+                icon = `<img src="../Assets/ebay-icon-2048x2048-2vonydav.png" alt="Ebay" class="result-icon" />`;
+              } else {
+                icon = `<img src="../Assets/default.png" alt="Default" class="result-icon" />`;
+              }
 
-              return `<a href="${url}" target="_blank">${icon} ${name}</a>`;
+              return `
+                <div class="result-item">
+                  <a href="#" class="result-link">
+                    <div class="platform-info">
+                      ${icon}
+                      <span>${name}</span>
+                    </div>
+                    <button class="open-button" data-url="${url}">Open</button>
+                  </a>
+                </div>`;
             })
-            .join("<br>");
+            .join("");
 
           resultDiv.innerHTML = `We are available at: <br>${links}`;
           resultDiv.classList.remove("hidden");
+
+          // Add click handlers for the open buttons
+          document.querySelectorAll('.open-button').forEach(button => {
+            button.addEventListener('click', async (e) => {
+              e.preventDefault();
+              const url = button.dataset.url;
+              const buttonText = button.textContent;
+              
+              // Start loading animation
+              button.textContent = '';
+              button.classList.add('loading');
+              
+              // Simulate loading (you can remove the timeout in production)
+              await new Promise(resolve => setTimeout(resolve, 800));
+              
+              // Add vanishing animation to the entire result item
+              const resultItem = button.closest('.result-item');
+              resultItem.classList.add('vanish-animation');
+              
+              // Open the URL in a new tab
+              window.open(url, '_blank');
+              
+              // Reset button state after animation
+              setTimeout(() => {
+                button.classList.remove('loading');
+                button.textContent = buttonText;
+                resultItem.classList.remove('vanish-animation');
+              }, 500);
+            });
+          });
         } else {
           resultDiv.innerHTML =
             "Please make a valid selection in both dropdowns.";

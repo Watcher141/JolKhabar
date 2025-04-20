@@ -43,7 +43,20 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Set to 2 columns */
   gap: 2rem;
-  justify-content:space-evenly
+  justify-content: space-evenly;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .container .products-container .product {
@@ -51,22 +64,66 @@ body {
   padding: 2.5rem 1.5rem; /* Scaled down */
   background: #ffffff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  
   cursor: pointer;
   border-radius: 15px; /* Rounded corners */
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: productAppear 0.5s ease-out forwards;
+}
+
+@keyframes productAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container .products-container .product:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.container .products-container .product:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.container .products-container .product:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.container .products-container .product:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.container .products-container .product:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.container .products-container .product:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.container .products-container .product:nth-child(8) {
+  animation-delay: 0.7s;
 }
 
 .container .products-container .product:hover {
   outline: 0.2rem solid #222;
   outline-offset: 0;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .container .products-container .product img {
   height: 20rem; /* Scaled down */
+  transition: transform 0.5s ease;
 }
 
 .container .products-container .product:hover img {
-  transform: scale(0.9);
+  transform: scale(1.1);
 }
 
 .container .products-container .product h3 {
@@ -96,6 +153,8 @@ body {
   justify-content: center;
   overflow-y: auto; /* Added for scrolling */
   border-radius: 15px; /* Rounded corners */
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
 }
 
 .products-preview .preview {
@@ -108,10 +167,15 @@ body {
   width: 90%;
   max-width: 35rem;
   border-radius: 15px; /* Rounded corners */
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 
 .products-preview .preview.active {
   display: inline-block;
+  transform: scale(1);
+  opacity: 1;
 }
 
 .products-preview .preview img {
@@ -127,10 +191,11 @@ body {
   cursor: pointer;
   color: #444;
   font-size: 3rem;
+  transition: transform 0.3s ease;
 }
 
 .products-preview .preview .fa-times:hover {
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(1.2);
 }
 
 .products-preview .preview h3 {
@@ -140,12 +205,18 @@ body {
 }
 
 .products-preview .preview .stars {
-  padding: .3rem 0;
+  padding: 0.3rem 0;
   font-size: 1rem;
 }
 
 .products-preview .preview .stars i {
   color: #27ae60;
+  transition: transform 0.2s ease;
+}
+
+.products-preview .preview .stars:hover i {
+  transform: scale(1.2);
+  color: #ffd700;
 }
 
 .products-preview .preview .stars span {
@@ -154,7 +225,7 @@ body {
 
 .products-preview .preview p {
   line-height: 1;
-  padding: .4rem 0;
+  padding: 0.4rem 0;
   font-size: 1rem;
   color: #777;
 }
@@ -181,6 +252,24 @@ body {
   background: #c79c3f; /* Matching color */
   color: #fff; /* Matching text color */
   border-radius: 15px; /* Rounded corners */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.products-preview .preview .buttons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.products-preview .preview .buttons a:hover::before {
+  left: 100%;
 }
 
 .products-preview .preview .buttons a:hover {
@@ -201,7 +290,6 @@ body {
   background: #c79c3f;
   color: #fff;
 }
-
 
 @media (max-width: 991px) {
   html {
@@ -283,12 +371,18 @@ body {
   max-width: 100%;
   margin: 0 auto 20px;
   overflow: hidden;
+  position: relative;
 }
 
 .banner img {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.banner:hover img {
+  transform: scale(1.02);
 }
 
 /* Responsive adjustments */

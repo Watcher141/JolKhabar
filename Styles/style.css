@@ -43,6 +43,7 @@ nav a {
   color: var(--text-color);
   position: relative;
   overflow: hidden;
+  font-size: 15pt; /* Increased by 25% from 12pt */
 }
 
 nav a::after {
@@ -111,6 +112,7 @@ nav svg {
     width: 100%;
     padding: 20px 30px;
     justify-content: flex-start;
+    font-size: 13.75pt; /* Increased by 25% from 11pt for mobile */
   }
 
   .open-sidebar-button,

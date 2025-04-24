@@ -64,3 +64,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+function checkAvailability(button) {
+    // Add loading state with smooth transition
+    button.style.width = button.offsetWidth + 'px';
+    button.classList.add('loading');
+    button.textContent = '';
+    
+    // Simulate loading delay
+    setTimeout(() => {
+        // Start exit animation
+        button.style.transform = 'scale(0.95)';
+        button.style.opacity = '0.8';
+        
+        setTimeout(() => {
+            // Redirect to Places.html
+            window.location.href = '../Products/Places.html';
+        }, 200);
+    }, 800);
+}

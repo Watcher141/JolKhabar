@@ -203,7 +203,7 @@ nav svg {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1000 / 441;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .nolen-gur-section,
@@ -216,8 +216,8 @@ nav svg {
   position: relative;
   overflow: hidden;
   aspect-ratio: 5 / 1;
-  margin-bottom: 10px;
-  border-radius: 15px;
+  margin-bottom: 2px;
+  border-radius: 5px;
 }
 
 .nolen-gur-section {
@@ -500,11 +500,11 @@ footer {
 }
 .available-at-section {
   text-align: center;
-  margin: 40px 2px;
+  margin: 10px 4px;
   background: linear-gradient(145deg, #fff8dc, #dbdad2);
   box-shadow: 4px 4px 8px #cccccc, -4px -4px 8px #ffffff;
   border-radius: 15px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .available-at-section h2 {

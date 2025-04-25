@@ -322,7 +322,7 @@ button:hover {
   .nolen-gur-section,
   .nolen-gur-section1,
   .doshokorma-section {
-    height: 35vh;  /* Increased from 28vh */
+    height: 28vh;  
   }
 
   .aamsotto-section,
@@ -338,12 +338,12 @@ button:hover {
   .chal-section,
   .achar-section,
   .nolen-gur-section {
-    height: 32vh;  /* Increased from 26vh */
+    height: 26vh; 
   }
 
   .nolen-gur-section1,
   .doshokorma-section {
-    height: 35vh;  /* Increased from 30vh */
+    height: 30vh;  /* Increased from 30vh */
   }
 
   .aamsotto-section,
@@ -359,22 +359,22 @@ button:hover {
   .chal-section,
   .achar-section,
   .doshokorma-section {
-    height: 25vh;  /* Adjusted for mobile */
+    height: auto;
   }
 
-  .nolen-gur-section {
-    height: 20vh;  /* Adjusted for mobile */
+  .nolen-gur-section{
+    height: 15vh;
   }
 
   .nolen-gur-section1 {
-    height: 25vh;  /* Adjusted for mobile */
+    height: 20vh;
   }
 
   .aamsotto-section,
   .chanachur-section,
   .chatni-section,
   .kasundi-section {
-    height: 25vh;  /* Adjusted for mobile */
+    height: 20vh;
   }
 
   .doshokorma-image {

@@ -4,10 +4,141 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tulaipanji Rice</title>
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <!-- custom css file links  -->
   <link rel="stylesheet" href="../../styles/style.css">
   <link rel="stylesheet" href="../../Styles/style1.css" />
   <link rel="stylesheet" href="../../Styles/style.css" />
   <link rel="stylesheet" href="../../styles/style3.css">
+  <style>
+    .product-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+    .check-availability {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #503530;
+      color: #fff;
+      font-size: 1rem;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto 0;
+    }
+    .check-availability:hover {
+      background: #614540;
+    }
+    .check-availability:active {
+      background: #503530;
+    }
+    .details-section {
+      flex: 1 1 500px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .image-section {
+      flex: 1 1 400px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .image-section img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .image-section:hover img {
+      transform: scale(1.1);
+    }
+    .details-section h1 {
+      color: #503530;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .stars {
+      color: #ffd700;
+      margin: 10px 0;
+    }
+    .description {
+      margin: 20px 0;
+      line-height: 1.6;
+      color: #666;
+    }
+    .features {
+      list-style: none;
+      margin: 20px 0;
+      flex-grow: 1;
+    }
+    .features li {
+      color: #666;
+      margin: 8px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+    .features li::before {
+      content: "•";
+      color: #c77f20;
+      position: absolute;
+      left: 0;
+    }
+    @media screen and (max-width: 768px) {
+      .product-container {
+        margin: 20px auto;
+        padding: 15px;
+      }
+      .details-section {
+        padding: 15px;
+      }
+      .details-section h1 {
+        font-size: 1.5rem;
+      }
+      .check-availability {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        max-width: 250px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .product-container {
+        margin: 10px auto;
+        padding: 10px;
+        gap: 20px;
+      }
+      .image-section {
+        flex: 1 1 100%;
+      }
+      .details-section {
+        flex: 1 1 100%;
+        padding: 10px;
+      }
+      .details-section h1 {
+        font-size: 1.3rem;
+      }
+      .description {
+        font-size: 0.9rem;
+      }
+      .features li {
+        font-size: 0.9rem;
+      }
+      .check-availability {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        max-width: 200px;
+      }
+    }
+  </style>
   <script src="../../scripts/product.js" defer></script>
 </head>
 <body>
@@ -27,6 +158,7 @@
           </svg>
         </label>
         <a class="home-link" href="../../index.html">Home</a>
+        <a href="../AboutUs.html">About Us</a>
         <a href="../Product1.html">Achar</a>
         <a href="../Product2.html">Aamsotto</a>
         <a href="../Product3.html">Chanachur</a>
@@ -35,7 +167,6 @@
         <a href="../Product7.html">Rice</a>
         <a href="../Product6.html">Delicacies</a>
         <a href="../Product8.html">Dashakarma</a>
-        <a href="../AboutUs.html">About Us</a>
       </div>
     </nav>
   </header>
@@ -73,7 +204,14 @@
   </main>
 
   <footer>
-    <p>&copy; 2023 Jolkhabar. All rights reserved.</p>
+    <div class="footer-content">
+      <a href="../Places.html" class="footer-button">Places to find us</a>
+      <p>&copy; 2024 SIBLINGS EXIM PRIVATE LIMITED. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/amaderjolkhabar" target="_blank"><img src="../../facebook-icon.png" alt="Facebook"></a>
+        <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank"><img src="../../YoutubeLogo.png" alt="Youtube"></a>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chal Bhaja - Product Details</title>
+  <title>Chal Bhaja - JOLKHABAR</title>
   <link rel="stylesheet" href="../../styles/style.css">
-    <link rel="stylesheet" href="../../Styles/style1.css" />
-    <link rel="stylesheet" href="../../Styles/style.css" />
-    <link rel="stylesheet" href="../../styles/style3.css">
-  <link rel="stylesheet" href="../../styles/product-details.css">
-  <script src="../../scripts/product-details.js" defer></script>
+  <link rel="stylesheet" href="../../styles/style4.css">
+  <script src="../../scripts/product.js" defer></script>
 </head>
 <body>
   <header>
@@ -38,43 +35,67 @@
         <a href="../Product6.html">Delicacies</a>
         <a href="../Product8.html">Dashakarma</a>
       </div>
-  </nav>
+    </nav>
   </header>
 
   <main>
-    <div class="product-container">
-      <div class="image-section">
-        <img src="../../images/Chalbhaja.png" alt="Chal Bhaja">
-      </div>
-      <div class="details-section">
-        <h1>CHAL BHAJA</h1>
-        <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          <span style="color: #666">( 250 )</span>
+    <div class="container">
+      <div class="product-images-container">
+        <div class="main-image-container">
+          <img id="main-product-image" src="../../images/Chalbhaja.png" alt="Chal Bhaja" class="main-image">
         </div>
+        <div class="thumbnail-container">
+          <img src="../../images/Chalbhaja.png" alt="Chal Bhaja" class="thumbnail active"
+               onclick="changeMainImage(this, '../../images/Chalbhaja.png')">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">CHAL BHAJA</h1>
+        <div class="rating">★★★★★ (4.8/5) <span style="color: #666">( 250 reviews )</span></div>
+
+        <div class="brand">
+          <strong>Brand:</strong> JOLKHABAR
+          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+               onerror="this.style.display='none'">
+        </div>
+
         <p class="description">
-          JOLKHABAR - Chal Bhaja
+          JOLKHABAR's Chal Bhaja is a traditional Bengali rice-based snack made from carefully selected rice grains that are roasted to perfection. This light and crispy snack offers a unique nutty flavor that comes from the precise roasting process. A healthy alternative to fried snacks, it's perfect for those who appreciate authentic Bengali cuisine.
         </p>
-        <ul class="features">
-          <li>Crispy rice snack</li>
-          <li>Traditional Bengali recipe</li>
-          <li>Perfect for snacking</li>
-          <li>No artificial preservatives</li>
-          <li>Handmade with care</li>
-        </ul>
-        <div style="text-align: center;">
-          <button class="check-availability" onclick="checkAvailability(this)">Check Availability</button>
+
+        <div class="button-container">
+          <a href="../Places.html" class="availability-btn">Check Availability</a>
+        </div>
+
+        <div class="highlights">
+          <h3>Product Highlights:</h3>
+          <ul>
+            <li>Made from premium quality rice</li>
+            <li>Traditional roasting method</li>
+            <li>Light and crispy texture</li>
+            <li>Natural nutty flavor</li>
+            <li>No artificial additives</li>
+            <li>Healthy snacking option</li>
+            <li>Rich in natural nutrients</li>
+          </ul>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2023 Jolkhabar. All rights reserved.</p>
+    <div class="brand-footer">
+      <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
+           onerror="this.style.display='none'">
+    </div>
+    <div class="help">
+      <a href="mailto:bk24sd@gmail.com">
+        <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+        bk24sd@gmail.com
+      </a><br>
+      &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+    </div>
   </footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tok Jhal Misti Chanachur - JolKhabar</title>
+  <title>Tok-Jhal Misti Chanachur - JOLKHABAR</title>
   <link rel="stylesheet" href="../../styles/style.css">
   <link rel="stylesheet" href="../../styles/style4.css">
   <script src="../../scripts/product.js" defer></script>
@@ -42,17 +42,17 @@
     <div class="container">
       <div class="product-images-container">
         <div class="main-image-container">
-          <img id="main-product-image" src="../../images/Tok Jhal Misti.png" alt="Tok Jhal Misti Chanachur" class="main-image">
+          <img id="main-product-image" src="../../images/Tok Jhal Misti.png" alt="Tok-Jhal Misti Chanachur" class="main-image">
         </div>
         <div class="thumbnail-container">
-          <img src="../../images/Tok Jhal Misti.png" alt="Tok Jhal Misti Chanachur" class="thumbnail active"
+          <img src="../../images/Tok Jhal Misti.png" alt="Tok-Jhal Misti Chanachur" class="thumbnail active"
                onclick="changeMainImage(this, '../../images/Tok Jhal Misti.png')">
         </div>
       </div>
 
       <div class="product-info">
-        <h1 class="product-title">TOK JHAL MISTI CHANACHUR</h1>
-        <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 250 reviews )</span></div>
+        <h1 class="product-title">TOK-JHAL MISTI CHANACHUR</h1>
+        <div class="rating">★★★★★ (4.8/5) <span style="color: #666">( 250 reviews )</span></div>
 
         <div class="brand">
           <strong>Brand:</strong> JOLKHABAR
@@ -61,7 +61,7 @@
         </div>
 
         <p class="description">
-          JOLKHABAR - Tok Jhal Misti Chanachur. A delightful mix of sour, spicy, and sweet flavors, this traditional Bengali snack is perfect for any time.
+          JOLKHABAR's Tok-Jhal Misti Chanachur is a unique Bengali snack that perfectly balances three distinct flavors - sour (tok), spicy (jhal), and sweet (misti). This special blend creates a mesmerizing taste experience that's uniquely Bengali. Each handful delivers a perfect harmony of flavors that makes it impossible to stop at just one bite.
         </p>
 
         <div class="button-container">
@@ -71,11 +71,13 @@
         <div class="highlights">
           <h3>Product Highlights:</h3>
           <ul>
-            <li>Sour, spicy, and sweet snack</li>
-            <li>Traditional Bengali recipe</li>
-            <li>Perfect for snacking</li>
+            <li>Unique three-flavor blend</li>
+            <li>Perfect balance of sour, spicy, and sweet</li>
+            <li>Made with premium ingredients</li>
+            <li>Authentic Bengali recipe</li>
             <li>No artificial preservatives</li>
-            <li>Handmade with care</li>
+            <li>Crunchy texture</li>
+            <li>Ideal for snacking any time</li>
           </ul>
         </div>
       </div>
@@ -87,24 +89,23 @@
       <div>
         <div class="footer-logos">
           <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
-            <img src="../../facebook-icon.png" alt="Facebook" onerror="this.style.display='none'">
+            <img src="../../facebook-icon.png" alt="Facebook">
           </a>
           <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <img src="../../instagram-icon.png" alt="Instagram" onerror="this.style.display='none'">
+            <img src="../../instagram-icon.png" alt="Instagram">
           </a>
           <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
-            <img src="../../YoutubeLogo.png" alt="YouTube" onerror="this.style.display='none'">
+            <img src="../../YoutubeLogo.png" alt="YouTube">
           </a>
         </div>
         <div class="brand-footer">
-          <img src="../../Jolkahabr Logo.png" alt="JolKhabar Logo" width="120"
-               onerror="this.style.display='none'">
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120">
         </div>
       </div>
       <div class="help">
         <strong>Help & Support</strong><br>
         <span>
-          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
+          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location">
           Kolkata, West Bengal
         </span><br>
         <a href="tel:+919674627460">
@@ -119,29 +120,9 @@
           <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
           bk24sd@gmail.com
         </a><br>
-        &copy; 2023 Jolkhabar. All rights reserved.
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
       </div>
     </div>
   </footer>
-
-  <script>
-    function changeMainImage(thumbnailElement, imageUrl) {
-      document.getElementById('main-product-image').src = imageUrl;
-      const thumbnails = document.getElementsByClassName('thumbnail');
-      for (let i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].classList.remove('active');
-      }
-      thumbnailElement.classList.add('active');
-    }
-
-    function checkAvailability(button) {
-      button.textContent = "Available Now!";
-      button.style.backgroundColor = "#4CAF50";
-      setTimeout(function() {
-        button.textContent = "Check Availability";
-        button.style.backgroundColor = "#f05a28";
-      }, 3000);
-    }
-  </script>
 </body>
 </html>

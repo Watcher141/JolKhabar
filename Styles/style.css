@@ -665,3 +665,28 @@ footer {
 .check-availability:hover {
   background: #614540;
 }
+
+/* Button Style from style4.css */
+.availability-btn {
+  background-color: #503530; /* Changed to a dark brown color */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  width: 220px; /* Increased width slightly */
+  text-align: center;
+  display: inline-block; /* Ensure it's displayed */
+  box-shadow: 0 3px 5px rgb(255, 255, 255); /* Add shadow for visibility */
+  position: relative; /* Add position relative */
+  z-index: 2; /* Add z-index */
+  text-decoration: none; /* Remove underline from link */
+}
+
+.availability-btn:hover {
+  background-color: #503530; /* Darker shade on hover */
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2); /* Add shadow on hover */
+}

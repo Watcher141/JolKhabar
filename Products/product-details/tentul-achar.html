@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tentul Achar - JolKhabar</title> <!-- TODO: Update Title -->
+  <title>Tentul Achar - JolKhabar</title>
   <link rel="stylesheet" href="../../styles/style.css">
-  <!-- <link rel="stylesheet" href="../../Styles/style1.css" />
-  <link rel="stylesheet" href="../../Styles/style.css" />
-  <link rel="stylesheet" href="../../styles/style3.css"> -->
   <link rel="stylesheet" href="../../styles/style4.css">
-  <script src="../../scripts/product.js" defer></script>
+  <script src="../../js/script.js" defer></script>
 </head>
 <body>
   <header>
@@ -45,11 +42,9 @@
     <div class="container">
       <div class="product-images-container">
         <div class="main-image-container">
-          <!-- TODO: Update Main Image Path and Alt Text -->
           <img id="main-product-image" src="../../images/Misti Achar Tentul.png" alt="Tentul Achar" class="main-image">
         </div>
         <div class="thumbnail-container">
-           <!-- TODO: Update Thumbnail Image Paths, Alt Text and onclick paths -->
           <img src="../../images/Misti Achar Tentul.png" alt="Tentul Achar" class="thumbnail active"
                onclick="changeMainImage(this, '../../images/Misti Achar Tentul.png')">
           <img src="../../images/TetulAchar.png" alt="Tentul Achar Package" class="thumbnail"
@@ -62,28 +57,20 @@
       </div>
 
       <div class="product-info">
-         <!-- TODO: Update Product Title -->
         <h1 class="product-title">TENTUL ACHAR</h1>
-         <!-- TODO: Update Rating and Review Count -->
         <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 142 reviews )</span></div>
-
         <div class="brand">
           <strong>Brand:</strong> JOLKHABAR
           <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
                onerror="this.style.display='none'">
         </div>
-
-         <!-- TODO: Update Product Description -->
         <p class="description">
           JOLKHABAR's Tentul Achar (Tamarind Pickle) is an authentic Bengali delicacy, handmade with traditional methods for a tangy and flavorful experience. Perfect as a side with your meals or as a snack.
         </p>
-
         <div class="button-container">
           <a href="../Places.html" class="availability-btn">Check Availability</a>
         </div>
-
         <div class="highlights">
-           <!-- TODO: Update Product Highlights -->
           <h3>Product Highlights:</h3>
           <ul>
             <li>Made with fresh tamarind</li>
@@ -112,13 +99,13 @@
           </a>
         </div>
         <div class="brand-footer">
-          <img src="../../Jolkahabr Logo.png" alt="JolKhabar Logo" width="120"
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
                onerror="this.style.display='none'">
         </div>
       </div>
       <div class="help">
         <strong>Help & Support</strong><br>
-        <span> <!-- Wrap location text for better mobile centering -->
+        <span>
           <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
           Kolkata, West Bengal
         </span><br>
@@ -134,34 +121,23 @@
           <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
           bk24sd@gmail.com
         </a><br>
-        &copy; 2023 Jolkhabar. All rights reserved.
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script>
-    // Function to change the main image when a thumbnail is clicked
     function changeMainImage(thumbnailElement, imageUrl) {
-      // Update the main image src
       document.getElementById('main-product-image').src = imageUrl;
-
-      // Remove active class from all thumbnails
       const thumbnails = document.getElementsByClassName('thumbnail');
       for (let i = 0; i < thumbnails.length; i++) {
         thumbnails[i].classList.remove('active');
       }
-
-      // Add active class to the clicked thumbnail
       thumbnailElement.classList.add('active');
     }
-
-    // Function to handle the availability button click
     function checkAvailability(button) {
-      // You can replace this with actual availability check logic
       button.textContent = "Available Now!";
       button.style.backgroundColor = "#4CAF50";
-
-      // Reset after 3 seconds
       setTimeout(function() {
         button.textContent = "Check Availability";
         button.style.backgroundColor = "#f05a28";

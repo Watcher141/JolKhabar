@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diet Chire</title>
+  <title>Diet Chira - JOLKHABAR</title>
   <link rel="stylesheet" href="../../styles/style.css">
-  <link rel="stylesheet" href="../../Styles/style1.css" />
-  <link rel="stylesheet" href="../../Styles/style.css" />
-  <link rel="stylesheet" href="../../styles/style3.css">
-  <script src="../../scripts/script.js" defer></script>
+  <link rel="stylesheet" href="../../styles/style4.css">
+  <script src="../../scripts/product.js" defer></script>
 </head>
 <body>
   <header>
@@ -41,39 +39,90 @@
   </header>
 
   <main>
-    <div class="product-container">
-      <div class="image-section">
-        <img src="../../images/Diet Chire.png" alt="Diet Chire">
-      </div>
-      <div class="details-section">
-        <h1>DIET CHIRA</h1>
-        <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          <span style="color: #666">( 138 )</span>
+    <div class="container">
+      <div class="product-images-container">
+        <div class="main-image-container">
+          <img id="main-product-image" src="../../images/Diet Chire.png" alt="Diet Chira" class="main-image">
         </div>
+        <div class="thumbnail-container">
+          <img src="../../images/Diet Chire.png" alt="Diet Chira" class="thumbnail active"
+               onclick="changeMainImage(this, '../../images/Diet Chire.png')">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">DIET CHIRA</h1>
+        <div class="rating">★★★★☆ (4.4/5) <span style="color: #666">( 138 reviews )</span></div>
+
+        <div class="brand">
+          <strong>Brand:</strong> JOLKHABAR
+          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+               onerror="this.style.display='none'">
+        </div>
+
         <p class="description">
-          JOLKHABAR - Diet Chira
+          JOLKHABAR's Diet Chira is a specially prepared light and healthy snack made from premium quality flattened rice. Perfect for health-conscious individuals, this snack is low in calories while maintaining the authentic taste of traditional Bengali cuisine. Each serving provides essential nutrients while being mindful of your dietary needs.
         </p>
-        <ul class="features">
-          <li>Light and healthy snack</li>
-          <li>Traditional Bengali recipe</li>
-          <li>Perfect for diet-conscious people</li>
-          <li>No artificial preservatives</li>
-          <li>Handmade with care</li>
-        </ul>
-        <div style="text-align: center;">
-          <button class="check-availability" onclick="checkAvailability(this)">Check Availability</button>
+
+        <div class="button-container">
+          <a href="../Places.html" class="availability-btn">Check Availability</a>
+        </div>
+
+        <div class="highlights">
+          <h3>Product Highlights:</h3>
+          <ul>
+            <li>Low-calorie healthy snack</li>
+            <li>Made with premium quality rice</li>
+            <li>Light and easily digestible</li>
+            <li>Rich in essential nutrients</li>
+            <li>No artificial additives</li>
+            <li>Perfect for diet-conscious individuals</li>
+            <li>Traditional preparation method</li>
+          </ul>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2023 Jolkhabar. All rights reserved.</p>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logos">
+          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../facebook-icon.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <img src="../../instagram-icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../YoutubeLogo.png" alt="YouTube">
+          </a>
+        </div>
+        <div class="brand-footer">
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120">
+        </div>
+      </div>
+      <div class="help">
+        <strong>Help & Support</strong><br>
+        <span>
+          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location">
+          Kolkata, West Bengal
+        </span><br>
+        <a href="tel:+919674627460">
+          <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+          +91 96746 27460
+        </a><br>
+        <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
+          <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+          +91 96746 27460
+        </a><br>
+        <a href="mailto:bk24sd@gmail.com">
+          <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+          bk24sd@gmail.com
+        </a><br>
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+      </div>
+    </div>
   </footer>
 </body>
 </html>

@@ -78,11 +78,11 @@ body {
 }
 
 .thumbnail.active {
-  border-color: #f05a28;
+  border-color: #503530;
 }
 
 .thumbnail:hover {
-  border-color: #f05a28;
+  border-color: #503530;
 }
 
 /* Right Product Info */
@@ -96,7 +96,7 @@ body {
 .product-title {
   font-size: 32px;
   font-weight: bold;
-  color: #f05a28;
+  color: #503530;
   margin-top: 0;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -137,7 +137,7 @@ body {
 }
 
 .availability-btn {
-  background-color: #f05a28;
+  background-color: #503530; /* Changed to a dark brown color */
   color: white;
   padding: 12px 24px;
   border: none;
@@ -156,7 +156,8 @@ body {
 }
 
 .availability-btn:hover {
-  background-color: #e04a18;
+  background-color: #503530; /* Darker shade on hover */
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2); /* Add shadow on hover */
 }
 
 .highlights {
@@ -169,7 +170,7 @@ body {
 }
 
 .highlights h3 {
-  color: #f05a28;
+  color:#503530; /* Changed heading color to match homepage */
   margin-top: 0;
   margin-bottom: 15px;
 }

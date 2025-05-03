@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhuri Bhaja - Product Details</title>
+  <title>Jhuri Bhaja - JOLKHABAR</title>
   <link rel="stylesheet" href="../../styles/style.css">
-    <link rel="stylesheet" href="../../Styles/style1.css" />
-    <link rel="stylesheet" href="../../Styles/style.css" />
-    <link rel="stylesheet" href="../../styles/style3.css">
-  <script src="../../scripts/script.js" defer></script>
+  <link rel="stylesheet" href="../../styles/style4.css">
+  <script src="../../scripts/product.js" defer></script>
 </head>
 <body>
   <header>
@@ -41,39 +39,63 @@
   </header>
 
   <main>
-    <div class="product-container">
-      <div class="image-section">
-        <img src="../../images/Jhuri Bhaja.png" alt="Jhuri Bhaja">
-      </div>
-      <div class="details-section">
-        <h1>JHURI BHAJA</h1>
-        <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          <span style="color: #666">( 250 )</span>
+    <div class="container">
+      <div class="product-images-container">
+        <div class="main-image-container">
+          <img id="main-product-image" src="../../images/Jhuri Bhaja.png" alt="Jhuri Bhaja" class="main-image">
         </div>
+        <div class="thumbnail-container">
+          <img src="../../images/Jhuri Bhaja.png" alt="Jhuri Bhaja" class="thumbnail active"
+               onclick="changeMainImage(this, '../../images/Jhuri Bhaja.png')">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">JHURI BHAJA</h1>
+        <div class="rating">★★★★★ (4.7/5) <span style="color: #666">( 185 reviews )</span></div>
+
+        <div class="brand">
+          <strong>Brand:</strong> JOLKHABAR
+          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+               onerror="this.style.display='none'">
+        </div>
+
         <p class="description">
-          JOLKHABAR - Jhuri Bhaja
+          JOLKHABAR's Jhuri Bhaja is a delightfully crispy Bengali snack made from thinly sliced potatoes, fried to golden perfection. Known for its fine, thread-like appearance, this traditional snack offers an unmatched crunchiness and flavor that makes it a beloved part of Bengali cuisine. Each batch is carefully prepared to achieve the perfect texture and taste.
         </p>
-        <ul class="features">
-          <li>Crispy and crunchy snack</li>
-          <li>Traditional Bengali recipe</li>
-          <li>Perfect for snacking</li>
-          <li>No artificial preservatives</li>
-          <li>Handmade with care</li>
-        </ul>
-        <div style="text-align: center;">
-          <button class="check-availability" onclick="checkAvailability(this)">Check Availability</button>
+
+        <div class="button-container">
+          <a href="../Places.html" class="availability-btn">Check Availability</a>
+        </div>
+
+        <div class="highlights">
+          <h3>Product Highlights:</h3>
+          <ul>
+            <li>Ultra-thin, crispy potato strands</li>
+            <li>Traditional Bengali recipe</li>
+            <li>Perfect golden color</li>
+            <li>Made from selected potatoes</li>
+            <li>No artificial preservatives</li>
+            <li>Light and crunchy texture</li>
+            <li>Ideal tea-time snack</li>
+          </ul>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2023 Jolkhabar. All rights reserved.</p>
+    <div class="brand-footer">
+      <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
+           onerror="this.style.display='none'">
+    </div>
+    <div class="help">
+      <a href="mailto:bk24sd@gmail.com">
+        <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+        bk24sd@gmail.com
+      </a><br>
+      &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+    </div>
   </footer>
 </body>
 </html>

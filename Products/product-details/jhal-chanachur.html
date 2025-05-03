@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jhal Chanachur</title>
+  <title>Jhal Chanachur - JOLKHABAR</title>
   <link rel="stylesheet" href="../../styles/style.css">
-  <link rel="stylesheet" href="../../Styles/style1.css" />
-  <link rel="stylesheet" href="../../Styles/style.css" />
-  <link rel="stylesheet" href="../../styles/style3.css">
-  <script src="../../scripts/script.js" defer></script>
+  <link rel="stylesheet" href="../../styles/style4.css">
+  <script src="../../scripts/product.js" defer></script>
 </head>
 <body>
   <header>
@@ -43,39 +41,90 @@
   </header>
 
   <main>
-    <div class="product-container">
-      <div class="image-section">
-        <img src="../../images/Jhal.png" alt="Jhal Chanachur">
-      </div>
-      <div class="details-section">
-        <h1>JHAL CHANACHUR</h1>
-        <div class="stars">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-          <span style="color: #666">( 141 )</span>
+    <div class="container">
+      <div class="product-images-container">
+        <div class="main-image-container">
+          <img id="main-product-image" src="../../images/Jhal.png" alt="Jhal Chanachur" class="main-image">
         </div>
+        <div class="thumbnail-container">
+          <img src="../../images/Jhal.png" alt="Jhal Chanachur" class="thumbnail active"
+               onclick="changeMainImage(this, '../../images/Jhal.png')">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">JHAL CHANACHUR</h1>
+        <div class="rating">★★★★☆ (4.4/5) <span style="color: #666">( 141 reviews )</span></div>
+
+        <div class="brand">
+          <strong>Brand:</strong> JOLKHABAR
+          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+               onerror="this.style.display='none'">
+        </div>
+
         <p class="description">
-          JOLKHABAR - Jhal Chanachur
+          JOLKHABAR's Jhal Chanachur is a spicy Bengali snack mix that's sure to tantalize your taste buds. Made with a perfect blend of crispy ingredients and aromatic spices, this traditional snack offers a satisfying heat level that spice lovers will appreciate. Each handful delivers a crunchy texture and authentic Bengali flavor that makes it an ideal companion for your evening tea or social gatherings.
         </p>
-        <ul class="features">
-          <li>Spicy and crunchy snack</li>
-          <li>Traditional Bengali recipe</li>
-          <li>Perfect for snacking</li>
-          <li>No artificial preservatives</li>
-          <li>Handmade with care</li>
-        </ul>
-        <div style="text-align: center;">
-          <button class="check-availability" onclick="checkAvailability(this)">Check Availability</button>
+
+        <div class="button-container">
+          <a href="../Places.html" class="availability-btn">Check Availability</a>
+        </div>
+
+        <div class="highlights">
+          <h3>Product Highlights:</h3>
+          <ul>
+            <li>Perfectly spiced mixture</li>
+            <li>Authentic Bengali recipe</li>
+            <li>Crunchy texture</li>
+            <li>Made with premium ingredients</li>
+            <li>No artificial preservatives</li>
+            <li>Ideal tea-time snack</li>
+            <li>Perfect balance of spices</li>
+          </ul>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2023 Jolkhabar. All rights reserved.</p>
+    <div class="footer-content">
+      <div>
+        <div class="footer-logos">
+          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../facebook-icon.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <img src="../../instagram-icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../YoutubeLogo.png" alt="YouTube">
+          </a>
+        </div>
+        <div class="brand-footer">
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120">
+        </div>
+      </div>
+      <div class="help">
+        <strong>Help & Support</strong><br>
+        <span>
+          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location">
+          Kolkata, West Bengal
+        </span><br>
+        <a href="tel:+919674627460">
+          <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+          +91 96746 27460
+        </a><br>
+        <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
+          <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+          +91 96746 27460
+        </a><br>
+        <a href="mailto:bk24sd@gmail.com">
+          <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+          bk24sd@gmail.com
+        </a><br>
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+      </div>
+    </div>
   </footer>
 </body>
 </html>

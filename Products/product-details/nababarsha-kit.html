@@ -47,7 +47,6 @@
         <div class="thumbnail-container">
           <img src="../../images/Dashakarma_images/2Nababarsha Kit Primary Image.jpeg" alt="NABABARSHA KIT" class="thumbnail active"
                onclick="changeMainImage(this, '../../images/Dashakarma_images/2Nababarsha Kit Primary Image.jpeg')">
-          <!-- Add more thumbnails if available -->
         </div>
       </div>
 
@@ -56,8 +55,8 @@
         <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 250 reviews )</span></div>
 
         <div class="brand">
-          <strong>Brand:</strong> JOLKHABAR
-          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+          <strong>Brand:</strong> DASHAKARMA
+          <img src="../../Dashakarma Logo.png" class="brand-logo" alt="Dashakarma Logo"
                onerror="this.style.display='none'">
         </div>
 
@@ -72,7 +71,8 @@
         <div class="highlights">
           <h3>Product Highlights:</h3>
           <ul>
-            <li>All essentials for Bengali New Year</li>
+            <li>Bengali New Year celebration essentials</li>
+            <li>Traditional puja items included</li>
             <li>Traditional and authentic</li>
             <li>No artificial preservatives</li>
             <li>Hand-packed with care</li>
@@ -97,7 +97,7 @@
           </a>
         </div>
         <div class="brand-footer">
-          <img src="../../Jolkahabr Logo.png" alt="JolKhabar Logo" width="120"
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
                onerror="this.style.display='none'">
         </div>
       </div>
@@ -119,38 +119,19 @@
           <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
           bk24sd@gmail.com
         </a><br>
-        &copy; 2023 Jolkhabar. All rights reserved.
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script>
-    // Function to change the main image when a thumbnail is clicked
     function changeMainImage(thumbnailElement, imageUrl) {
-      // Update the main image src
       document.getElementById('main-product-image').src = imageUrl;
-
-      // Remove active class from all thumbnails
       const thumbnails = document.getElementsByClassName('thumbnail');
       for (let i = 0; i < thumbnails.length; i++) {
         thumbnails[i].classList.remove('active');
       }
-
-      // Add active class to the clicked thumbnail
       thumbnailElement.classList.add('active');
-    }
-
-    // Function to handle the availability button click
-    function checkAvailability(button) {
-      // You can replace this with actual availability check logic
-      button.textContent = "Available Now!";
-      button.style.backgroundColor = "#4CAF50";
-
-      // Reset after 3 seconds
-      setTimeout(function() {
-        button.textContent = "Check Availability";
-        button.style.backgroundColor = "#f05a28";
-      }, 3000);
     }
   </script>
 </body>

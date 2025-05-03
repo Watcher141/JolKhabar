@@ -1,161 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nolen Gur - JolKhabar</title>
-  <link rel="stylesheet" href="../../styles/style.css">
-  <link rel="stylesheet" href="../../styles/style4.css">
-  <script src="../../scripts/product.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nolen Gur - JolKhabar</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/style4.css">
+    <script src="../../scripts/product.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <input type="checkbox" id="sidebar-active" />
-      <label for="sidebar-active" class="open-sidebar-button">
-        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-        </svg>
-      </label>
-      <label id="overlay" for="sidebar-active"></label>
-      <div class="links-container">
-        <label for="sidebar-active" class="close-sidebar-button">
-          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-          </svg>
-        </label>
-        <a class="home-link" href="../../index.html">Home</a>
-        <a href="../AboutUs.html">About Us</a>
-        <a href="../Product1.html">Achar</a>
-        <a href="../Product2.html">Aamsotto</a>
-        <a href="../Product3.html">Chanachur</a>
-        <a href="../Product4.html">Chatni</a>
-        <a href="../Product5.html">Kasundi</a>
-        <a href="../Product7.html">Rice</a>
-        <a href="../Product6.html">Delicacies</a>
-        <a href="../Product8.html">Dashakarma</a>
-      </div>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <input type="checkbox" id="sidebar-active" />
+            <label for="sidebar-active" class="open-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+            </label>
+            <label id="overlay" for="sidebar-active"></label>
+            <div class="links-container">
+                <label for="sidebar-active" class="close-sidebar-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </label>
+                <a class="home-link" href="../../index.html">Home</a>
+                <a href="../AboutUs.html">About Us</a>
+                <a href="../Product1.html">Achar</a>
+                <a href="../Product2.html">Aamsotto</a>
+                <a href="../Product3.html">Chanachur</a>
+                <a href="../Product4.html">Chatni</a>
+                <a href="../Product5.html">Kasundi</a>
+                <a href="../Product7.html">Rice</a>
+                <a href="../Product6.html">Delicacies</a>
+                <a href="../Product8.html">Dashakarma</a>
+            </div>
+        </nav>
+    </header>
 
-  <main>
-    <div class="container">
-      <div class="product-images-container">
-        <div class="main-image-container">
-          <img id="main-product-image" src="../../images/Nolen Gur.png" alt="Nolen Gur" class="main-image">
+    <main>
+        <div class="container">
+            <div class="product-images-container">
+                <div class="main-image-container">
+                    <img id="main-product-image" src="../../images/Nolen Gur.png" alt="Nolen Gur" class="main-image">
+                </div>
+                <div class="thumbnail-container">
+                    <img src="../../images/Nolen Gur.png" alt="Nolen Gur" class="thumbnail active"
+                        onclick="changeMainImage(this, '../../images/Nolen Gur.png')">
+                    <img src="../../Assets/nolengur.png" alt="Nolen Gur Package" class="thumbnail"
+                        onclick="changeMainImage(this, '../../Assets/nolengur.png')">
+                    <img src="../../Assets/gur.png" alt="Gur Close-up" class="thumbnail"
+                        onclick="changeMainImage(this, '../../Assets/gur.png')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">NOLEN GUR</h1>
+                <div class="rating">★★★★★ (4.9/5) <span style="color: #666">( 182 reviews )</span></div>
+
+                <div class="brand">
+                    <strong>Brand:</strong> JOLKHABAR
+                    <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+                        onerror="this.style.display='none'">
+                </div>
+
+                <p class="description">
+                    JOLKHABAR's Nolen Gur (Date Palm Jaggery) is the quintessential winter delicacy of Bengal, harvested from the sap of date palm trees during the winter months. This liquid gold offers a distinct caramel-like flavor with complex notes that transform ordinary desserts into extraordinary culinary experiences.
+                </p>
+
+                <div class="button-container">
+                    <a href="../Places.html" class="availability-btn">Check Availability</a>
+                </div>
+
+                <div class="highlights">
+                    <h3>Product Highlights:</h3>
+                    <ul>
+                        <li>100% pure date palm jaggery</li>
+                        <li>Harvested during winter months only</li>
+                        <li>Rich in iron and natural minerals</li>
+                        <li>Perfect for traditional Bengali sweets</li>
+                        <li>Available in both liquid and solid forms</li>
+                        <li>No artificial additives or preservatives</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="thumbnail-container">
-          <img src="../../images/Nolen Gur.png" alt="Nolen Gur" class="thumbnail active"
-               onclick="changeMainImage(this, '../../images/Nolen Gur.png')">
-          <img src="../../images/nolengur.png" alt="Nolen Gur Package" class="thumbnail"
-               onclick="changeMainImage(this, '../../images/nolengur.png')"
-               onerror="this.onerror=null; this.src='../../images/Nolen Gur.png';">
-          <!-- Add more thumbnails if available -->
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logos">
+                    <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
+                        <img src="../../facebook-icon.png" alt="Facebook" onerror="this.style.display='none'">
+                    </a>
+                    <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
+                        <img src="../../instagram-icon.png" alt="Instagram" onerror="this.style.display='none'">
+                    </a>
+                    <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
+                        <img src="../../YoutubeLogo.png" alt="YouTube" onerror="this.style.display='none'">
+                    </a>
+                </div>
+                <div class="brand-footer">
+                    <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+            <div class="help">
+                <strong>Help & Support</strong><br>
+                <span>
+                    <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
+                    Kolkata, West Bengal
+                </span><br>
+                <a href="tel:+919674627460">
+                    <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+                    +91 96746 27460
+                </a><br>
+                <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
+                    <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+                    +91 96746 27460
+                </a><br>
+                <a href="mailto:bk24sd@gmail.com">
+                    <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+                    bk24sd@gmail.com
+                </a><br>
+                &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <div class="product-info">
-        <h1 class="product-title">NOLEN GUR</h1>
-        <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 126 reviews )</span></div>
+    <script>
+        // Function to change the main image when a thumbnail is clicked
+        function changeMainImage(thumbnailElement, imageUrl) {
+            // Update the main image src
+            document.getElementById('main-product-image').src = imageUrl;
 
-        <div class="brand">
-          <strong>Brand:</strong> JOLKHABAR
-          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
-               onerror="this.style.display='none'">
-        </div>
+            // Remove active class from all thumbnails
+            const thumbnails = document.getElementsByClassName('thumbnail');
+            for (let i = 0; i < thumbnails.length; i++) {
+                thumbnails[i].classList.remove('active');
+            }
 
-        <p class="description">
-          JOLKHABAR Nolen Gur - Liquid Date Palm Jaggery. A traditional Bengali delicacy known for its rich, natural sweetness.
-        </p>
-
-        <div class="button-container">
-          <a href="../Places.html" class="availability-btn">Check Availability</a>
-        </div>
-
-        <div class="highlights">
-          <h3>Product Highlights:</h3>
-          <ul>
-            <li>Pure liquid date palm jaggery</li>
-            <li>Traditional Bengali delicacy</li>
-            <li>Rich, natural sweetness</li>
-            <li>No artificial preservatives</li>
-            <li>Handmade with care</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div>
-        <div class="footer-logos">
-          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
-            <img src="../../facebook-icon.png" alt="Facebook" onerror="this.style.display='none'">
-          </a>
-          <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <img src="../../instagram-icon.png" alt="Instagram" onerror="this.style.display='none'">
-          </a>
-          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
-            <img src="../../YoutubeLogo.png" alt="YouTube" onerror="this.style.display='none'">
-          </a>
-        </div>
-        <div class="brand-footer">
-          <img src="../../Jolkahabr Logo.png" alt="JolKhabar Logo" width="120"
-               onerror="this.style.display='none'">
-        </div>
-      </div>
-      <div class="help">
-        <strong>Help & Support</strong><br>
-        <span>
-          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
-          Kolkata, West Bengal
-        </span><br>
-        <a href="tel:+919674627460">
-          <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
-          +91 96746 27460
-        </a><br>
-        <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
-          <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
-          +91 96746 27460
-        </a><br>
-        <a href="mailto:bk24sd@gmail.com">
-          <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
-          bk24sd@gmail.com
-        </a><br>
-        &copy; 2023 Jolkhabar. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Function to change the main image when a thumbnail is clicked
-    function changeMainImage(thumbnailElement, imageUrl) {
-      // Update the main image src
-      document.getElementById('main-product-image').src = imageUrl;
-
-      // Remove active class from all thumbnails
-      const thumbnails = document.getElementsByClassName('thumbnail');
-      for (let i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].classList.remove('active');
-      }
-
-      // Add active class to the clicked thumbnail
-      thumbnailElement.classList.add('active');
-    }
-
-    // Function to handle the availability button click
-    function checkAvailability(button) {
-      // You can replace this with actual availability check logic
-      button.textContent = "Available Now!";
-      button.style.backgroundColor = "#4CAF50";
-
-      // Reset after 3 seconds
-      setTimeout(function() {
-        button.textContent = "Check Availability";
-        button.style.backgroundColor = "#f05a28";
-      }, 3000);
-    }
-  </script>
+            // Add active class to the clicked thumbnail
+            thumbnailElement.classList.add('active');
+        }
+    </script>
 </body>
 </html>

@@ -42,18 +42,16 @@
     <div class="container">
       <div class="product-images-container">
         <div class="main-image-container">
-          <img id="main-product-image" src="../../images/doshokorma.jpg" alt="Sradho Puja Kit" class="main-image">
+          <img id="main-product-image" src="../../images/doshokorma.jpg" alt="SRADHO PUJA KIT" class="main-image">
         </div>
         <div class="thumbnail-container">
-          <img src="../../images/doshokorma.jpg" alt="Sradho Puja Kit" class="thumbnail active"
+          <img src="../../images/doshokorma.jpg" alt="SRADHO PUJA KIT" class="thumbnail active"
                onclick="changeMainImage(this, '../../images/doshokorma.jpg')">
-          <!-- Add more thumbnails if available -->
         </div>
       </div>
 
       <div class="product-info">
         <h1 class="product-title">SRADHO PUJA KIT</h1>
-        <!-- TODO: Update Rating and Review Count -->
         <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 250 reviews )</span></div>
 
         <div class="brand">
@@ -73,8 +71,8 @@
         <div class="highlights">
           <h3>Product Highlights:</h3>
           <ul>
-            <li>Complete pind daan & tarpan essentials</li>
-            <li>For paying homage to ancestors</li>
+            <li>Complete pind daan essentials</li>
+            <li>Tarpan materials included</li>
             <li>Traditional and authentic</li>
             <li>No artificial preservatives</li>
             <li>Hand-packed with care</li>
@@ -99,13 +97,13 @@
           </a>
         </div>
         <div class="brand-footer">
-          <img src="../../Jolkahabr Logo.png" alt="JolKhabar Logo" width="120"
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
                onerror="this.style.display='none'">
         </div>
       </div>
       <div class="help">
         <strong>Help & Support</strong><br>
-        <span> <!-- Wrap location text for better mobile centering -->
+        <span>
           <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
           Kolkata, West Bengal
         </span><br>
@@ -121,38 +119,19 @@
           <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
           bk24sd@gmail.com
         </a><br>
-        &copy; 2023 Jolkhabar. All rights reserved.
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
       </div>
     </div>
   </footer>
 
   <script>
-    // Function to change the main image when a thumbnail is clicked
     function changeMainImage(thumbnailElement, imageUrl) {
-      // Update the main image src
       document.getElementById('main-product-image').src = imageUrl;
-
-      // Remove active class from all thumbnails
       const thumbnails = document.getElementsByClassName('thumbnail');
       for (let i = 0; i < thumbnails.length; i++) {
         thumbnails[i].classList.remove('active');
       }
-
-      // Add active class to the clicked thumbnail
       thumbnailElement.classList.add('active');
-    }
-
-    // Function to handle the availability button click
-    function checkAvailability(button) {
-      // You can replace this with actual availability check logic
-      button.textContent = "Available Now!";
-      button.style.backgroundColor = "#4CAF50";
-
-      // Reset after 3 seconds
-      setTimeout(function() {
-        button.textContent = "Check Availability";
-        button.style.backgroundColor = "#f05a28";
-      }, 3000);
     }
   </script>
 </body>

@@ -1,0 +1,179 @@
+/* Footer Styles */
+/* Enhanced Footer */
+footer {
+  background-color: #fff8dc; /* Changed footer background to match homepage */
+  color: #503530; /* Changed footer text color to match homepage */
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 2px solid #eee; /* Add a subtle top border */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Ensures space between left, middle, right */
+  align-items: center; /* Vertically align items in the middle */
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left section */
+.footer-content > div:first-child {
+  flex-basis: 25%; /* Adjust basis as needed */
+  text-align: left;
+}
+
+/* Middle section (button) */
+.footer-middle {
+  flex-basis: 40%; /* Adjust basis */
+  text-align: center;
+}
+
+/* Right section */
+.help {
+  flex-basis: 25%; /* Adjust basis */
+  text-align: center; /* Changed from right to center */
+  font-size: 14px;
+  line-height: 1.5;
+  color: #503530;
+}
+
+.help strong {
+    color: #503530; /* Ensure heading is also dark brown */
+    display: block; /* Make heading block */
+    margin-bottom: 2px; /* Reduced margin-bottom from 8px to 2px */
+}
+
+/* Style from style4.css */
+.help a {
+  color: #503530;
+  text-decoration: none;
+  display: inline-flex; /* Use inline-flex as in style4 */
+  align-items: center;
+  margin-bottom: 5px;
+  justify-content: center; /* Changed from flex-end to center */
+}
+
+/* Style from style4.css (applied to span) */
+.help span {
+  color: #503530;
+  display: inline-flex; /* Use inline-flex as in style4 */
+  align-items: center;
+  margin-bottom: 5px;
+  justify-content: center; /* Changed from flex-end to center */
+}
+
+/* Style from style4.css */
+.help a:hover {
+  text-decoration: underline;
+  color: #c77f20;
+}
+
+/* Style from style4.css */
+.help .contact-icon {
+    display: inline-block;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    object-fit: contain;
+}
+
+.footer-logos {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  justify-content: flex-start; /* Align logos to the start */
+}
+
+.footer-logos a img {
+    /* Add filter if needed, e.g., if they are white */
+    /* filter: invert(1); */
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.brand-footer {
+  margin: 10px 0;
+  text-align: left; /* Align brand logo to the left */
+}
+
+.brand-footer img {
+    /* Add filter if needed */
+    width: 120px;
+    /* filter: none; */ /* Reset filter if applied elsewhere */
+}
+
+/* Button Style Fix */
+.availability-btn {
+  background-color: #503530;
+  color: white !important; /* Ensure text color is always white */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  width: 220px;
+  text-align: center;
+  display: inline-block;
+  /* Removed the white box-shadow that might obscure text */
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.availability-btn:hover {
+  background-color: #614540; /* Slightly lighter brown on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Darker shadow on hover */
+}
+
+/* Mobile Styles for Footer */
+@media (max-width: 768px) {
+  /* Footer mobile adjustments */
+  footer {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Add gap between stacked items */
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Reset flex-basis for mobile */
+  .footer-content > div:first-child,
+  .footer-middle,
+  .help {
+    flex-basis: auto; /* Allow items to take natural width */
+    width: 100%; /* Make sections take full width */
+    text-align: center; /* Center text for mobile */
+  }
+
+  .footer-logos {
+    justify-content: center; /* Center logos */
+  }
+
+  .brand-footer {
+    text-align: center; /* Center brand logo */
+  }
+
+  .help {
+    text-align: center; /* Keep centered */
+    line-height: 1.8; /* Increase line height for better readability */
+  }
+  
+  .help span, .help a {
+    display: inline-flex; /* Use inline-flex for centering */
+    justify-content: center; /* Keep centered */
+    align-items: center;
+    width: 100%; /* Ensure it takes full width for centering */
+  }
+}

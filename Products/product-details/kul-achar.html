@@ -1,246 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KUL ACHAR - JOLKHABAR</title>
-
-  <!-- font awesome cdn link  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-
-  <!-- custom css file links  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kul Achar - JolKhabar</title>
   <link rel="stylesheet" href="../../styles/style.css">
-  <link rel="stylesheet" href="../../Styles/style1.css" />
-  <link rel="stylesheet" href="../../Styles/style.css" />
-  <link rel="stylesheet" href="../../styles/style3.css">
-  
-  <!-- custom js file link  -->
+  <link rel="stylesheet" href="../../styles/style4.css">
   <script src="../../js/script.js" defer></script>
-
-  <style>
-    .product-container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 12px;
-    }
-
-    .check-availability {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #503530;
-      color: #fff;
-      font-size: 1rem;
-      text-transform: uppercase;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
-      max-width: 300px;
-      margin: 20px auto 0;
-    }
-
-    .check-availability:hover {
-      background: #614540;
-    }
-
-    .check-availability:active {
-      background: #503530;
-    }
-
-    .details-section {
-      flex: 1 1 500px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .image-section {
-      flex: 1 1 400px;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .image-section img {
-      width: 100%;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-
-    .image-section:hover img {
-      transform: scale(1.1);
-    }
-
-    .details-section h1 {
-      color: #503530;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .stars {
-      color: #ffd700;
-      margin: 10px 0;
-    }
-
-    .description {
-      margin: 20px 0;
-      line-height: 1.6;
-      color: #666;
-    }
-
-    .features {
-      list-style: none;
-      margin: 20px 0;
-      flex-grow: 1;
-    }
-
-    .features li {
-      color: #666;
-      margin: 8px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .features li::before {
-      content: "•";
-      color: #c77f20;
-      position: absolute;
-      left: 0;
-    }
-
-
-
-    @media screen and (max-width: 768px) {
-      .product-container {
-        margin: 20px auto;
-        padding: 15px;
-      }
-
-      .details-section {
-        padding: 15px;
-      }
-
-      .details-section h1 {
-        font-size: 1.5rem;
-      }
-
-      .check-availability {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        max-width: 250px;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .product-container {
-        margin: 10px auto;
-        padding: 10px;
-        gap: 20px;
-      }
-
-      .image-section {
-        flex: 1 1 100%;
-      }
-
-      .details-section {
-        flex: 1 1 100%;
-        padding: 10px;
-      }
-
-      .details-section h1 {
-        font-size: 1.3rem;
-      }
-
-      .description {
-        font-size: 0.9rem;
-      }
-
-      .features li {
-        font-size: 0.9rem;
-      }
-
-      .check-availability {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        max-width: 200px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <input type="checkbox" id="sidebar-active" />
-    <label for="sidebar-active" class="open-sidebar-button">
-      <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-      </svg>
-    </label>
-    <label id="overlay" for="sidebar-active"></label>
-    <div class="links-container">
-      <label for="sidebar-active" class="close-sidebar-button">
+  <header>
+    <nav>
+      <input type="checkbox" id="sidebar-active" />
+      <label for="sidebar-active" class="open-sidebar-button">
         <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
         </svg>
       </label>
-      <a class="home-link" href="../../index.html">Home</a>
-      <a href="../AboutUs.html">About Us</a>
-      <a href="../Product1.html">Achar</a>
-      <a href="../Product2.html">Aamsotto</a>
-      <a href="../Product3.html">Chanachur</a>
-      <a href="../Product4.html">Chatni</a>
-      <a href="../Product5.html">Kasundi</a>
-      <a href="../Product7.html">Rice</a>
-      <a href="../Product6.html">Delicacies</a>
-      <a href="../Product8.html">Dashakarma</a>
-    </div>
-  </nav>
-
-  <div class="product-container">
-    <div class="image-section">
-      <img src="../../images/Misti Achar Kul.png" alt="Kul Achar">
-    </div>
-    <div class="details-section">
-      <h1>KUL ACHAR</h1>
-      <div class="stars">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star-half-alt"></i>
-        <span style="color: #666">( 134 )</span>
+      <label id="overlay" for="sidebar-active"></label>
+      <div class="links-container">
+        <label for="sidebar-active" class="close-sidebar-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+          </svg>
+        </label>
+        <a class="home-link" href="../../index.html">Home</a>
+        <a href="../AboutUs.html">About Us</a>
+        <a href="../Product1.html">Achar</a>
+        <a href="../Product2.html">Aamsotto</a>
+        <a href="../Product3.html">Chanachur</a>
+        <a href="../Product4.html">Chatni</a>
+        <a href="../Product5.html">Kasundi</a>
+        <a href="../Product7.html">Rice</a>
+        <a href="../Product6.html">Delicacies</a>
+        <a href="../Product8.html">Dashakarma</a>
       </div>
-      <p class="description">
-        JOLKHABAR's Kul Achar (Plum Pickle) is a sweet and tangy Bengali delicacy, handmade with ripe plums and traditional spices. Enjoy the authentic taste of Bengal with every bite.
-      </p>
-      <ul class="features">
-        <li>Made with fresh, ripe plums</li>
-        <li>Traditional Bengali recipe</li>
-        <li>Sweet and tangy flavor</li>
-        <li>No artificial preservatives</li>
-        <li>Handmade with care</li>
-      </ul>
-      <div style="text-align: center;">
-        <button class="check-availability" onclick="checkAvailability(this)">Check Availability</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="product-images-container">
+        <div class="main-image-container">
+          <img id="main-product-image" src="../../images/Misti Achar Kul.png" alt="Kul Achar" class="main-image">
+        </div>
+        <div class="thumbnail-container">
+          <img src="../../images/Misti Achar Kul.png" alt="Kul Achar" class="thumbnail active"
+               onclick="changeMainImage(this, '../../images/Misti Achar Kul.png')">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h1 class="product-title">KUL ACHAR</h1>
+        <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 134 reviews )</span></div>
+        <div class="brand">
+          <strong>Brand:</strong> JOLKHABAR
+          <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+               onerror="this.style.display='none'">
+        </div>
+        <p class="description">
+          JOLKHABAR's Kul Achar (Plum Pickle) is a sweet and tangy Bengali delicacy, handmade with ripe plums and traditional spices. Enjoy the authentic taste of Bengal with every bite.
+        </p>
+        <div class="button-container">
+          <a href="../Places.html" class="availability-btn">Check Availability</a>
+        </div>
+        <div class="highlights">
+          <h3>Product Highlights:</h3>
+          <ul>
+            <li>Made with fresh, ripe plums</li>
+            <li>Traditional Bengali recipe</li>
+            <li>Sweet and tangy flavor</li>
+            <li>No artificial preservatives</li>
+            <li>Handmade with care</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <a href="../Places.html" class="footer-button">Places to find us</a>
-      <p>&copy; 2024 SIBLINGS EXIM PRIVATE LIMITED. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/amaderjolkhabar" target="_blank"><img src="../../facebook-icon.png" alt="Facebook"></a>
-        <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank"><img src="../../YoutubeLogo.png" alt="Youtube"></a>
+      <div>
+        <div class="footer-logos">
+          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../facebook-icon.png" alt="Facebook" onerror="this.style.display='none'">
+          </a>
+          <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <img src="../../instagram-icon.png" alt="Instagram" onerror="this.style.display='none'">
+          </a>
+          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../YoutubeLogo.png" alt="YouTube" onerror="this.style.display='none'">
+          </a>
+        </div>
+        <div class="brand-footer">
+          <img src="/images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
+               onerror="this.style.display='none'">
+        </div>
+      </div>
+      <div class="help">
+        <strong>Help & Support</strong><br>
+        <span>
+          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
+          Kolkata, West Bengal
+        </span><br>
+        <a href="tel:+919674627460">
+          <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+          +91 96746 27460
+        </a><br>
+        <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
+          <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+          +91 96746 27460
+        </a><br>
+        <a href="mailto:bk24sd@gmail.com">
+          <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+          bk24sd@gmail.com
+        </a><br>
+        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
       </div>
     </div>
   </footer>
+
+  <script>
+    function changeMainImage(thumbnailElement, imageUrl) {
+      document.getElementById('main-product-image').src = imageUrl;
+      const thumbnails = document.getElementsByClassName('thumbnail');
+      for (let i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].classList.remove('active');
+      }
+      thumbnailElement.classList.add('active');
+    }
+    function checkAvailability(button) {
+      button.textContent = "Available Now!";
+      button.style.backgroundColor = "#4CAF50";
+      setTimeout(function() {
+        button.textContent = "Check Availability";
+        button.style.backgroundColor = "#f05a28";
+      }, 3000);
+    }
+  </script>
 </body>
 </html>

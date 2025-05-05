@@ -16,8 +16,41 @@
     <link rel="stylesheet" href="../Styles/style1.css" />
     <link rel="stylesheet" href="../Styles/style.css" />
     <link rel="stylesheet" href="../Styles/style5.css" />
+    <!-- Inline CSS to fix any overlapping issues -->
+    <style>
+      .products-preview {
+        position: fixed;
+        z-index: 1000; /* Ensure it's above other elements but below footer when needed */
+      }
+      
+      footer {
+        position: relative;
+        z-index: 10;
+        margin-top: 40px;
+        width: 100%;
+        clear: both;
+      }
+      
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .footer-middle {
+        flex-basis: 40%;
+        text-align: center;
+      }
+      
+      .availability-btn {
+        display: inline-block !important;
+        position: relative !important;
+        z-index: 20 !important;
+      }
+    </style>
     <!-- custom js file link  -->
     <script src="../js/script.js" defer></script>
+    <script src="../js/backToTop.js" defer></script>
   </head>
   <body>
     <nav>
@@ -195,3 +228,4 @@
   </footer>
   </body>
 </html>
+``` 

@@ -45,6 +45,57 @@
       }
     }
     </script>
+    
+    <!-- Style for Back to Top button -->
+    <style>
+      .back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: #503530;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        cursor: pointer;
+      }
+      
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .back-to-top:hover {
+        background-color: #614540;
+        transform: translateY(-3px);
+      }
+      
+      /* Arrow icon */
+      .back-to-top svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+      }
+      
+      /* Mobile adjustment */
+      @media (max-width: 768px) {
+        .back-to-top {
+          width: 40px;
+          height: 40px;
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -144,6 +195,28 @@
         <img src="./Assets/ebay-icon-2048x2048-2vonydav.png" alt="Ebay" class="available-logo">
       </div>
     </div>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTopButton">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 4l-8 8h6v8h4v-8h6z" />
+      </svg>
+    </a>
+    <script>
+      const backToTopButton = document.getElementById('backToTopButton');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+
+      backToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
     <!-- Footer Section -->
     <footer>
       <div class="footer-content">

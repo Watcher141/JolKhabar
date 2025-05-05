@@ -6,6 +6,10 @@ footer {
   padding: 20px;
   margin-top: 40px;
   border-top: 2px solid #eee; /* Add a subtle top border */
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  clear: both;
 }
 
 .footer-content {
@@ -118,17 +122,70 @@ footer {
   transition: background-color 0.2s, box-shadow 0.2s;
   width: 220px;
   text-align: center;
-  display: inline-block;
+  display: inline-block !important;
   /* Removed the white box-shadow that might obscure text */
   box-shadow: 0 3px 5px rgba(0,0,0,0.1); /* Subtle shadow */
-  position: relative;
-  z-index: 2;
+  position: relative !important;
+  z-index: 20 !important;
   text-decoration: none;
 }
 
 .availability-btn:hover {
   background-color: #614540; /* Slightly lighter brown on hover */
   box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Darker shadow on hover */
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #503530;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: #614540;
+  transform: translateY(-3px);
+}
+
+/* Arrow icon */
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+  }
+  .back-to-top svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 /* Mobile Styles for Footer */
@@ -176,4 +233,10 @@ footer {
     align-items: center;
     width: 100%; /* Ensure it takes full width for centering */
   }
+}
+
+/* Product Preview and Footer Positioning Fixes */
+.products-preview {
+  position: fixed;
+  z-index: 1000; /* Ensure it's above other elements but below footer when needed */
 }

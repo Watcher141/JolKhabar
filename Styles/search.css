@@ -236,7 +236,7 @@
   /* Make sure hamburger menu button is visible and positioned correctly */
   .open-sidebar-button {
     position: fixed !important;
-    top: 5px !important; /* Position from the top of the viewport - Adjusted from 8px */
+    top: -1px !important; /* Position from the top of the viewport - Adjusted from 8px */
     right: 10px !important;
     z-index: 1005 !important; /* Higher z-index to ensure it's above search bar */
     display: block !important;

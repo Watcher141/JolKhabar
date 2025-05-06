@@ -432,9 +432,8 @@ button:hover {
   .chal-section,
   .achar-section,
   .nolen-gur-section,
-  .nolen-gur-section1,
-  .doshokorma-section {
-    height: 28vh;  
+  .nolen-gur-section1 {
+    height: 100vh;  
   }
 
   .aamsotto-section,
@@ -448,13 +447,11 @@ button:hover {
 @media (max-width: 992px) {
   .banner-section,
   .chal-section,
-  .achar-section,
   .nolen-gur-section {
     height: 26vh; 
   }
 
-  .nolen-gur-section1,
-  .doshokorma-section {
+  .nolen-gur-section1 {
     height: 30vh;  /* Increased from 30vh */
   }
 
@@ -473,7 +470,7 @@ button:hover {
   .nolen-gur-section,
   .doshokorma-section {
     height: auto;
-    aspect-ratio: 5 / 1;
+    
   }
 
   .nolen-gur-section {

@@ -9,6 +9,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensure padding is included in width calculations */
 }
 
 html {
@@ -16,6 +17,13 @@ html {
   font-family: Poppins, Segoe UI, Tahoma, sans-serif;
   background-color: #fff8dc;
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  overflow-x: hidden; /* Also prevent horizontal scrolling on body */
+  width: 100%;
+  max-width: 100%;
 }
 
 nav {
@@ -159,11 +167,15 @@ nav svg {
   flex-wrap: wrap;
   gap: 10px;
   width: 100%;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 0;
+  overflow: hidden; /* Prevent overflow content */
 }
 
 .banner-section,
-.chal-section {
+.chal-section,
+.nolen-gur-section {
   flex: 1 1 100%;
   display: flex;
   justify-content: center;
@@ -172,6 +184,7 @@ nav svg {
   overflow: hidden;
   aspect-ratio: 5 / 1;
   animation: scaleIn 1s ease-out;
+  max-width: 100%;
 }
 
 .chal-section button {
@@ -206,7 +219,32 @@ nav svg {
   margin-top: 0px;
 }
 
-.nolen-gur-section,
+.nolen-gur-section {
+  height: auto; /* Changed from fixed height to auto */
+  aspect-ratio: 5 / 1; /* Maintain the same aspect ratio as other banners */
+}
+
+.nolen-gur-section button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  background-color: #c4bfbe;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.nolen-gur-section button:hover {
+  background-color: #b87149;
+  transform: translateX(-50%) scale(1.1);
+}
+
 .nolen-gur-section1,
 .doshokorma-section {
   flex: 1 1 100%;
@@ -218,10 +256,6 @@ nav svg {
   aspect-ratio: 5 / 1;
   margin-bottom: 2px;
   border-radius: 5px;
-}
-
-.nolen-gur-section {
-  height: 50vh;
 }
 
 .nolen-gur-section1 {
@@ -436,12 +470,21 @@ button:hover {
   .banner-section,
   .chal-section,
   .achar-section,
+  .nolen-gur-section,
   .doshokorma-section {
     height: auto;
+    aspect-ratio: 5 / 1;
   }
 
-  .nolen-gur-section{
-    height: 15vh;
+  .nolen-gur-section {
+    height: auto; /* Changed from 15vh to auto to maintain consistency */
+  }
+
+  .nolen-gur-section button,
+  .chal-section button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    bottom: 5px;
   }
 
   .nolen-gur-section1 {

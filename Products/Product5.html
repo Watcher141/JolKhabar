@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../Styles/style1.css" />
     <link rel="stylesheet" href="../Styles/style.css" />
     <link rel="stylesheet" href="../Styles/style5.css" />
+    <link rel="stylesheet" href="../Styles/search.css" />
     <!-- Inline CSS to fix any overlapping issues -->
     <style>
       .products-preview {
@@ -83,6 +84,13 @@
         </label>
 
         <a class="home-link" href="../index.html">Home</a>
+        
+        <!-- Search container positioned after Home button -->
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search products...">
+          <div id="search-results"></div>
+        </div>
+        
         <a href="AboutUs.html">About Us</a>
         <a href="Product1.html">Achar</a>
         <a href="Product2.html">Aamsotto</a>
@@ -226,6 +234,10 @@
       </div>
     </div>
   </footer>
+  
+  <!-- Search Scripts -->
+  <script src="../js/products.js"></script>
+  <script src="../js/search.js"></script>
   </body>
 </html>
 ``` 

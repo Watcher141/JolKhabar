@@ -1,0 +1,274 @@
+/* Search functionality styles for JolKhabar */
+.search-container {
+  position: relative; /* Changed from absolute */
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  height: 36px;
+  max-width: 220px;
+  /* Remove center positioning */
+  margin-right: 10px; /* Add some margin */
+}
+
+#search-input {
+  padding: 8px 12px;
+  border: 1px solid #d1cbb8;
+  border-radius: 4px;
+  width: 200px;
+  font-size: 14px;
+  background-color: #fff8dc;
+  color: #503530;
+  font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  height: 36px;
+  box-sizing: border-box;
+  line-height: 20px;
+}
+
+#search-input:focus {
+  border-color: #c77f20;
+  box-shadow: 0 0 5px rgba(199, 127, 32, 0.3);
+}
+
+#search-button {
+  display: none; /* Hide the search button */
+}
+
+/* Search results container */
+#search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff8dc;
+  border: 1px solid #d1cbb8;
+  border-top: none;
+  z-index: 999;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 0 0 4px 4px;
+}
+
+.search-result-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee7c4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: #f5efda;
+}
+
+.search-result-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.search-result-item-content {
+  flex: 1;
+}
+
+.search-result-item h3 {
+  margin: 0 0 5px 0;
+  color: #503530;
+  font-size: 14px;
+}
+
+.search-result-item p {
+  margin: 0;
+  font-size: 12px;
+  color: #8c7b6b;
+}
+
+.no-results {
+  padding: 15px;
+  text-align: center;
+  color: #8c7b6b;
+}
+
+.highlight {
+  background-color: rgba(199, 127, 32, 0.2);
+  font-weight: bold;
+}
+
+/* Page transition animation */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff8dc;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.page-transition.active {
+  opacity: 0.9;
+  visibility: visible;
+  pointer-events: all;
+}
+
+/* Add subtle loading animation */
+.page-transition::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  border: 4px solid transparent;
+  border-top-color: #c77f20;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .search-container {
+    max-width: 180px;
+  }
+  
+  #search-input {
+    width: 180px;
+  }
+  
+  #search-results {
+    width: 100%;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  /* Remove search bar from navigation */
+  nav .search-container {
+    display: none;
+  }
+  
+  /* Fixed search bar at the top of the page, outside navigation */
+  body::before {
+    content: none; /* Remove the extra spacing */
+  }
+  
+  body {
+    position: relative;
+  }
+  
+  /* Create a new search container at the top of the body */
+  body .search-container-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #fff8dc;
+    display: flex;
+    z-index: 100; /* Lower z-index so nav button appears above */
+    height: 46px; /* Reduced height */
+    max-width: none;
+    margin: 0;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  body .search-container-mobile #search-input-mobile {
+    flex: 1;
+    width: 100%;
+    height: 36px;
+    padding: 8px 12px;
+    border: 1px solid #d1cbb8;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff8dc;
+    color: #503530;
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    line-height: 20px;
+    margin-right: 50px; /* Make room for the menu button */
+  }
+  
+  body .search-container-mobile #search-results-mobile {
+    display: none;
+    position: absolute;
+    top: 46px; /* Match the height of search bar */
+    left: 0;
+    width: 100%;
+    background: #fff8dc;
+    border: 1px solid #d1cbb8;
+    border-top: none;
+    z-index: 101; /* Ensure search results appear above content but below nav */
+    max-height: 80vh; /* Limit height to 80% of viewport */
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Remove the background overlay that was hiding the menu button */
+  body::after {
+    content: none;
+  }
+  
+  /* Make sure hamburger menu button is visible and positioned correctly */
+  .open-sidebar-button {
+    position: fixed !important;
+    top: 5px !important; /* Position from the top of the viewport - Adjusted from 8px */
+    right: 10px !important;
+    z-index: 1005 !important; /* Higher z-index to ensure it's above search bar */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+  }
+  
+  /* Ensure the navigation menu's overlay is also above the search */
+  #overlay {
+    z-index: 1004 !important;
+  }
+  
+  /* Ensure the navigation menu appears above the search bar */
+  .links-container {
+    z-index: 1004 !important;
+  }
+  
+  /* Adjust main container padding to account for fixed search bar */
+  .container {
+    padding-top: 46px !important; /* Match search bar height */
+    margin-top: 0 !important;
+  }
+  
+  /* Remove any extra spacing that might push content down */
+  .banner {
+    margin-top: 0 !important;
+  }
+  
+  /* Ensure navigation menu appears below search bar */
+  nav {
+    z-index: 1000 !important; /* Ensure it's below the search bar */
+  }
+}

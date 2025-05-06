@@ -15,6 +15,7 @@
     
     <link rel="stylesheet" href="./Styles/style.css" />
     <link rel="stylesheet" href="./Styles/style5.css" />
+    <link rel="stylesheet" href="./Styles/search.css" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CGR4M4S3L"></script>
     <script>
@@ -65,6 +66,7 @@
         </svg>
       </label>
       <label id="overlay" for="sidebar-active"></label>
+
       <div class="links-container">
         <label for="sidebar-active" class="close-sidebar-button">
           <svg
@@ -79,7 +81,15 @@
           </svg>
         </label>
 
+        <!-- Home link positioned at the left -->
         <a class="home-link" href="./index.html">Home</a>
+        
+        <!-- Search container positioned after Home button -->
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search products...">
+          <div id="search-results"></div>
+        </div>
+        
         <a href="./Products/AboutUs.html">About Us</a>
         <a href="./Products/Product1.html">Achar</a>
         <a href="./Products/Product2.html">Aamsotto</a>
@@ -194,5 +204,17 @@
         </div>
       </div>
     </footer>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" aria-label="Back to top" style="display: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+      </svg>
+    </a>
+    
+    <!-- Scripts -->
+    <script src="./js/products.js"></script>
+    <script src="./js/search.js"></script>
+    <script src="./js/backToTop.js"></script>
   </body>
 </html>

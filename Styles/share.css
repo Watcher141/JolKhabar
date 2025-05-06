@@ -1,0 +1,122 @@
+/* Social Share Button Styles */
+.menu{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+
+.menu .toggle{
+  position: relative;
+  height: 45px;
+  width: 45px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: 1.25s;
+  z-index: 5;
+}
+
+.menu.active .toggle{
+  transform: rotate(360deg);
+  box-shadow: 0 6px 8px rgba(0,0,0,0.15),
+    0 0 0 2px #333,
+    0 0 0 6px #fff;
+}
+
+.menu li{
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transition: 0.5s;
+  transform: rotate(calc(360deg/8 * var(--i)));
+  transform-origin: 140px;
+  scale: 0;
+  transition-delay: calc(0.05s * var(--i));
+}
+
+.menu.active li{
+  scale: 1;
+}
+
+.menu li a{
+  position: relative;
+  display: flex;
+  transform: rotate(calc(360deg/-8 * var(--i)));
+  width: 40px;
+  height: 40px;
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--clr);
+  box-shadow: 0 3px 4px rgba(0,0,0,0.15);
+  transition: 0.5s;
+}
+
+.menu li:hover a{
+  font-size: 1.75rem;
+  box-shadow: 0 0 0 2px var(--clr),
+    0 0 0 4px #fff;
+}
+
+/* Positioning for the social icons in a circle */
+.menu li:nth-child(1) {
+  transform: translate(70px, 0);
+}
+.menu li:nth-child(2) {
+  transform: translate(60px, 60px);
+}
+.menu li:nth-child(3) {
+  transform: translate(0, 70px);
+}
+.menu li:nth-child(4) {
+  transform: translate(-60px, 60px);
+}
+.menu li:nth-child(5) {
+  transform: translate(-70px, 0);
+}
+.menu li:nth-child(6) {
+  transform: translate(-60px, -60px);
+}
+.menu li:nth-child(7) {
+  transform: translate(0, -70px);
+}
+.menu li:nth-child(8) {
+  transform: translate(60px, -60px);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .menu li:nth-child(1) { transform: translate(50px, 0); }
+  .menu li:nth-child(2) { transform: translate(35px, 35px); }
+  .menu li:nth-child(3) { transform: translate(0, 50px); }
+  .menu li:nth-child(4) { transform: translate(-35px, 35px); }
+  .menu li:nth-child(5) { transform: translate(-50px, 0); }
+  .menu li:nth-child(6) { transform: translate(-35px, -35px); }
+  .menu li:nth-child(7) { transform: translate(0, -50px); }
+  .menu li:nth-child(8) { transform: translate(35px, -35px); }
+  
+  .menu li a {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .menu li:hover a {
+    font-size: 1.25rem;
+  }
+}

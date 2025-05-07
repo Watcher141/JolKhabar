@@ -87,58 +87,44 @@
   </main>
 
   <footer>
-    <div class="brand-footer">
-      <img src="../../Jolkahabr Logo.png" alt="JolKhabar Logo" width="120">
-    </div>
-    <div class="help">
-      <div class="contact-info">
+    <div class="footer-content">
+      <div>
+        <div class="footer-logos">
+          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../facebook-icon.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
+            <img src="../../instagram-icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
+            <img src="../../YoutubeLogo.png" alt="YouTube">
+          </a>
+        </div>
+        <div class="brand-footer">
+          <img src="../../images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120">
+        </div>
+      </div>
+      <div class="help">
+        <strong>Help & Support</strong><br>
+        <span>
+          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location">
+          Kolkata, West Bengal
+        </span><br>
+        <a href="tel:+919674627460">
+          <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+          +91 96746 27460
+        </a><br>
+        <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
+          <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+          +91 96746 27460
+        </a><br>
         <a href="mailto:bk24sd@gmail.com">
           <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
           bk24sd@gmail.com
-        </a>
-        <a href="tel:+919163885060">
-          <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Phone">
-          +91 9163885060
-        </a>
-        <a href="https://maps.app.goo.gl/HxqFbi1dXfh6qyKX9" target="_blank">
-          <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location">
-          Location
-        </a>
-      </div>
-      <div class="copyright">
+        </a><br>
         &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
       </div>
     </div>
   </footer>
-
-  <script>
-    // Function to change the main image when a thumbnail is clicked
-    function changeMainImage(thumbnailElement, imageUrl) {
-      // Update the main image src
-      document.getElementById('main-product-image').src = imageUrl;
-
-      // Remove active class from all thumbnails
-      const thumbnails = document.getElementsByClassName('thumbnail');
-      for (let i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].classList.remove('active');
-      }
-
-      // Add active class to the clicked thumbnail
-      thumbnailElement.classList.add('active');
-    }
-
-    // Function to handle the availability button click
-    function checkAvailability(button) {
-      // You can replace this with actual availability check logic
-      button.textContent = "Available Now!";
-      button.style.backgroundColor = "#4CAF50";
-
-      // Reset after 3 seconds
-      setTimeout(function() {
-        button.textContent = "Check Availability";
-        button.style.backgroundColor = "#f05a28";
-      }, 3000);
-    }
-  </script>
 </body>
 </html>

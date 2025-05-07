@@ -17,6 +17,58 @@ document.addEventListener('DOMContentLoaded', function() {
     pageTransition.className = 'page-transition';
     document.body.appendChild(pageTransition);
     
+    // SECURITY: Add sanitization function for XSS protection
+    function sanitizeHTML(text) {
+        const element = document.createElement('div');
+        element.textContent = text;
+        return element.innerHTML;
+    }
+    
+    // SECURITY: Helper function to escape special characters in regex
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+    
+    // SECURITY: Add rate limiting for search
+    const MAX_SEARCHES_PER_MINUTE = 30;
+    const searches = [];
+    
+    function checkRateLimit() {
+        const now = Date.now();
+        
+        // Add current search timestamp
+        searches.push(now);
+        
+        // Remove searches older than 1 minute
+        while (searches.length && searches[0] < now - 60000) {
+            searches.shift();
+        }
+        
+        // Check if too many searches
+        if (searches.length > MAX_SEARCHES_PER_MINUTE) {
+            console.warn("Search rate limit exceeded");
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Filter out products that don't have actual product detail pages
+    const availableProducts = products.filter(product => {
+        // Filter out any products with coming-soon.html in their URL
+        if (product.detailsUrl.includes('coming-soon.html')) {
+            return false;
+        }
+        
+        // Explicitly check the IDs of products we know don't have detail pages yet
+        const unavailableProductIds = [6, 7, 22, 32, 38]; // IDs of products without detail pages
+        if (unavailableProductIds.includes(product.id)) {
+            return false;
+        }
+        
+        return true;
+    });
+    
     // Create mobile search bar for small screens
     if (window.innerWidth <= 480) {
         // Remove any existing mobile search bars to avoid duplicates
@@ -114,6 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function performSearch() {
         if (!searchInput) return;
         
+        // SECURITY: Apply rate limiting
+        if (!checkRateLimit()) {
+            return;
+        }
+        
         const query = searchInput.value.toLowerCase().trim();
         
         if (query.length === 0) {
@@ -121,24 +178,32 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Filter products based on search query
-        const results = products.filter(product => {
-            return product.name.toLowerCase().includes(query) || 
-                   product.description.toLowerCase().includes(query) ||
-                   product.category.toLowerCase().includes(query);
+        // SECURITY: Sanitize the search query
+        const sanitizedQuery = sanitizeHTML(query);
+        
+        // Filter products based on search query - Only from available products
+        const results = availableProducts.filter(product => {
+            return product.name.toLowerCase().includes(sanitizedQuery) || 
+                   product.description.toLowerCase().includes(sanitizedQuery) ||
+                   product.category.toLowerCase().includes(sanitizedQuery);
         });
         
         // Display search results
-        displayResults(results, query, searchResults);
+        displayResults(results, sanitizedQuery, searchResults);
         
         // Track search for analytics
-        trackSearch(query);
+        trackSearch(sanitizedQuery);
     }
     
     // Mobile search function
     function performSearchMobile() {
         const mobileSearchInput = document.getElementById('search-input-mobile');
         if (!mobileSearchInput) return;
+        
+        // SECURITY: Apply rate limiting
+        if (!checkRateLimit()) {
+            return;
+        }
         
         const query = mobileSearchInput.value.toLowerCase().trim();
         
@@ -147,22 +212,25 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Filter products based on search query
-        const results = products.filter(product => {
-            return product.name.toLowerCase().includes(query) || 
-                   product.description.toLowerCase().includes(query) ||
-                   product.category.toLowerCase().includes(query);
+        // SECURITY: Sanitize the search query
+        const sanitizedQuery = sanitizeHTML(query);
+        
+        // Filter products based on search query - Only from available products
+        const results = availableProducts.filter(product => {
+            return product.name.toLowerCase().includes(sanitizedQuery) || 
+                   product.description.toLowerCase().includes(sanitizedQuery) ||
+                   product.category.toLowerCase().includes(sanitizedQuery);
         });
         
         // Display search results
         const mobileSearchResults = document.getElementById('search-results-mobile');
-        displayResults(results, query, mobileSearchResults);
+        displayResults(results, sanitizedQuery, mobileSearchResults);
         
         // Track search for analytics
-        trackSearch(query);
+        trackSearch(sanitizedQuery);
     }
     
-    // Display search results - updated to work with both desktop and mobile
+    // Display search results - updated to work with both desktop and mobile and now with improved security
     function displayResults(results, query, resultsContainer) {
         if (!resultsContainer) return;
         
@@ -179,9 +247,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const resultItem = document.createElement('div');
             resultItem.className = 'search-result-item';
             
-            // Highlight matching text
-            const nameHighlighted = highlightText(product.name, query);
-            const descHighlighted = highlightText(product.description, query);
+            // SECURITY: Sanitize product data
+            const safeName = sanitizeHTML(product.name);
+            const safeDesc = sanitizeHTML(product.description);
+            const safeCategory = sanitizeHTML(product.category);
+            
+            // Highlight matching text with improved security
+            const nameHighlighted = highlightText(safeName, query);
+            const descHighlighted = highlightText(safeDesc, query);
             
             // Fix image paths based on whether we're in product page or homepage
             let imageSrc = product.image;
@@ -195,14 +268,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 detailsUrl = '.' + detailsUrl;
             }
             
-            resultItem.innerHTML = `
-                <img src="${imageSrc}" alt="${product.name}" onerror="this.src='${fallbackImage}'">
-                <div class="search-result-item-content">
-                    <h3>${nameHighlighted}</h3>
-                    <p>${descHighlighted}</p>
-                    <span class="category">${product.category}</span>
-                </div>
-            `;
+            // SECURITY: Use DOM methods instead of innerHTML where possible
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = safeName;
+            img.onerror = function() { this.src = fallbackImage; };
+            
+            const content = document.createElement('div');
+            content.className = 'search-result-item-content';
+            
+            const title = document.createElement('h3');
+            title.innerHTML = nameHighlighted; // We use innerHTML here because it contains our highlight spans
+            
+            const desc = document.createElement('p');
+            desc.innerHTML = descHighlighted; // We use innerHTML here because it contains our highlight spans
+            
+            const categorySpan = document.createElement('span');
+            categorySpan.className = 'category';
+            categorySpan.textContent = safeCategory;
+            
+            content.appendChild(title);
+            content.appendChild(desc);
+            content.appendChild(categorySpan);
+            
+            resultItem.appendChild(img);
+            resultItem.appendChild(content);
             
             // Add click event to navigate to product detail page with animation
             resultItem.addEventListener('click', function(e) {
@@ -224,11 +314,12 @@ document.addEventListener('DOMContentLoaded', function() {
         resultsContainer.style.display = 'block';
     }
     
-    // Highlight search term in text
+    // Highlight search term in text with improved security
     function highlightText(text, query) {
         if (!query || query.length < 2) return text;
         
-        const escapedQuery = query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        // SECURITY: Escape special regex characters in the query to prevent regex injection
+        const escapedQuery = escapeRegExp(query);
         const regex = new RegExp(`(${escapedQuery})`, 'gi');
         return text.replace(regex, '<span class="highlight">$1</span>');
     }
@@ -248,25 +339,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Track search analytics using localStorage
+    // Track search analytics using localStorage with improved security
     function trackSearch(query) {
         if (window.localStorage) {
-            // Create or retrieve search history
-            let searchHistory = JSON.parse(localStorage.getItem('jolkhabarSearchHistory') || '[]');
-            
-            // Add this search with timestamp
-            searchHistory.push({
-                query: query,
-                timestamp: new Date().toISOString()
-            });
-            
-            // Keep only last 100 searches
-            if (searchHistory.length > 100) {
-                searchHistory = searchHistory.slice(-100);
+            try {
+                // SECURITY: Sanitize before storing
+                const sanitizedQuery = query.replace(/[<>]/g, '');
+                
+                // Create or retrieve search history
+                let searchHistory = JSON.parse(localStorage.getItem('jolkhabarSearchHistory') || '[]');
+                
+                // Add this search with timestamp
+                searchHistory.push({
+                    query: sanitizedQuery,
+                    timestamp: new Date().toISOString()
+                });
+                
+                // Keep only last 100 searches
+                if (searchHistory.length > 100) {
+                    searchHistory = searchHistory.slice(-100);
+                }
+                
+                // Save back to localStorage
+                localStorage.setItem('jolkhabarSearchHistory', JSON.stringify(searchHistory));
+            } catch (e) {
+                console.error('Error processing search history');
+                localStorage.removeItem('jolkhabarSearchHistory'); // Reset if corrupted
             }
-            
-            // Save back to localStorage
-            localStorage.setItem('jolkhabarSearchHistory', JSON.stringify(searchHistory));
         }
     }
     

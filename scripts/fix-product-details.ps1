@@ -46,44 +46,32 @@ $consistentFooter = @'
 '@
 
 # Get all product detail HTML files
-$productDetailFiles = Get-ChildItem -Path ".\Products\product-details\*.html"
+$productDetailFiles = Get-ChildItem -Path ".\Products\product-details\*.html" -Recurse
 
 $updateCount = 0
 $errorCount = 0
 
 foreach ($file in $productDetailFiles) {
     try {
-        Write-Host "Processing $($file.Name)..."
-        
-        # Read file content
         $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
         
-        # Create a backup of the original file
-        Copy-Item -Path $file.FullName -Destination "$($file.FullName).bak" -Force
-        
-        # Use regex with single-line mode to match the entire footer section
-        $pattern = '(?s)<footer.*?</footer>'
-        
-        if ($content -match $pattern) {
-            Write-Host "  Replacing existing footer..."
-            $updatedContent = [regex]::Replace($content, $pattern, $consistentFooter)
+        # Find where the footer starts and ends
+        if ($content -match "(?s)<footer.*?</footer>") {
+            $updatedContent = $content -replace "(?s)<footer.*?</footer>", $consistentFooter
             
-            # Write the updated content back to the file
-            Set-Content -Path $file.FullName -Value $updatedContent -Encoding UTF8 -NoNewline
+            # Save the updated content
+            $updatedContent | Set-Content -Path $file.FullName -Encoding UTF8 -NoNewline
+            Write-Host "Updated footer in $($file.Name)" -ForegroundColor Green
             $updateCount++
         } else {
-            Write-Host "  No footer found, inserting new footer before </body>..."
-            # Insert the footer before the closing body tag
-            $updatedContent = $content -replace '</body>', "$consistentFooter`r`n</body>"
-            
-            # Write the updated content back to the file
-            Set-Content -Path $file.FullName -Value $updatedContent -Encoding UTF8 -NoNewline
+            # If no footer found, insert it before the closing </body> tag
+            $updatedContent = $content -replace "</body>", "$consistentFooter`r`n</body>"
+            $updatedContent | Set-Content -Path $file.FullName -Encoding UTF8 -NoNewline
+            Write-Host "Added footer to $($file.Name)" -ForegroundColor Yellow
             $updateCount++
         }
-        Write-Host "  Success: Updated $($file.Name)" -ForegroundColor Green
-    }
-    catch {
-        Write-Host "  Error processing $($file.Name): $_" -ForegroundColor Red
+    } catch {
+        Write-Host "Error updating $($file.Name): $_" -ForegroundColor Red
         $errorCount++
     }
 }
@@ -92,4 +80,4 @@ Write-Host "`nSummary:"
 Write-Host "- Total files processed: $($productDetailFiles.Count)"
 Write-Host "- Successfully updated: $updateCount"
 Write-Host "- Errors encountered: $errorCount"
-Write-Host "`nDone!"
+Write-Host "Done!"

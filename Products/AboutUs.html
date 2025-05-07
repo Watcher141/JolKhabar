@@ -4,33 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - JOLKHABAR</title>
+  <link rel="stylesheet" href="../Styles/style.css" />
+  <link rel="stylesheet" href="../Styles/search.css" />
+  <link rel="stylesheet" href="../Styles/style5.css" />
   <link rel="stylesheet" href="../Styles/aboutus.css" />
-  <link rel="stylesheet" href="../../styles/style5.css">
 </head>
 <body>
   <!-- NAVBAR -->
   <nav>
-    <div class="navbar-container">
-      <div class="navbar-logo">
-        <img src="../Jolkahabr Logo.png" alt="JOLKHABAR Logo" />
-        <span>JOLKHABAR</span>
+    <input type="checkbox" id="sidebar-active">
+    <label for="sidebar-active" class="open-sidebar-button">
+      <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+      </svg>
+    </label>
+    <label id="overlay" for="sidebar-active"></label>
+
+    <div class="links-container">
+      <label for="sidebar-active" class="close-sidebar-button">
+        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+        </svg>
+      </label>
+
+      <!-- Home link positioned at the left -->
+      <a class="home-link" href="../index.html">Home</a>
+      
+      <!-- Search container positioned after Home button -->
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search products...">
+        <div id="search-results"></div>
       </div>
-      <button class="nav-toggle" id="navToggle">&#9776;</button>
-      <div class="nav-links" id="navLinks">
-        <button class="nav-close" id="navClose">&times;</button>
-        <a class="home-link" href="../index.html">Home</a>
-        <a href="AboutUs.html" class="active">About Us</a>
-        <a href="Product1.html">Achar</a>
-        <a href="Product2.html">Aamsotto</a>
-        <a href="Product3.html">Chanachur</a>
-        <a href="Product4.html">Chatni</a>
-        <a href="Product5.html">Kasundi</a>
-        <a href="Product7.html">Rice</a>
-        <a href="Product6.html">Delicacies</a>
-        <a href="Product8.html">Dashakarma</a>
-      </div>
+      
+      <a href="../Products/AboutUs.html">About Us</a>
+      <a href="../Products/Product1.html">Achar</a>
+      <a href="../Products/Product2.html">Aamsotto</a>
+      <a href="../Products/Product3.html">Chanachur</a>
+      <a href="../Products/Product4.html">Chatni</a>
+      <a href="../Products/Product5.html">Kasundi</a>
+      <a href="../Products/Product7.html">Rice</a>
+      <a href="../Products/Product6.html">Delicacies</a>
+      <a href="../Products/Product8.html">Dashakarma</a>
     </div>
   </nav>
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
@@ -38,12 +55,33 @@
       <p>Handcrafted traditions since 2010</p>
     </div>
   </section>
+  
   <main>
+    <!-- STORY SECTION -->
+    <section class="story-section">
+      <h2>Our Journey & Purpose</h2>
+      
+      <h3>JOLKHABAR</h3>
+      <p>
+        The aim is to bring back the childhood memories, the taste, aroma and the traditional recipes, those used to be prepared by our grandmothers/mothers, and to serve Bangalis (bangali) staying away from Bengal. Hence, to maintain that authenticity every product of "JOLKHABAR" is handmade, ensuring the taste and aroma continues. None of the products of "JOLKHABAR" is developed by any machine/processing unit, and that's how the products of "JOLKHABAR" holds the same taste and aroma of those old homemade foods.
+      </p>
+      
+      <h3>DASHAKARMA</h3>
+      <p>
+        This objective is to continue our family heritage and tradition and to pass it on to our next generation, to take it forward, irrespective of whichever part of the world you are staying. Hence, to fulfil that desire and to overcome the inhibiting factors like arranging related Puja List (fordomala), Shop (dashakarma bhandar), Holy Book (panchali) this DASHAKARMA, now onwards is just a click away and will be delivered at your doorstep across the world. Let your family tradition continue, where ever you are.
+      </p>
+
+      <h3>BEHIND THE SCENE: Our Social Impact</h3>
+      <p>
+        Each of the products of "JOLKHABAR" and “DASHAKARMA” is made and packed by the women of Rural Bengal. Through this initiative, the purpose of "JOLKHABAR" and “DASHAKARMA” is to create a new way of earning for the women and make them as self-reliant.
+      </p>
+    </section>
+
     <!-- ABOUT SECTION -->
     <section class="about-section">
       <h2>JOLKHABAR - Taste of Childhood</h2>
       <p>
-        JOLKHABAR revives cherished memories through grandmothers' recipes, meticulously handcrafted without machines. Every product maintains the authentic taste and aroma of traditional Bengali home cooking. Our mission is to preserve Bengal’s culinary heritage and deliver it to your doorstep, wherever you are in the world.
+        JOLKHABAR revives cherished memories through grandmothers' recipes, meticulously handcrafted without machines. Every product maintains the authentic taste and aroma of traditional Bengali home cooking. Our mission is to preserve Bengal's culinary heritage and deliver it to your doorstep, wherever you are in the world.
       </p>
       <div class="impact-grid">
         <div class="impact-card">
@@ -60,49 +98,133 @@
         </div>
       </div>
     </section>
+    
     <!-- GALLERY SECTION (Client/Workspace Images) -->
     <section class="gallery-section">
       <h2>Our Team & Workspace</h2>
-      <div class="scrolling-gallery" id="scrollingGallery">
-        <div class="gallery-item"><img src="../images/aamkulerachar.jpg" alt="Workspace 1"></div>
-        <div class="gallery-item"><img src="../images/ammkhjur.jpg" alt="Workspace 2"></div>
-        <div class="gallery-item"><img src="../images/jagadhatri.jpg" alt="Workspace 3"></div>
-        <div class="gallery-item"><img src="../images/khejur.jpg" alt="Workspace 4"></div>
-        <div class="gallery-item"><img src="../images/ostomi.jpg" alt="Workspace 5"></div>
-        <div class="gallery-item"><img src="../images/sattanarayn.jpg" alt="Workspace 6"></div>
-        <!-- Add more images as needed -->
+      <div class="gallery-container">
+        <div class="scrolling-gallery" id="scrollingGallery">
+          <!-- Original gallery items -->
+          <div class="gallery-item"><img src="../images/aamkulerachar.jpg" alt="Workspace 1"></div>
+          <div class="gallery-item"><img src="../images/ammkhjur.jpg" alt="Workspace 2"></div>
+          <div class="gallery-item"><img src="../images/jagadhatri.jpg" alt="Workspace 3"></div>
+          <div class="gallery-item"><img src="../images/khejur.jpg" alt="Workspace 4"></div>
+          <div class="gallery-item"><img src="../images/ostomi.jpg" alt="Workspace 5"></div>
+          <div class="gallery-item"><img src="../images/sattanarayn.jpg" alt="Workspace 6"></div>
+          <!-- Clone of items for seamless scrolling -->
+          <div class="gallery-item"><img src="../images/aamkulerachar.jpg" alt="Workspace 1"></div>
+          <div class="gallery-item"><img src="../images/ammkhjur.jpg" alt="Workspace 2"></div>
+          <div class="gallery-item"><img src="../images/jagadhatri.jpg" alt="Workspace 3"></div>
+          <div class="gallery-item"><img src="../images/khejur.jpg" alt="Workspace 4"></div>
+          <div class="gallery-item"><img src="../images/ostomi.jpg" alt="Workspace 5"></div>
+          <div class="gallery-item"><img src="../images/sattanarayn.jpg" alt="Workspace 6"></div>
+        </div>
       </div>
-      <p style="text-align:center; color:#8b4513; margin-top:1rem; font-size:1rem;">
+      <p>
         Want to see your team here? <b>Upload your workspace or employee images!</b>
       </p>
     </section>
+    
     <!-- TEAM SECTION -->
     <section class="team-section">
       <h2>Meet Our Artisans</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="../images/ammemnikasundi.png" alt="Maya Das">
-          <h4>Maya Das</h4>
-          <p>Master Pickle Maker</p>
-        </div>
-        <div class="team-member">
-          <img src="../images/chanachurr.png" alt="Priya Roy">
-          <h4>Priya Roy</h4>
-          <p>Traditional Sweet Specialist</p>
-        </div>
-        <div class="team-member">
-          <img src="../images/kulerachar.jpg" alt="Rina Ghosh">
-          <h4>Rina Ghosh</h4>
-          <p>Packaging Lead</p>
-        </div>
-        <div class="team-member">
-          <img src="../images/laxmi.jpg" alt="Soma Sen">
-          <h4>Soma Sen</h4>
-          <p>Quality Control</p>
+      <div class="team-container">
+        <div class="team-scroll-wrapper" id="teamScrollWrapper">
+          <!-- Original team members -->
+          <div class="team-member">
+            <img src="../images/ammemnikasundi.png" alt="Maya Das">
+            <h4>Maya Das</h4>
+            <p>Master Pickle Maker</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/chanachurr.png" alt="Priya Roy">
+            <h4>Priya Roy</h4>
+            <p>Traditional Sweet Specialist</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/kulerachar.jpg" alt="Rina Ghosh">
+            <h4>Rina Ghosh</h4>
+            <p>Packaging Lead</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/laxmi.jpg" alt="Soma Sen">
+            <h4>Soma Sen</h4>
+            <p>Quality Control</p>
+          </div>
+          <!-- Additional team members -->
+          <div class="team-member">
+            <img src="../images/aamkulerachar.jpg" alt="Anita Mondal">
+            <h4>Anita Mondal</h4>
+            <p>Production Manager</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/tetulkuler.png" alt="Rupa Das">
+            <h4>Rupa Das</h4>
+            <p>Achar Expert</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/khejur.jpg" alt="Puja Sharma">
+            <h4>Puja Sharma</h4>
+            <p>Sweet Specialist</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/jagadhatri.jpg" alt="Mira Ghosh">
+            <h4>Mira Ghosh</h4>
+            <p>Food Safety Manager</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/sattanarayn.jpg" alt="Lalita Roy">
+            <h4>Lalita Roy</h4>
+            <p>Traditional Recipe Expert</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/ostomi.jpg" alt="Sabita Devi">
+            <h4>Sabita Devi</h4>
+            <p>Production Lead</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/leburachar.png" alt="Neha Banerjee">
+            <h4>Neha Banerjee</h4>
+            <p>Quality Assurance</p>
+          </div>
+          
+          <!-- Clone of first set of members for seamless scrolling -->
+          <div class="team-member">
+            <img src="../images/ammemnikasundi.png" alt="Maya Das">
+            <h4>Maya Das</h4>
+            <p>Master Pickle Maker</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/chanachurr.png" alt="Priya Roy">
+            <h4>Priya Roy</h4>
+            <p>Traditional Sweet Specialist</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/kulerachar.jpg" alt="Rina Ghosh">
+            <h4>Rina Ghosh</h4>
+            <p>Packaging Lead</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/laxmi.jpg" alt="Soma Sen">
+            <h4>Soma Sen</h4>
+            <p>Quality Control</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/aamkulerachar.jpg" alt="Anita Mondal">
+            <h4>Anita Mondal</h4>
+            <p>Production Manager</p>
+          </div>
+          <div class="team-member">
+            <img src="../images/tetulkuler.png" alt="Rupa Das">
+            <h4>Rupa Das</h4>
+            <p>Achar Expert</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
+  
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
       <div>
@@ -118,52 +240,140 @@
           </a>
         </div>
         <div class="brand-footer">
-          <img src="../images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
-               onerror="this.style.display='none'">
+          <img src="../images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" onerror="this.style.display='none'">
         </div>
       </div>
 
+      <div class="footer-middle">
+        <a href="../Products/Places.html" class="availability-btn">Places to find us</a>
+      </div>
+
       <div class="help">
-        <strong>Help & Support</strong><br>
+        <strong>Help & Support</strong>
         <span>
           <img src="../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
           Kolkata, West Bengal
-        </span><br>
+        </span>
         <a href="tel:+919674627460">
-          <img src="../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+          <img src="../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call" onerror="this.style.display='none'">
           +91 96746 27460
-        </a><br>
+        </a>
         <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
-          <img src="../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+          <img src="../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp" onerror="this.style.display='none'">
           +91 96746 27460
-        </a><br>
+        </a>
         <a href="mailto:bk24sd@gmail.com">
-          <img src="../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+          <img src="../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email" onerror="this.style.display='none'">
           bk24sd@gmail.com
-        </a><br>
-        &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+        </a>
+        <span class="copyright">&copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.</span>
       </div>
     </div>
   </footer>
+  
+  <!-- Back to top button -->
+  <a href="#" class="back-to-top" aria-label="Back to top" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+    </svg>
+  </a>
+  
   <script>
-    // Mobile nav logic
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    const navClose = document.getElementById('navClose');
-    navToggle && navToggle.addEventListener('click', () => navLinks.classList.add('open'));
-    navClose && navClose.addEventListener('click', () => navLinks.classList.remove('open'));
-    // Smooth floating gallery animation
+    // Enhanced gallery animation with pause at ends
     const gallery = document.getElementById('scrollingGallery');
-    let scrollAmount = 0, scrollDir = 1;
-    function autoScrollGallery() {
-      if (!gallery) return;
-      scrollAmount += scrollDir * 1.2;
-      if (scrollAmount > gallery.scrollWidth - gallery.clientWidth) scrollDir = -1;
-      if (scrollAmount < 0) scrollDir = 1;
-      gallery.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-      requestAnimationFrame(autoScrollGallery);
+    if (gallery) {
+        let scrollAmount = 0;
+        let scrollDir = 1;
+        const scrollSpeed = 0.8; // Speed: pixels per frame. Adjust for faster/slower scroll.
+        const pauseDuration = 1500; // Pause at ends: milliseconds. Adjust for longer/shorter pause.
+
+        function animateScroll() {
+            // If the gallery has been hidden or removed, or no longer in the document, stop the animation
+            if (!document.body.contains(gallery) || gallery.offsetParent === null) {
+                return;
+            }
+
+            // Check if gallery has content to scroll
+            if (gallery.scrollWidth <= gallery.clientWidth) {
+                // No scrolling needed if content is not wider than container.
+                // Still request a frame to re-check later if content/visibility changes.
+                requestNextFrame(); 
+                return;
+            }
+
+            scrollAmount += scrollDir * scrollSpeed;
+            let needsPause = false;
+
+            if (scrollDir === 1 && scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
+                scrollAmount = gallery.scrollWidth - gallery.clientWidth; // Clamp to end
+                scrollDir = -1;
+                needsPause = true;
+            } else if (scrollDir === -1 && scrollAmount <= 0) {
+                scrollAmount = 0; // Clamp to start
+                scrollDir = 1;
+                needsPause = true;
+            }
+            
+            // Ensure scrollAmount doesn't go out of bounds due to large scrollSpeed or other factors
+            if (scrollAmount > gallery.scrollWidth - gallery.clientWidth) {
+                scrollAmount = gallery.scrollWidth - gallery.clientWidth;
+            } else if (scrollAmount < 0) {
+                scrollAmount = 0;
+            }
+            
+            gallery.scrollTo({ left: scrollAmount, behavior: 'auto' });
+
+            if (needsPause) {
+                setTimeout(requestNextFrame, pauseDuration);
+            } else {
+                requestNextFrame();
+            }
+        }
+
+        function requestNextFrame() {
+            // Ensure animation only runs if the gallery is still part of the document and visible
+            if (document.body.contains(gallery) && gallery.offsetParent !== null) {
+                 requestAnimationFrame(animateScroll);
+            }
+        }
+
+        // Start the animation
+        requestNextFrame();
     }
-    autoScrollGallery();
+    
+    // Add animation delay to impact cards and team members
+    const impactCards = document.querySelectorAll('.impact-card');
+    const teamMembers = document.querySelectorAll('.team-member');
+    
+    impactCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 0.2}s`;
+    });
+    
+    teamMembers.forEach((member, index) => {
+      member.style.animationDelay = `${index * 0.2}s`;
+    });
+    
+    // Add scroll reveal effect
+    function revealOnScroll() {
+      const sections = document.querySelectorAll('.about-section, .gallery-section, .team-section');
+      
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (sectionTop < windowHeight - 100) {
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
+        }
+      });
+    }
+    
+    window.addEventListener('load', revealOnScroll);
+    window.addEventListener('scroll', revealOnScroll);
   </script>
+  <!-- Adding search functionality -->
+  <script src="../js/products.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/backToTop.js"></script>
 </body>
 </html>

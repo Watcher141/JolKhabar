@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /search?q=
+
+# Allow all product pages to be indexed
+Allow: /Products/product-details/
+
+# Sitemap location
+Sitemap: https://jolkhabar.com/sitemap.xml

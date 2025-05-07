@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Security Enhancement: Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+    <!-- Security Enhancement: HSTS -->
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    <!-- Security Enhancement: Prevent MIME type sniffing -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <!-- Security Enhancement: Prevent clickjacking -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <!-- Security Enhancement: XSS Protection -->
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <!-- Security Enhancement: Referrer Policy -->
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <title>JOLKHABAR - Authentic Bengali Food Products | Traditional Bengali Delicacies</title>
     <meta name="description" content="Discover authentic Bengali food products at JOLKHABAR. From Achar to Kasundi, shop traditional Bengali delicacies, sweets, and more. Available on Amazon, Flipkart & other platforms." />
     <meta name="keywords" content="Bengali food, Achar, Kasundi, Aamsotto, Chanachur, Bengali sweets, traditional Bengali food, Bengali delicacies" />

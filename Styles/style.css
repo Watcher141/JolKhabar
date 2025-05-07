@@ -464,17 +464,23 @@ button:hover {
 }
 
 @media (max-width: 576px) {
+  /* Remove gap between banners in mobile view */
+  .container {
+    gap: 0;
+  }
+  
   .banner-section,
   .chal-section,
   .achar-section,
   .nolen-gur-section,
   .doshokorma-section {
     height: auto;
-    
+    margin: 0; /* Remove any margins */
   }
 
   .nolen-gur-section {
     height: auto; /* Changed from 15vh to auto to maintain consistency */
+    margin: 0; /* Remove any margins */
   }
 
   .nolen-gur-section button,
@@ -486,6 +492,7 @@ button:hover {
 
   .nolen-gur-section1 {
     height: 20vh;
+    margin: 0; /* Remove any margins */
   }
 
   .aamsotto-section,
@@ -493,6 +500,7 @@ button:hover {
   .chatni-section,
   .kasundi-section {
     height: 20vh;
+    margin: 0; /* Remove any margins */
   }
 
   .doshokorma-image {

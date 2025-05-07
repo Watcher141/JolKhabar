@@ -260,7 +260,7 @@ const products = [
     // Dashakarma (Product8) items
     {
         id: 32,
-        name: "JolKhabar Dashakarma Special Full Kit",
+        name: "Dashakarma Special Full Kit",
         category: "Dashakarma",
         description: "Special items for Bengali traditional ceremonies",
         image: "./images/doshokorma.jpg",
@@ -268,7 +268,7 @@ const products = [
     },
     {
         id: 33,
-        name: "JolKhabar Grihoprobesh Full Kit",
+        name: "Dashakarma Grihoprobesh Full Kit",
         category: "Dashakarma",
         description: "Complete package for housewarming ceremony",
         image: "./images/grihoprobesh.jpg",
@@ -276,7 +276,7 @@ const products = [
     },
     {
         id: 34,
-        name: "JolKhabar Satyanarayan Puja Full Kit",
+        name: "Dashakarma Satyanarayan Puja Full Kit",
         category: "Dashakarma",
         description: "Items for Satyanarayan puja ceremony",
         image: "./images/sattanarayn.jpg",
@@ -284,7 +284,7 @@ const products = [
     },
     {
         id: 35,
-        name: "JolKhabar Jagadhatri Puja Full Kit",
+        name: "Dashakarma Jagadhatri Puja Full Kit",
         category: "Dashakarma",
         description: "Items for Jagadhatri puja ceremony",
         image: "./images/jagadhatri.jpg",
@@ -292,7 +292,7 @@ const products = [
     },
     {
         id: 36,
-        name: "JolKhabar Laxmi Puja Full Kit",
+        name: "Dashakarma Laxmi Puja Full Kit",
         category: "Dashakarma",
         description: "Items for Laxmi puja ceremony",
         image: "./images/laxmi.jpg",
@@ -300,7 +300,7 @@ const products = [
     },
     {
         id: 37,
-        name: "JolKhabar Kartik Puja Full Kit",
+        name: "Dashakarma Kartik Puja Full Kit",
         category: "Dashakarma",
         description: "Items for Kartik puja ceremony",
         image: "./images/kartik.jpg",
@@ -308,7 +308,7 @@ const products = [
     },
     {
         id: 38,
-        name: "JolKhabar Ashtami Puja Full Kit",
+        name: "Dashakarma Ashtami Puja Full Kit",
         category: "Dashakarma",
         description: "Items for Ashtami puja ceremony",
         image: "./images/ostomi.jpg",

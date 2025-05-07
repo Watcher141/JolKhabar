@@ -1,0 +1,4 @@
+Contact: mailto:security@jolkhabar.com
+Expires: 2026-05-06T07:30:00Z
+Policy: https://jolkhabar.com/security-policy
+Preferred-Languages: en, bn

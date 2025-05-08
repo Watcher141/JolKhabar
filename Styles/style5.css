@@ -77,10 +77,15 @@ footer {
 .help .contact-icon {
     display: inline-block;
     margin-right: 8px;
-    width: 16px;
-    height: 16px;
+    width: 20px; /* Default size, will apply to WhatsApp */
+    height: 20px; /* Default size, will apply to WhatsApp */
     vertical-align: middle;
     object-fit: contain;
+}
+
+.help .contact-icon[alt="Call"] {
+    width: 17px; /* Slightly smaller for the call icon */
+    height: 17px; /* Slightly smaller for the call icon */
 }
 
 .footer-logos {

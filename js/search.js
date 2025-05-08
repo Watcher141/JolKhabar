@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageTransition = document.createElement('div');
     pageTransition.className = 'page-transition';
     document.body.appendChild(pageTransition);
+
+    // Event listener for when the page is shown (e.g., on load, or when navigating back)
+    window.addEventListener('pageshow', function(event) {
+        // Ensure the transition is not active when the page is displayed
+        if (pageTransition) {
+            pageTransition.classList.remove('active');
+        }
+    });
     
     // SECURITY: Add sanitization function for XSS protection
     function sanitizeHTML(text) {

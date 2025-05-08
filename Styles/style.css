@@ -523,14 +523,46 @@ button:hover {
   }
 
   .chal-section button {
+    padding: 5px 10px; /* This was a more specific rule, will be overridden below if it applies to an explore button */
+    font-size: 0.8rem;
+  }
+
+  button { /* General button styling for mobile, explore buttons will get more specific styling */
     padding: 5px 10px;
     font-size: 0.8rem;
+    bottom: 5px;
+  }
+
+  /* Apply opacity and reduced size to the Explore button elements themselves for specified sections */
+  .achar-section button,
+  .aamsotto-section button,
+  .chanachur-section button,
+  .chatni-section button,
+  .kasundi-section button,
+  .chal-section button, /* This will override the .chal-section button rule above for explore buttons */
+  .nolen-gur-section button,
+  .doshokorma-section button {
+    opacity: 0.7;
+    padding: 4px 8px; /* Reduced padding by approx 15% */
+    font-size: 0.68rem; /* Reduced font-size by approx 15% */
   }
 
   button {
     padding: 5px 10px;
     font-size: 0.8rem;
     bottom: 5px;
+  }
+
+  /* Apply opacity to the button elements themselves for specified sections */
+  .achar-section button,
+  .aamsotto-section button,
+  .chanachur-section button,
+  .chatni-section button,
+  .kasundi-section button,
+  .chal-section button,
+  .nolen-gur-section button,
+  .doshokorma-section button {
+    opacity: 0.7;
   }
 }
 

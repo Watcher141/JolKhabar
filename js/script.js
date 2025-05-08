@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
 let preveiwContainer = document.querySelector('.products-preview');
 let previewBox = preveiwContainer.querySelectorAll('.preview');
 
+// Create page transition overlay if it doesn't exist (for script.js specific usage)
+let pageTransition;
+if (!document.querySelector('.page-transition')) {
+    pageTransition = document.createElement('div');
+    pageTransition.className = 'page-transition';
+    document.body.appendChild(pageTransition);
+} else {
+    pageTransition = document.querySelector('.page-transition');
+}
+
+// Event listener for when the page is shown (e.g., on load, or when navigating back)
+window.addEventListener('pageshow', function(event) {
+    // Ensure the transition is not active when the page is displayed
+    if (pageTransition) {
+        pageTransition.classList.remove('active');
+    }
+});
+
 // Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
@@ -70,6 +88,21 @@ document.querySelectorAll('.products-container .product').forEach(product => {
             let target = preview.getAttribute('data-target');
             if (name == target) {
                 preview.classList.add('active');
+                // Add event listeners to buttons within the active preview
+                // Updated selector to include .check-availability for "View Product" buttons
+                const previewButtons = preview.querySelectorAll('.buy-now, .details-btn, .check-availability');
+                previewButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        if (pageTransition) {
+                            pageTransition.classList.add('active');
+                        }
+                        const href = this.getAttribute('href');
+                        setTimeout(function() {
+                            window.location.href = href;
+                        }, 400); // Match CSS animation duration
+                    });
+                });
             }
         });
     };

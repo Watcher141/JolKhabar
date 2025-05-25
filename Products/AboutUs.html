@@ -4,375 +4,634 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - JOLKHABAR</title>
-  <link rel="stylesheet" href="../Styles/style.css" />
-  <link rel="stylesheet" href="../Styles/search.css" />
-  <link rel="stylesheet" href="../Styles/style5.css" />
-  <link rel="stylesheet" href="../Styles/aboutus.css" />
+  <style>
+    :root {
+      --primary-bg: #f5e6d3;
+      --primary-brown: #8b4513;
+      --secondary-brown: #a0522d;
+      --accent: #fff8f0;
+      --white: #fff;
+      --shadow: 0 4px 15px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --transition: 0.3s cubic-bezier(.4,2,.6,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--primary-bg);
+      color: #3d2b1f;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      background: var(--primary-brown);
+      color: var(--white);
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1.5rem;
+      position: relative;
+      gap: 2rem;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .navbar-logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: var(--white);
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .navbar-logo span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: var(--white);
+    }    .nav-links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      transition: background var(--transition), color var(--transition);
+      font-size: 0.9rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .nav-links a.home-link {
+      background: var(--secondary-brown);
+      font-weight: bold;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: #fff;
+      color: var(--primary-brown);
+    }    /* Hamburger for mobile */
+    .nav-toggle, .nav-close {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.8rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    @media (min-width: 1200px) {
+      .nav-links {
+        gap: 1.2rem;
+      }
+      .nav-links a {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+      }
+    }    @media (max-width: 1024px) {
+      .navbar-container {
+        gap: 1.5rem;
+      }
+      .nav-links {
+        gap: 0.6rem;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.35rem 0.7rem;
+      }
+    }
+    @media (max-width: 900px) {
+      .nav-links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        width: 280px;
+        background: var(--primary-brown);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem 1.5rem 1rem 1.5rem;
+        gap: 0.8rem;
+        transition: left var(--transition);
+        z-index: 1100;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
+      }
+      .nav-links.open {
+        left: 0;
+      }      .nav-links a {
+        width: 100%;
+        text-align: left;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+      .nav-toggle {
+        display: block;
+      }
+      .nav-close {
+        display: block;
+        align-self: flex-end;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+      }
+      /* Mobile overlay */
+      .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1050;
+      }
+      .nav-overlay.show {
+        display: block;
+      }
+    }    @media (max-width: 600px) {
+      .navbar-container {
+        padding: 0.5rem 1rem;
+        gap: 1rem;
+      }
+      .navbar-logo span {
+        font-size: 1.2rem;
+      }
+      .nav-links {
+        width: 100%;
+        left: -100%;
+        padding: 1.5rem 1rem;
+      }
+      .nav-links a {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.95rem;
+      }
+    }    /* HERO */
+    .hero {
+      margin-top: 70px;
+      min-height: 65vh;
+      background: url('../Assets/jolbanner.jpg') center/cover no-repeat;
+      position: relative;
+      box-shadow: var(--shadow);
+      background-attachment: fixed;
+    }
+    /* MAIN CONTENT */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1rem 1rem 1rem;
+    }
+    .about-section {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+      padding: 2.5rem 2rem;
+      animation: fadeIn 1.2s both;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-section h2 {
+      color: var(--primary-brown);
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid var(--secondary-brown);
+      padding-left: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .about-section p {
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+      color: #4b2e1a;
+    }
+    .impact-grid {
+      display: flex;
+      gap: 2rem;
+      margin: 2rem 0 0 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .impact-card {
+      background: var(--accent);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(139,69,19,0.08);
+      padding: 1.5rem 2rem;
+      min-width: 180px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: popIn 0.7s both;
+    }
+    .impact-card h3 {
+      font-size: 2.2rem;
+      color: var(--primary-brown);
+      margin-bottom: 0.3rem;
+      font-weight: bold;
+    }
+    .impact-card p {
+      color: #6d4c2a;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .impact-card:hover {
+      transform: translateY(-8px) scale(1.04) rotate(-1deg);
+      box-shadow: 0 8px 24px rgba(139,69,19,0.13);
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.8);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    /* GALLERY */
+    .gallery-section {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 2.5rem;
+      padding: 2.5rem 2rem;
+      animation: fadeIn 1.2s both;
+    }    .gallery-section h2 {
+      color: var(--primary-brown);
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      border-left: 5px solid var(--secondary-brown);
+      padding-left: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }/* ENHANCED TEAM & WORKSPACE SECTION */
+    .team-workspace-section {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+      .team-member-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .team-member-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(139,69,19,0.1), transparent);
+      transition: left 0.6s;
+    }
+    
+    .team-member-card:hover::before {
+      left: 100%;
+    }
+    
+    .team-member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(139,69,19,0.15);
+    }
+    
+    /* Reverse layout for odd items */
+    .team-member-card.reverse {
+      flex-direction: row-reverse;
+    }
+    
+    .team-photo {
+      flex: 0 0 200px;
+      position: relative;
+    }
+    
+    .team-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-brown);
+      background: #fff;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 8px 20px rgba(139,69,19,0.2);
+    }
+    
+    .team-photo:hover img {
+      transform: scale(1.05) rotate(3deg);
+      filter: brightness(1.1);
+    }
+    
+    .team-info {
+      flex: 1;
+      padding: 1rem 0;
+    }
+    
+    .team-info h3 {
+      color: var(--primary-brown);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: relative;
+    }
+    
+    .team-info h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-brown);
+      border-radius: 2px;
+    }
+    
+    .team-info .role {
+      color: var(--secondary-brown);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .team-info p {
+      color: #4b2e1a;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    
+    .team-info .achievements {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+      .achievement-badge {
+      background: var(--accent);
+      color: var(--primary-brown);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--secondary-brown);
+    }/* Responsive */
+    @media (max-width: 900px) {
+      .navbar-container { flex-direction: row; }
+      .hero {
+        min-height: 50vh;
+        background-attachment: scroll;
+      }      main { padding: 1.2rem 0.2rem; }
+      .about-section, .gallery-section { padding: 1.2rem 0.7rem; }
+      .impact-grid { gap: 1rem; }
+      
+      /* Team & Workspace Mobile */
+      .team-member-card {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+      }
+      
+      .team-photo {
+        flex: none;
+      }
+      
+      .team-photo img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .team-info h3 {
+        font-size: 1.5rem;
+      }
+      
+      .team-info h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .team-info p {
+        font-size: 1rem;
+      }
+      
+      .achievements {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 600px) {      .hero {
+        min-height: 40vh;
+      }
+      .about-section, .gallery-section { margin-bottom: 1.2rem; }
+      
+      /* Team & Workspace Small Mobile */
+      .team-member-card {
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+      }
+      
+      .team-photo img {
+        width: 120px;
+        height: 120px;
+      }
+      
+      .team-info h3 {
+        font-size: 1.3rem;
+      }
+      
+      .team-info .role {
+        font-size: 1rem;
+      }
+      
+      .team-info p {
+        font-size: 0.95rem;
+      }
+      
+      .achievement-badge {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- NAVBAR -->
   <nav>
-    <input type="checkbox" id="sidebar-active">
-    <label for="sidebar-active" class="open-sidebar-button">
-      <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-      </svg>
-    </label>
-    <label id="overlay" for="sidebar-active"></label>
-
-    <div class="links-container">
-      <label for="sidebar-active" class="close-sidebar-button">
-        <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
-          <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-        </svg>
-      </label>
-
-      <!-- Home link positioned at the left -->
-      <a class="home-link" href="../index.html">Home</a>
-      
-      <!-- Search container positioned after Home button -->
-      <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search products...">
-        <div id="search-results"></div>
+    <div class="navbar-container">
+      <div class="navbar-logo">
+        <img src="../Jolkahabr Logo.png" alt="JOLKHABAR Logo" />
+        <span>JOLKHABAR</span>
       </div>
-      
-      <a href="../Products/AboutUs.html">About Us</a>
-      <a href="../Products/Product1.html">Achar</a>
-      <a href="../Products/Product2.html">Aamsotto</a>
-      <a href="../Products/Product3.html">Chanachur</a>
-      <a href="../Products/Product4.html">Chatni</a>
-      <a href="../Products/Product5.html">Kasundi</a>
-      <a href="../Products/Product7.html">Rice</a>
-      <a href="../Products/Product6.html">Delicacies</a>
-      <a href="../Products/Product8.html">Dashakarma</a>
+      <button class="nav-toggle" id="navToggle">&#9776;</button>      <div class="nav-links" id="navLinks">
+        <button class="nav-close" id="navClose">&times;</button>
+        <a class="home-link" href="../index.html">Home</a>
+        <a href="Product1.html">Achar</a>
+        <a href="Product2.html">Aamsotto</a>
+        <a href="Product3.html">Chanachur</a>
+        <a href="Product4.html">Chatni</a>
+        <a href="Product5.html">Kasundi</a>
+        <a href="Product7.html">Rice</a>
+        <a href="Product6.html">Delicacies</a>
+        <a href="Product8.html">Dashakarma</a>
+        <a href="AboutUs.html" class="active">About Us</a>      </div>
     </div>
-  </nav>
-
-  <!-- HERO -->
+    <div class="nav-overlay" id="navOverlay"></div>
+  </nav>  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>বাঙালির ঐতিহ্যের ঠিকানা</h1>
-      <p>Bengali culinary delights</p>
-    </div>
   </section>
-  
   <main>
-    <!-- STORY SECTION -->
-    <section class="story-section">
-      <h2>Our Purpose</h2>
-      
-      <h3>JOLKHABAR</h3>
-      <p>
-        The aim is to bring back the childhood memories, the taste, aroma and the traditional recipes, those used to be prepared by our grandmothers/mothers, and to serve Bangalis (bangali) staying away from Bengal. Hence, to maintain that authenticity every product of "JOLKHABAR" is handmade, ensuring the taste and aroma continues. None of the products of "JOLKHABAR" is developed by any machine/processing unit, and that's how the products of "JOLKHABAR" holds the same taste and aroma of those old homemade foods.
-      </p>
-      
-      <h3>DASHAKARMA</h3>
-      <p>
-        This objective is to continue our family heritage and tradition and to pass it on to our next generation, to take it forward, irrespective of whichever part of the world you are staying. Hence, to fulfil that desire and to overcome the inhibiting factors like arranging related Puja List (fordomala), Shop (dashakarma bhandar), Holy Book (panchali) this DASHAKARMA, now onwards is just a click away and will be delivered at your doorstep across the world. Let your family tradition continue, where ever you are.
-      </p>
-
-        <h3>Social impact</h3>
-      <p>
-        Each of the products of "JOLKHABAR" and “DASHAKARMA” is made and packed by the women of Rural Bengal. Through this initiative, the purpose of "JOLKHABAR" and “DASHAKARMA” is to create a new way of earning for the women and make them as self-reliant.
-      </p>
-    </section>
-
     <!-- ABOUT SECTION -->
     <section class="about-section">
-      
+      <h2>JOLKHABAR - Taste of Childhood</h2>
+      <p>
+        JOLKHABAR revives cherished memories through grandmothers' recipes, meticulously handcrafted without machines. Every product maintains the authentic taste and aroma of traditional Bengali home cooking. Our mission is to preserve Bengal’s culinary heritage and deliver it to your doorstep, wherever you are in the world.
+      </p>
       <div class="impact-grid">
         <div class="impact-card">
           <h3>100%</h3>
           <p>Handmade Products</p>
         </div>
         <div class="impact-card">
-          <h3>50+</h3>
-          <p>Traditional Recipes Preserved</p>
-        </div>
-        <div class="impact-card">
           <h3>10K+</h3>
           <p>Global Customers Served</p>
         </div>
+        <div class="impact-card">
+          <h3>50+</h3>
+          <p>Traditional Recipes Preserved</p>
+        </div>
       </div>
-    </section>
-    
-    <!-- GALLERY SECTION (Client/Workspace Images) -->
+    </section>    <!-- ENHANCED TEAM & WORKSPACE SECTION -->
     <section class="gallery-section">
       <h2>Our Team & Workspace</h2>
-      <div class="gallery-container">
-        <div class="scrolling-gallery" id="scrollingGallery">
-          <!-- Original gallery items -->
-          <div class="gallery-item" data-name="Bijoy" data-designation="Business Head" data-story="In search of IKIGAI (creating business and impacting lives).\nWith 15+ years of corporate experience, developing a business to empower women and make them self-reliant, to live with honor." data-img-src="../images/Contact_logos/Employee_images/Bijoy.jpg">
-            <img src="../images/Contact_logos/Employee_images/Bijoy.jpg" alt="Bijoy" class="employee-modal-trigger">
-            <p class="employee-name">Bijoy</p>
-            <p class="employee-designation">Business Head</p>
+      
+      <!-- Team Members with Enhanced Layout -->
+      <div class="team-workspace-section">
+        <!-- Maya Das - Left Photo, Right Content -->
+        <div class="team-member-card">
+          <div class="team-photo">
+            <img src="../images/ammemnikasundi.png" alt="Maya Das">
           </div>
-          <div class="gallery-item" data-name="Saima" data-designation="Admin & Accounts" data-story="An Accountancy Final Year student, engaged to fund and support younger Sister and Brother’s education." data-img-src="../images/Contact_logos/Employee_images/Saima.jpg">
-            <img src="../images/Contact_logos/Employee_images/Saima.jpg" alt="Saima" class="employee-modal-trigger">
-            <p class="employee-name">Saima</p>
-            <p class="employee-designation">Admin & Accounts</p>
+          <div class="team-info">
+            <h3>Maya Das</h3>
+            <div class="role">Master Pickle Maker</div>
+            <p>With over 15 years of experience in traditional Bengali pickle making, Maya Das is the heart of our pickle production. She learned the ancient art of pickle making from her grandmother and has perfected recipes that have been passed down through generations. Her expertise in selecting the finest ingredients and achieving the perfect balance of spices makes our pickles truly authentic.</p>
+            <div class="achievements">
+              <span class="achievement-badge">15+ Years Experience</span>
+              <span class="achievement-badge">Traditional Recipes</span>
+              <span class="achievement-badge">Quality Expert</span>
+            </div>
           </div>
-          <div class="gallery-item" data-name="Pinki" data-designation="PO & Distribution" data-story="A 8th passed women, was working as a Domestic Help, engaged for 2+ years now, to become self-independent and avoid domestic violence." data-img-src="../images/Contact_logos/Employee_images/Pinki.jpg">
-            <img src="../images/Contact_logos/Employee_images/Pinki.jpg" alt="Pinki" class="employee-modal-trigger">
-            <p class="employee-name">Pinki</p>
-            <p class="employee-designation">PO & Distribution</p>
-          </div>
-          <div class="gallery-item" data-name="Puja" data-designation="E-Commerce Team" data-story="A single mother, engaged to continue and support her daughter’s education, saving to have her own home someday." data-img-src="../images/Contact_logos/Employee_images/Puja.jpg">
-            <img src="../images/Contact_logos/Employee_images/Puja.jpg" alt="Puja" class="employee-modal-trigger">
-            <p class="employee-name">Puja</p>
-            <p class="employee-designation">E-Commerce Team</p>
-          </div>
-          <div class="gallery-item" data-name="Smriti" data-designation="E-Commerce Team" data-story="A BSc Graduate, engaged to financially support her father to run the family." data-img-src="../images/Contact_logos/Employee_images/Smriti.jpg">
-            <img src="../images/Contact_logos/Employee_images/Smriti.jpg" alt="Smriti" class="employee-modal-trigger">
-            <p class="employee-name">Smriti</p>
-            <p class="employee-designation">E-Commerce Team</p>
-          </div>
-          <div class="gallery-item" data-name="Pompa" data-designation="PO & Distribution" data-story="Engaged to support her 2 son’s education and saving to start her own business in near future." data-img-src="../images/Contact_logos/Employee_images/Pompa.jpg">
-            <img src="../images/Contact_logos/Employee_images/Pompa.jpg" alt="Pompa" class="employee-modal-trigger">
-            <p class="employee-name">Pompa</p>
-            <p class="employee-designation">PO & Distribution</p>
-          </div>
-          <div class="gallery-item" data-name="Madhumita" data-designation="Labeling & Packaging" data-story="A 10th passed lady, deprived by in-laws, engaged to support son’s education and saving to have own house at native village." data-img-src="../images/Contact_logos/Employee_images/Madhumita.jpg">
-            <img src="../images/Contact_logos/Employee_images/Madhumita.jpg" alt="Madhumita" class="employee-modal-trigger">
-            <p class="employee-name">Madhumita</p>
-            <p class="employee-designation">Labeling & Packaging</p>
-          </div>
-          <div class="gallery-item" data-name="Sibasree" data-designation="Labeling & Packaging" data-story="A 12th passed girl, engaged to support her elderly ill parents and become self-independent." data-img-src="../images/Contact_logos/Employee_images/Sibasree.jpg">
-            <img src="../images/Contact_logos/Employee_images/Sibasree.jpg" alt="Sibasree" class="employee-modal-trigger">
-            <p class="employee-name">Sibasree</p>
-            <p class="employee-designation">Labeling & Packaging</p>
-          </div>
-          <div class="gallery-item" data-name="Sruti" data-designation="Support" data-story="A 12th passed young girl, engaged to support elderly parents and become self-independent to run her own expenses." data-img-src="../images/Contact_logos/Employee_images/Sruti.jpg">
-            <img src="../images/Contact_logos/Employee_images/Sruti.jpg" alt="Sruti" class="employee-modal-trigger">
-            <p class="employee-name">Sruti</p>
-            <p class="employee-designation">Support</p>
-          </div>
-          <div class="gallery-item" data-name="Jaydeb" data-designation="Operations" data-story="An efficient and hardworking gentleman who supports the team through outdoor fieldwork." data-img-src="../images/Contact_logos/Employee_images/Jaydeb.jpg">
-            <img src="../images/Contact_logos/Employee_images/Jaydeb.jpg" alt="Jaydeb" class="employee-modal-trigger">
-            <p class="employee-name">Jaydeb</p>
-            <p class="employee-designation">Operations</p>
-          </div>
+        </div>
 
-          <!-- Clone of items for seamless scrolling -->
-          <div class="gallery-item" data-name="Bijoy" data-designation="Business Head" data-story="In search of IKIGAI (creating business and impacting lives).\nWith 15+ years of corporate experience, developing a business to empower women and make them self-reliant, to live with honor." data-img-src="../images/Contact_logos/Employee_images/Bijoy.jpg">
-            <img src="../images/Contact_logos/Employee_images/Bijoy.jpg" alt="Bijoy" class="employee-modal-trigger">
-            <p class="employee-name">Bijoy</p>
-            <p class="employee-designation">Business Head</p>
+        <!-- Priya Roy - Right Photo, Left Content -->
+        <div class="team-member-card reverse">
+          <div class="team-photo">
+            <img src="../images/chanachurr.png" alt="Priya Roy">
           </div>
-          <div class="gallery-item" data-name="Saima" data-designation="Admin & Accounts" data-story="An Accountancy Final Year student, engaged to fund and support younger Sister and Brother’s education." data-img-src="../images/Contact_logos/Employee_images/Saima.jpg">
-            <img src="../images/Contact_logos/Employee_images/Saima.jpg" alt="Saima" class="employee-modal-trigger">
-            <p class="employee-name">Saima</p>
-            <p class="employee-designation">Admin & Accounts</p>
+          <div class="team-info">
+            <h3>Priya Roy</h3>
+            <div class="role">Traditional Sweet Specialist</div>
+            <p>Priya Roy is our master confectioner who specializes in creating traditional Bengali sweets and delicacies. Her innovative approach while maintaining authentic flavors has earned her recognition throughout the region. She oversees the production of our premium sweet products including Nolen Gur and other seasonal specialties, ensuring each batch meets our highest standards.</p>
+            <div class="achievements">
+              <span class="achievement-badge">Sweet Specialist</span>
+              <span class="achievement-badge">Innovation Leader</span>
+              <span class="achievement-badge">Regional Recognition</span>
+            </div>
           </div>
-          <div class="gallery-item" data-name="Pinki" data-designation="PO & Distribution" data-story="A 8th passed women, was working as a Domestic Help, engaged for 2+ years now, to become self-independent and avoid domestic violence." data-img-src="../images/Contact_logos/Employee_images/Pinki.jpg">
-            <img src="../images/Contact_logos/Employee_images/Pinki.jpg" alt="Pinki" class="employee-modal-trigger">
-            <p class="employee-name">Pinki</p>
-            <p class="employee-designation">PO & Distribution</p>
+        </div>
+
+        <!-- Rina Ghosh - Left Photo, Right Content -->
+        <div class="team-member-card">
+          <div class="team-photo">
+            <img src="../images/kulerachar.jpg" alt="Rina Ghosh">
           </div>
-          <div class="gallery-item" data-name="Puja" data-designation="E-Commerce Team" data-story="A single mother, engaged to continue and support her daughter’s education, saving to have her own home someday." data-img-src="../images/Contact_logos/Employee_images/Puja.jpg">
-            <img src="../images/Contact_logos/Employee_images/Puja.jpg" alt="Puja" class="employee-modal-trigger">
-            <p class="employee-name">Puja</p>
-            <p class="employee-designation">E-Commerce Team</p>
+          <div class="team-info">
+            <h3>Rina Ghosh</h3>
+            <div class="role">Packaging & Operations Lead</div>
+            <p>Rina Ghosh leads our packaging and operations team with meticulous attention to detail. She ensures that every product is carefully packaged to preserve freshness and maintain quality during shipping. Her efficient management of our supply chain and logistics has enabled us to serve customers worldwide while maintaining the integrity of our handcrafted products.</p>
+            <div class="achievements">
+              <span class="achievement-badge">Operations Expert</span>
+              <span class="achievement-badge">Global Shipping</span>
+              <span class="achievement-badge">Quality Assurance</span>
+            </div>
           </div>
-          <div class="gallery-item" data-name="Smriti" data-designation="E-Commerce Team" data-story="A BSc Graduate, engaged to financially support her father to run the family." data-img-src="../images/Contact_logos/Employee_images/Smriti.jpg">
-            <img src="../images/Contact_logos/Employee_images/Smriti.jpg" alt="Smriti" class="employee-modal-trigger">
-            <p class="employee-name">Smriti</p>
-            <p class="employee-designation">E-Commerce Team</p>
+        </div>
+
+        <!-- Soma Sen - Right Photo, Left Content -->
+        <div class="team-member-card reverse">
+          <div class="team-photo">
+            <img src="../images/laxmi.jpg" alt="Soma Sen">
           </div>
-          <div class="gallery-item" data-name="Pompa" data-designation="PO & Distribution" data-story="Engaged to support her 2 son’s education and saving to start her own business in near future." data-img-src="../images/Contact_logos/Employee_images/Pompa.jpg">
-            <img src="../images/Contact_logos/Employee_images/Pompa.jpg" alt="Pompa" class="employee-modal-trigger">
-            <p class="employee-name">Pompa</p>
-            <p class="employee-designation">PO & Distribution</p>
-          </div>
-          <div class="gallery-item" data-name="Madhumita" data-designation="Labeling & Packaging" data-story="A 10th passed lady, deprived by in-laws, engaged to support son’s education and saving to have own house at native village." data-img-src="../images/Contact_logos/Employee_images/Madhumita.jpg">
-            <img src="../images/Contact_logos/Employee_images/Madhumita.jpg" alt="Madhumita" class="employee-modal-trigger">
-            <p class="employee-name">Madhumita</p>
-            <p class="employee-designation">Labeling & Packaging</p>
-          </div>
-          <div class="gallery-item" data-name="Sibasree" data-designation="Labeling & Packaging" data-story="A 12th passed girl, engaged to support her elderly ill parents and become self-independent." data-img-src="../images/Contact_logos/Employee_images/Sibasree.jpg">
-            <img src="../images/Contact_logos/Employee_images/Sibasree.jpg" alt="Sibasree" class="employee-modal-trigger">
-            <p class="employee-name">Sibasree</p>
-            <p class="employee-designation">Labeling & Packaging</p>
-          </div>
-          <div class="gallery-item" data-name="Sruti" data-designation="Support" data-story="A 12th passed young girl, engaged to support elderly parents and become self-independent to run her own expenses." data-img-src="../images/Contact_logos/Employee_images/Sruti.jpg">
-            <img src="../images/Contact_logos/Employee_images/Sruti.jpg" alt="Sruti" class="employee-modal-trigger">
-            <p class="employee-name">Sruti</p>
-            <p class="employee-designation">Support</p>
-          </div>
-          <div class="gallery-item" data-name="Jaydeb" data-designation="Operations" data-story="An efficient and hardworking gentleman who supports the team through outdoor fieldwork." data-img-src="../images/Contact_logos/Employee_images/Jaydeb.jpg">
-            <img src="../images/Contact_logos/Employee_images/Jaydeb.jpg" alt="Jaydeb" class="employee-modal-trigger">
-            <p class="employee-name">Jaydeb</p>
-            <p class="employee-designation">Operations</p>
+          <div class="team-info">
+            <h3>Soma Sen</h3>
+            <div class="role">Quality Control Manager</div>
+            <p>Soma Sen is our dedicated quality control manager who ensures every product meets our stringent quality standards. With her keen eye for detail and extensive knowledge of food safety protocols, she maintains the consistency and excellence that our customers expect. Her commitment to quality has helped establish JOLKHABAR as a trusted brand in traditional Bengali foods.</p>
+            <div class="achievements">
+              <span class="achievement-badge">Quality Control</span>
+              <span class="achievement-badge">Food Safety Expert</span>
+              <span class="achievement-badge">Brand Excellence</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
+  </main>  <script>
+    // Mobile nav logic with improved UX
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const navClose = document.getElementById('navClose');
+    const navOverlay = document.getElementById('navOverlay');
     
-    <!-- TEAM SECTION -->
-  </main>
-  
-  <!-- Employee Modal -->
-  <div id="employeeModal" class="modal" style="display: none;">
-    <div class="modal-content">
-      <span class="close-button">&times;</span>
-      <img id="modalEmployeeImage" src="" alt="Employee Image" class="modal-employee-img-circle">
-      <h3 id="modalEmployeeName"></h3>
-      <p id="modalEmployeeDesignation"></p>
-      <p id="modalEmployeeStory"></p>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div>
-        <div class="footer-logos">
-          <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
-            <img src="../facebook-icon.png" alt="Facebook" onerror="this.style.display='none'">
-          </a>
-          <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
-            <img src="../instagram-icon.png" alt="Instagram" onerror="this.style.display='none'">
-          </a>
-          <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
-            <img src="../YoutubeLogo.png" alt="YouTube" onerror="this.style.display='none'">
-          </a>
-        </div>
-        <div class="brand-footer">
-          <img src="../images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" onerror="this.style.display='none'">
-        </div>
-      </div>
-
-      <div class="footer-middle">
-        <a href="../Products/Places.html" class="availability-btn">Places to find us</a>
-      </div>
-
-      <div class="help">
-        <strong>Help & Support</strong>
-        <span>
-          <img src="../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
-          Kolkata, West Bengal
-        </span>
-        <a href="tel:+919674627460">
-          <img src="../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call" onerror="this.style.display='none'">
-          +91 96746 27460
-        </a>
-        <a href="https://wa.me/919674627460" target="_blank" rel="noopener noreferrer">
-          <img src="../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp" onerror="this.style.display='none'">
-          +91 96746 27460
-        </a>
-        <a href="mailto:bk24sd@gmail.com">
-          <img src="../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email" onerror="this.style.display='none'">
-          bk24sd@gmail.com
-        </a>
-        <span class="copyright">&copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.</span>
-      </div>
-    </div>
-  </footer>
-  
-  <!-- Back to top button -->
-  <a href="#" class="back-to-top" aria-label="Back to top" style="display: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
-    </svg>
-  </a>
-  
-  <script>
-    // Enhanced gallery animation with pause at ends
-    const gallery = document.getElementById('scrollingGallery');
-    if (gallery) {
-        let scrollAmount = 0;
-        let scrollDir = 1;
-        const scrollSpeed = 0.8; // Speed: pixels per frame. Adjust for faster/slower scroll.
-        const pauseDuration = 1500; // Pause at ends: milliseconds. Adjust for longer/shorter pause.
-
-        function animateScroll() {
-            // If the gallery has been hidden or removed, or no longer in the document, stop the animation
-            if (!document.body.contains(gallery) || gallery.offsetParent === null) {
-                return;
-            }
-
-            // Check if gallery has content to scroll
-            if (gallery.scrollWidth <= gallery.clientWidth) {
-                // No scrolling needed if content is not wider than container.
-                // Still request a frame to re-check later if content/visibility changes.
-                requestNextFrame(); 
-                return;
-            }
-
-            scrollAmount += scrollDir * scrollSpeed;
-            let needsPause = false;
-
-            if (scrollDir === 1 && scrollAmount >= gallery.scrollWidth - gallery.clientWidth) {
-                scrollAmount = gallery.scrollWidth - gallery.clientWidth; // Clamp to end
-                scrollDir = -1;
-                needsPause = true;
-            } else if (scrollDir === -1 && scrollAmount <= 0) {
-                scrollAmount = 0; // Clamp to start
-                scrollDir = 1;
-                needsPause = true;
-            }
-            
-            // Ensure scrollAmount doesn't go out of bounds due to large scrollSpeed or other factors
-            if (scrollAmount > gallery.scrollWidth - gallery.clientWidth) {
-                scrollAmount = gallery.scrollWidth - gallery.clientWidth;
-            } else if (scrollAmount < 0) {
-                scrollAmount = 0;
-            }
-            
-            gallery.scrollTo({ left: scrollAmount, behavior: 'auto' });
-
-            if (needsPause) {
-                setTimeout(requestNextFrame, pauseDuration);
-            } else {
-                requestNextFrame();
-            }
-        }
-
-        function requestNextFrame() {
-            // Ensure animation only runs if the gallery is still part of the document and visible
-            if (document.body.contains(gallery) && gallery.offsetParent !== null) {
-                 requestAnimationFrame(animateScroll);
-            }
-        }
-
-        // Start the animation
-        requestNextFrame();
+    function openNav() {
+      navLinks.classList.add('open');
+      navOverlay.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
     }
     
-    // Add animation delay to impact cards and team members
-    const impactCards = document.querySelectorAll('.impact-card');
-    const teamMembers = document.querySelectorAll('.team-member');
-    
-    impactCards.forEach((card, index) => {
-      card.style.animationDelay = `${index * 0.2}s`;
-    });
-    
-    teamMembers.forEach((member, index) => {
-      member.style.animationDelay = `${index * 0.2}s`;
-    });
-    
-    // Add scroll reveal effect
-    function revealOnScroll() {
-      const sections = document.querySelectorAll('.about-section, .gallery-section, .team-section');
-      
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        if (sectionTop < windowHeight - 100) {
-          section.style.opacity = "1";
-          section.style.transform = "translateY(0)";
-        }
-      });
+    function closeNav() {
+      navLinks.classList.remove('open');
+      navOverlay.classList.remove('show');
+      document.body.style.overflow = 'auto'; // Restore scrolling
     }
     
-    window.addEventListener('load', revealOnScroll);
-    window.addEventListener('scroll', revealOnScroll);
+    navToggle && navToggle.addEventListener('click', openNav);
+    navClose && navClose.addEventListener('click', closeNav);
+    navOverlay && navOverlay.addEventListener('click', closeNav);
+    
+    // Close nav when clicking on a link (for mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', closeNav);
+    });
+      // Close nav on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        closeNav();
+      }
+    });
   </script>
-  <!-- Adding search functionality -->
-  <script src="../js/products.js"></script>
-  <script src="../js/search.js"></script>
-  <script src="../js/backToTop.js"></script>
-  <script src="../js/modal.js"></script> <!-- Added new script for modal -->
 </body>
 </html>

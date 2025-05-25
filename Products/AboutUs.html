@@ -135,15 +135,36 @@
     .nav-links a:hover, .nav-links a.active {
       background: var(--accent-color);
       color: var(--text-color);
-    }    /* Hamburger for mobile */    .nav-toggle, .nav-close {
+    }    /* Hamburger for mobile */    .open-sidebar-button {
       display: none;
       background: none;
       border: none;
-      color: var(--text-color);
-      font-size: 1.8rem;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 8px;
     }
+
+    .open-sidebar-button svg {
+      fill: var(--primary-brown);
+      width: 32px;
+      height: 32px;
+    }
+
+    .close-sidebar-button {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      margin-bottom: 1rem;
+      align-self: flex-end;
+    }
+
+    .close-sidebar-button svg {
+      fill: var(--white);
+      width: 32px;
+      height: 32px;
+    }
+
     @media (min-width: 1200px) {
       .nav-links {
         gap: 1.2rem;
@@ -190,15 +211,24 @@
         font-size: 1rem;
         border-radius: 8px;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-      .nav-toggle {
+      }      .open-sidebar-button {
         display: block;
       }
-      .nav-close {
+      .close-sidebar-button {
         display: block;
-        align-self: flex-end;
-        margin-bottom: 1rem;
-        font-size: 2rem;
+      }
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1050;
+      }
+      #sidebar-active:checked ~ #overlay {
+        display: block;
       }
       /* Mobile overlay */
       .nav-overlay {
@@ -233,39 +263,46 @@
       }
     }    /* HERO */
     .hero {
-      margin-top: 60px;
-      line-height: 0;
-      font-size: 0;
+      margin-top: var(--nav-height, 60px);
+      width: 100%;
+      background: var(--primary-bg);
+      overflow: hidden;
     }
+    
     .hero img {
       width: 100%;
       height: auto;
       display: block;
-      margin: 0;
-      padding: 0;
+      object-fit: cover;
     }
+    
     @media (min-width: 769px) {
       .hero {
         padding: 1rem;
-        line-height: normal;
-        font-size: initial;
-        background: var(--primary-bg);
         display: flex;
         justify-content: center;
       }
+      
       .hero img {
         max-width: 1200px;
         border-radius: var(--radius);
         box-shadow: var(--shadow);
         transition: transform 0.3s ease;
       }
+      
       .hero img:hover {
         transform: scale(1.02);
       }
     }
+    
     @media (max-width: 768px) {
       .hero {
-        margin-top: 55px;
+        margin-top: var(--nav-height, 55px);
+      }
+      
+      .hero img {
+        margin: 0;
+        border-radius: 0;
       }
     }
     /* MAIN CONTENT */
@@ -471,11 +508,9 @@
       font-size: 0.9rem;
       font-weight: 500;
       border: 1px solid var(--secondary-brown);
-    }/* Responsive */
-    @media (max-width: 900px) {
+    }/* Responsive */    @media (max-width: 900px) {
       .navbar-container { flex-direction: row; }
       .hero {
-        min-height: 50vh;
         background-attachment: scroll;
       }      main { padding: 1.2rem 0.2rem; }
       .about-section, .gallery-section { padding: 1.2rem 0.7rem; }
@@ -514,10 +549,7 @@
       .achievements {
         justify-content: center;
       }
-    }
-    @media (max-width: 600px) {      .hero {
-        min-height: 40vh;
-      }
+    }    @media (max-width: 600px) {
       .about-section, .gallery-section { margin-bottom: 1.2rem; }
       
       /* Team & Workspace Small Mobile */
@@ -557,7 +589,7 @@
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="32"
-        viewBox="0 -960 960 960"
+        viewBox="http://www.w3.org/2000/svg"
         width="32"
       >
         <path
@@ -597,16 +629,27 @@
         <button id="search-button" style="display: none;">Search</button>
         <div id="search-results"></div>
       </div>
-    </div>  </nav><!-- HERO -->
+    </div>  </nav>
+  <!-- HERO -->
   <section class="hero">
-    <img src="../images/Employees_images/Whole_team_image.png" alt="Jolkhabar Team" />
+    <img src="../images/Employees_images/Whole_team_image.png" alt="Jolkhabar Team" loading="eager">
   </section>
   <main>
     <!-- ABOUT SECTION -->
     <section class="about-section">
-      <h2>JOLKHABAR - Taste of Childhood</h2>
+      <h2>JOLKHABAR</h2>
       <p>
-        JOLKHABAR revives cherished memories through grandmothers' recipes, meticulously handcrafted without machines. Every product maintains the authentic taste and aroma of traditional Bengali home cooking. Our mission is to preserve Bengal’s culinary heritage and deliver it to your doorstep, wherever you are in the world.
+        The aim is to bring back the childhood memories, the taste, aroma and the traditional recipes, those used to be prepared by our grandmothers/mothers, and to serve Bangalis(bangali) staying away from Bengal. Hence, to maintain that authenticity every product of "JOLKHABAR" is handmade, ensuring the taste and aroma continues. None of the products of "JOLKHABAR" is developed by any machine/processing unit, and that's how the products of "JOLKHABAR" holds the same taste and aroma of those old homemade foods.
+      </p>
+      
+      <h2>DASHAKARMA</h2>
+      <p>
+        This objective is to continue our family heritage and tradition and to pass it on to our next generation, to take it forward, irrespective of whichever part of the world you are staying. Hence, to fulfil that desire and to overcome the inhibiting factors like arranging related Puja List (fordomala), Shop (dashakarma bhandar), Holy Book (panchali) this DASHAKARMA, now onwards is just a click away and will be delivered at your doorstep across the world. Let your family tradition continue, where ever you are.
+      </p>
+
+      <h2>BEHIND THE SCENE</h2>
+      <p>
+        Each of the products of "JOLKHABAR" and "DASHAKARMA" is made and packed by the women of Rural Bengal. Through this initiative, the purpose of "JOLKHABAR" and "DASHAKARMA" is to create a new way of earning for the women and make them as self-reliant.
       </p>
       <div class="impact-grid">
         <div class="impact-card">

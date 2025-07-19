@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../../../favicon/site.webmanifest">
+    <link rel="icon" href="../../../../favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#f05a28">
+    <meta name="theme-color" content="#ffffff">
+    
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aam Misti Achar - JolKhabar</title>
   <link rel="stylesheet" href="../../Styles/style.css">
   <link rel="stylesheet" href="../../Styles/style4.css">
   <link rel="stylesheet" href="../../Styles/style5.css">
+  <link rel="stylesheet" href="../../Styles/share.css">
   <script src="../../scripts/product.js" defer></script>
   <script src="../../js/backToTop.js" defer></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="../../js/Share.js" defer></script>
 </head>
 <body>
   <header>
@@ -65,7 +78,31 @@
         </p>
         <div class="button-container">
           <a href="../Places.html" class="availability-btn">Check Availability</a>
+          
+          <!-- Social Share Menu -->
+          <div class="menu">
+            <div class="toggle">
+              <ion-icon name="share-social"></ion-icon>
+            </div>
+            
+            <li style="--i:0;--clr:#1877f2">
+              <a href="javascript:void(0);" onclick="shareOnFacebook()"><ion-icon name="logo-facebook"></ion-icon></a>
+            </li>
+            <li style="--i:1;--clr:#25d366">
+              <a href="javascript:void(0);" onclick="shareOnWhatsapp()"><ion-icon name="logo-whatsapp"></ion-icon></a>
+            </li>
+            <li style="--i:2;--clr:#1da1f2">
+              <a href="javascript:void(0);" onclick="shareOnTwitter()"><ion-icon name="logo-twitter"></ion-icon></a>
+            </li>
+            <li style="--i:3;--clr:#FF5733">
+              <a href="mailto:?subject=Check out this amazing product from JolKhabar!&body=I found this great product on JolKhabar: Aam Misti Achar. Check it out here: " + window.location.href><ion-icon name="mail"></ion-icon></a>
+            </li>
+            <li style="--i:4;--clr:#0a66c2">
+              <a href="javascript:void(0);" onclick="shareOnLinkedIn()"><ion-icon name="logo-linkedin"></ion-icon></a>
+            </li>
+          </div>
         </div>
+        
         <div class="highlights">
           <h3>Product Highlights:</h3>
           <ul>
@@ -138,6 +175,31 @@
         button.textContent = "Check Availability";
         button.style.backgroundColor = "#f05a28";
       }, 3000);
+    }
+
+    // Social sharing functions
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent("Check out this amazing JolKhabar product - Aam Misti Achar");
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${title}`, '_blank');
+    }
+
+    function shareOnWhatsapp() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent("Check out this amazing JolKhabar product - Aam Misti Achar: ");
+      window.open(`https://wa.me/?text=${text}${url}`, '_blank');
+    }
+
+    function shareOnTwitter() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent("Check out this amazing JolKhabar product - Aam Misti Achar");
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+    }
+
+    function shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent("Check out this amazing JolKhabar product - Aam Misti Achar");
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
     }
   </script>
 </body>

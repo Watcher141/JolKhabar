@@ -41,12 +41,19 @@ body {
 
 .container .products-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Set to 2 columns */
+  grid-template-columns: 1fr; /* Single column */
   gap: 2rem;
-  justify-content: space-evenly;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 20px;
+  padding: 0 1rem; /* Optional: add some horizontal padding */
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
 }
+
+
+
+
 
 @keyframes fadeIn {
   from {
@@ -315,12 +322,19 @@ body {
 }
 
 @media (max-width: 768px) {
-  .container .products-container {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); /* Adjusted for smaller screens */
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    padding: 0 1rem;
   }
 
   .products-preview .preview img {
     height: 20rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .products-container .product h3 {
+    font-size: 1rem;
   }
 }
 
@@ -329,22 +343,19 @@ body {
     font-size: 50%;
   }
 
-  .container {
-    padding: 2rem 1rem;
-  }
-
-  .container .products-container {
+  .products-container {
     grid-template-columns: 1fr;
     gap: 1rem;
+    padding: 1rem;
   }
 
-  .container .products-container .product {
+  .products-container .product {
     width: 100%;
     height: auto;
     padding: 2rem 1rem;
   }
 
-  .container .products-container .product img {
+  .products-container .product img {
     width: 100%;
     height: auto;
   }
@@ -353,7 +364,7 @@ body {
     width: 90%;
     max-width: 30rem;
     margin: 0.5rem;
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 15px;
   }
 
   .products-preview .preview img {
@@ -375,12 +386,13 @@ body {
   }
 
   .products-preview .preview .buttons a {
-    flex: 1 1 45%; /* Adjusted width */
-    padding: 0.8rem; /* Scaled down padding */
-    font-size: 0.8rem; /* Scaled down font size */
-    border-radius: 15px; /* Rounded corners */
+    flex: 1 1 45%;
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 15px;
   }
 }
+
 
 /* Banner styles */
 .banner {

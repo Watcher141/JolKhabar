@@ -41,12 +41,12 @@ body {
 
 .container .products-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column */
-  gap: 2rem;
-  width: 100%;
-  max-width: 100%;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 1.5rem;
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto 20px;
-  padding: 0 1rem; /* Optional: add some horizontal padding */
+  padding: 0 1rem;
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards;
 }
@@ -68,11 +68,11 @@ body {
 
 .container .products-container .product {
   text-align: center;
-  padding: 2.5rem 1.5rem; /* Scaled down */
+  padding: 1.5rem 1rem;
   background: #ffffff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  border-radius: 15px; /* Rounded corners */
+  border-radius: 12px;
   transition: all 0.3s ease;
   opacity: 0;
   animation: productAppear 0.5s ease-out forwards;
@@ -125,7 +125,12 @@ body {
 }
 
 .container .products-container .product img {
-  height: 20rem; /* Scaled down */
+  height: 16rem;
+  width: auto;
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
   transition: transform 0.5s ease;
 }
 
@@ -322,9 +327,10 @@ body {
 }
 
 @media (max-width: 768px) {
-  .products-container {
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  .container .products-container {
+    grid-template-columns: repeat(2, 1fr); /* Maintain 2 columns */
     padding: 0 1rem;
+    gap: 1rem;
   }
 
   .products-preview .preview img {
@@ -343,13 +349,13 @@ body {
     font-size: 50%;
   }
 
-  .products-container {
-    grid-template-columns: 1fr;
+  .container .products-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
     gap: 1rem;
     padding: 1rem;
   }
 
-  .products-container .product {
+  .container .products-container .product {
     width: 100%;
     height: auto;
     padding: 2rem 1rem;

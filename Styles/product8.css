@@ -361,9 +361,7 @@ body {
     padding: 0.1rem;
   }
 
-  .container .products-container .product img {
-    height: 200px;
-  }
+ 
 }
 
 @media (max-width: 576px) {
@@ -373,7 +371,7 @@ body {
   }
   
   .container .products-container .product img {
-    height: 180px;
+    height: 90px;
   }
 }
 

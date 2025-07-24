@@ -216,12 +216,34 @@
       text-align: left;
     }
 
+    .name-with-social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .linkedin-link {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .linkedin-icon {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.2s ease;
+    }
+
+    .linkedin-icon:hover {
+      transform: scale(1.1);
+    }
+
     .team-member-details h4 {
       color: var(--primary-brown);
       font-size: 1.4rem;
       margin-bottom: 0.3rem;
       font-weight: 600;
       line-height: 1.3;
+      margin-right: 0.5rem;
     }
 
     .team-member-details p {
@@ -267,6 +289,10 @@
       }
       .team-member-details p {
         font-size: 0.8rem;
+      }
+      .linkedin-icon {
+        width: 20px;
+        height: 20px;
       }
       .team-member-details p.bio {
         font-size: 0.85rem;
@@ -492,7 +518,12 @@
             <img src="../images/Employees_images/Bijoy.png" alt="Bijoy">
           </div>
           <div class="team-member-details">
-            <h4>Bijoy</h4>
+            <div class="name-with-social">
+              <h4>Bijoy</h4>
+              <a href="https://www.linkedin.com/in/bijay-kumar-sahoo-89815416/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <img src="../images/Contact_logos/linkedin.png" alt="LinkedIn" class="linkedin-icon" onerror="this.style.display='none'">
+              </a>
+            </div>
             <p>Business Head</p>
             <p class="bio">In search of IKIGAI (creating business and impacting lives). With 15+ years of corporate experience, developing a business to empower women and make them self-reliant, to live with honor.</p>
           </div>

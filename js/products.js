@@ -313,5 +313,109 @@ const products = [
         description: "Items for Ashtami puja ceremony",
         image: "./images/ostomi.jpg",
         detailsUrl: "./Products/product-details/coming-soon.html"
+    },
+    {
+        id: 39,
+        name: "Dashakarma Saraswati Puja Kit",
+        category: "Dashakarma",
+        description: "Complete kit for Saraswati puja with white flowers and sacred items",
+        image: "./images/Dashakarma_images/1Saraswati Puja Primary Image.jpeg",
+        detailsUrl: "./Products/product-details/saraswati-puja-kit.html"
+    },
+    {
+        id: 40,
+        name: "Dashakarma Nababarsha Kit",
+        category: "Dashakarma",
+        description: "Bengali New Year celebration essentials",
+        image: "./images/Dashakarma_images/2Nababarsha Kit Primary Image.jpeg",
+        detailsUrl: "./Products/product-details/nababarsha-kit.html"
+    },
+    {
+        id: 41,
+        name: "Dashakarma Janmastami Puja Kit",
+        category: "Dashakarma",
+        description: "Krishna worship essentials for Janmashtami",
+        image: "./images/Dashakarma_images/3Janmastami kit Primary image.png",
+        detailsUrl: "./Products/product-details/janmastami-puja-kit.html"
+    },
+    {
+        id: 42,
+        name: "Dashakarma Ganesh Puja Kit",
+        category: "Dashakarma",
+        description: "Eco-friendly Ganesh puja essentials",
+        image: "./images/Dashakarma_images/4Ganesh puja primary.png",
+        detailsUrl: "./Products/product-details/ganesh-puja-kit.html"
+    },
+    {
+        id: 43,
+        name: "Dashakarma Biswakarma Puja Kit",
+        category: "Dashakarma",
+        description: "Tool worship essentials for Vishwakarma puja",
+        image: "./images/Dashakarma_images/5Biswakarma puja primary .jpg",
+        detailsUrl: "./Products/product-details/biswakarma-puja-kit.html"
+    },
+    {
+        id: 44,
+        name: "Dashakarma Kojagori Laxmi Puja Kit",
+        category: "Dashakarma",
+        description: "Prosperity worship kit for Kojagori Laxmi puja",
+        image: "./images/Dashakarma_images/6Kojagori Laxmipuja primary.jpg",
+        detailsUrl: "./Products/product-details/kojagori-laxmi-puja-kit.html"
+    },
+    {
+        id: 45,
+        name: "Dashakarma Hom Kit",
+        category: "Dashakarma",
+        description: "Herbal havan samagri for purification rituals",
+        image: "./images/Dashakarma_images/11 Hom Kit Primary Image.jpeg",
+        detailsUrl: "./Products/product-details/hom-kit.html"
+    },
+    {
+        id: 46,
+        name: "Dashakarma Shiv Ratri Kit",
+        category: "Dashakarma",
+        description: "Complete puja essentials for Maha Shivratri worship",
+        image: "./images/Dashakarma_images/shiv ratri primary image.jpg",
+        detailsUrl: "./Products/product-details/shiv-ratri-kit.html"
+    },
+    {
+        id: 47,
+        name: "Dashakarma Basanti Puja Kit",
+        category: "Dashakarma",
+        description: "Spring celebration essentials for Dol Purnima",
+        image: "./images/Dashakarma_images/1Saraswati Puja Primary Image.jpeg",
+        detailsUrl: "./Products/product-details/basanti-puja-kit.html"
+    },
+    {
+        id: 48,
+        name: "Dashakarma Nava Ratri Kit",
+        category: "Dashakarma",
+        description: "Nine-day Durga worship essentials",
+        image: "./images/Dashakarma_images/navaratri primary image.jpeg",
+        detailsUrl: "./Products/product-details/nava-ratri-kit.html"
+    },
+    {
+        id: 49,
+        name: "Dashakarma Annapurna Puja Kit",
+        category: "Dashakarma",
+        description: "Food goddess worship essentials for abundance",
+        image: "./images/Dashakarma_images/annapurna primary image.jpg",
+        detailsUrl: "./Products/product-details/annapurna-puja-kit.html"
+    },
+    {
+        id: 50,
+        name: "Dashakarma Akshay Tritiya Kit",
+        category: "Dashakarma",
+        description: "Auspicious day worship essentials for prosperity",
+        image: "./images/Dashakarma_images/akhay tritia primary image.jpg",
+        detailsUrl: "./Products/product-details/akshay-tritiya-kit.html"
+    },
+    {
+        id: 51,
+        name: "Dashakarma Manasha Puja Kit",
+        category: "Dashakarma",
+        description: "Snake goddess worship essentials for protection",
+        image: "./images/Dashakarma_images/manasha puja primary image.jpg",
+        detailsUrl: "./Products/product-details/manasha-puja-kit.html"
     }
 ];

@@ -40,8 +40,9 @@ body {
 }
 
 .container .products-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   width: 90%;
   max-width: 1200px;
@@ -68,7 +69,7 @@ body {
 
 .container .products-container .product {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 2rem;
   background: #ffffff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
@@ -76,6 +77,8 @@ body {
   transition: all 0.3s ease;
   opacity: 0;
   animation: productAppear 0.5s ease-out forwards;
+  width: 400px;
+  margin: 1.5rem;
 }
 
 @keyframes productAppear {
@@ -125,9 +128,8 @@ body {
 }
 
 .container .products-container .product img {
-  height: 16rem;
-  width: auto;
-  max-width: 90%;
+  height: 300px;
+  width: 100%;
   display: block;
   margin: 0 auto;
   object-fit: contain;
@@ -140,8 +142,9 @@ body {
 
 .container .products-container .product h3 {
   padding: 1rem 0;
-  font-size: 1rem; /* Decreased font size */
+  font-size: 1.5rem;
   color: #444;
+  margin-top: 1rem;
 }
 
 .container .products-container .product:hover h3 {

@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../favicon/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
-    <link rel="manifest" href="../../favicon/site.webmanifest">
-    <link rel="icon" href="../../favicon/favicon.ico">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="icon" href="/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#f05a28">
     <meta name="theme-color" content="#ffffff">
     <!-- Favicon -->
@@ -70,7 +70,7 @@
 
             <div class="product-info">
                 <h1 class="product-title">NOLEN GUR</h1>
-                <div class="rating">????? (4.9/5) <span style="color: #666">( 182 reviews )</span></div>
+                <div class="rating">★★★★★ (4.9/5) <span style="color: #666">( 182 reviews )</span></div>
 
                 <div class="brand">
                     <strong>Brand:</strong> JOLKHABAR
@@ -79,7 +79,7 @@
                 </div>
 
                 <p class="description">
-                    JOLKHABAR's Nolen Gur (Date Palm Jaggery) is the quintessential winter delicacy of Bengal, harvested from the sap of date palm trees during the winter months. This liquid gold offers a distinct caramel-like flavor with complex notes that transform ordinary desserts into extraordinary culinary experiences.
+                    JolKhabar Nolen Gur - Traditional Bengali date palm jaggery.
                 </p>
 
                 <div class="button-container">
@@ -89,12 +89,11 @@
                 <div class="highlights">
                     <h3>Product Highlights:</h3>
                     <ul>
-                        <li>100% pure date palm jaggery</li>
-                        <li>Harvested during winter months only</li>
-                        <li>Rich in iron and natural minerals</li>
-                        <li>Perfect for traditional Bengali sweets</li>
-                        <li>Available in both liquid and solid forms</li>
-                        <li>No artificial additives or preservatives</li>
+                        <li>Traditional</li>
+                        <li>Pure</li>
+                        <li>Assured Quality</li>
+                        <li>Authentic</li>
+                        <li>Hand-packed</li>
                     </ul>
                 </div>
             </div>
@@ -144,18 +143,12 @@
     </footer>
 
     <script>
-        // Function to change the main image when a thumbnail is clicked
         function changeMainImage(thumbnailElement, imageUrl) {
-            // Update the main image src
             document.getElementById('main-product-image').src = imageUrl;
-
-            // Remove active class from all thumbnails
             const thumbnails = document.getElementsByClassName('thumbnail');
             for (let i = 0; i < thumbnails.length; i++) {
                 thumbnails[i].classList.remove('active');
             }
-
-            // Add active class to the clicked thumbnail
             thumbnailElement.classList.add('active');
         }
     </script>

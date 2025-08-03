@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="../../favicon/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../favicon/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
-    <link rel="manifest" href="../../favicon/site.webmanifest">
-    <link rel="icon" href="../../favicon/favicon.ico">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="icon" href="/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#f05a28">
     <meta name="theme-color" content="#ffffff">
     <!-- Favicon -->
@@ -61,14 +61,12 @@
         <div class="thumbnail-container">
           <img src="../../images/Dashakarma_images/1Saraswati Puja Primary Image.jpeg" alt="SARASWATI PUJA KIT" class="thumbnail active"
                onclick="changeMainImage(this, '../../images/Dashakarma_images/1Saraswati Puja Primary Image.jpeg')">
-          <!-- Add more thumbnails if available -->
         </div>
       </div>
 
       <div class="product-info">
         <h1 class="product-title">SARASWATI PUJA KIT</h1>
-        <!-- TODO: Update Rating and Review Count -->
-        <div class="rating">????? (4.5/5) <span style="color: #666">( 250 reviews )</span></div>
+        <div class="rating">★★★★☆ (4.5/5) <span style="color: #666">( 250 reviews )</span></div>
 
         <div class="brand">
           <strong>Brand:</strong> DASHAKARMA
@@ -77,7 +75,7 @@
         </div>
 
         <p class="description">
-          Dashakarma Saraswati Puja Kit - Includes white flowers, akshat, and books for seeking wisdom and success—ideal for students and artists.
+          Dashakarma Saraswati Puja Kit - Traditional puja essentials for wisdom.
         </p>
 
         <div class="button-container">
@@ -87,11 +85,11 @@
         <div class="highlights">
           <h3>Product Highlights:</h3>
           <ul>
-            <li>Includes white flowers and akshat</li>
-            <li>Books for wisdom and success</li>
-            <li>Perfect for students and artists</li>
-            <li>No artificial preservatives</li>
-            <li>Hand-packed with care</li>
+            <li>Traditional</li>
+            <li>Pure</li>
+            <li>Assured Quality</li>
+            <li>Authentic</li>
+            <li>Hand-packed</li>
           </ul>
         </div>
       </div>
@@ -119,7 +117,7 @@
       </div>
       <div class="help">
         <strong>Help & Support</strong><br>
-        <span> <!-- Wrap location text for better mobile centering -->
+        <span>
           <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
           Kolkata, West Bengal
         </span><br>
@@ -141,32 +139,13 @@
   </footer>
 
   <script>
-    // Function to change the main image when a thumbnail is clicked
     function changeMainImage(thumbnailElement, imageUrl) {
-      // Update the main image src
       document.getElementById('main-product-image').src = imageUrl;
-
-      // Remove active class from all thumbnails
       const thumbnails = document.getElementsByClassName('thumbnail');
       for (let i = 0; i < thumbnails.length; i++) {
         thumbnails[i].classList.remove('active');
       }
-
-      // Add active class to the clicked thumbnail
       thumbnailElement.classList.add('active');
-    }
-
-    // Function to handle the availability button click
-    function checkAvailability(button) {
-      // You can replace this with actual availability check logic
-      button.textContent = "Available Now!";
-      button.style.backgroundColor = "#4CAF50";
-
-      // Reset after 3 seconds
-      setTimeout(function() {
-        button.textContent = "Check Availability";
-        button.style.backgroundColor = "#f05a28";
-      }, 3000);
     }
   </script>
 </body>

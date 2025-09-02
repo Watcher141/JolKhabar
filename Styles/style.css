@@ -258,6 +258,41 @@ nav svg {
   border-radius: 5px;
 }
 
+/* Make the entire banner sections clickable and show hover feedback */
+.clickable-section {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.clickable-section img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.clickable-section:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.98);
+}
+
+/* Remove old button rules for these sections since buttons were removed */
+.achar-section button,
+.aamsotto-section button,
+.chanachur-section button,
+.chatni-section button,
+.kasundi-section button,
+.chal-section button,
+.nolen-gur-section button,
+.doshokorma-section button {
+  display: none !important;
+}
+
 .nolen-gur-section1 {
   height: 80vh;
 }
@@ -474,8 +509,11 @@ button:hover {
   .achar-section,
   .nolen-gur-section,
   .doshokorma-section {
+    /* Make parent establish flow and a minimum visible height on small screens */
     height: auto;
     margin: 0; /* Remove any margins */
+    position: relative;
+    min-height: 10px;
   }
 
   .nolen-gur-section {
@@ -501,6 +539,29 @@ button:hover {
   .kasundi-section {
     height: 20vh;
     margin: 0; /* Remove any margins */
+  }
+
+  /* Override absolute positioning for banner images on phones so they remain visible
+     and participate in layout (parent has auto height). Use !important to override
+     earlier global rules that set images absolute and z-index:-1. */
+  .banner-section img,
+  .achar-image,
+  .background-image,
+  .kasundi-image,
+  .aamsotto-image,
+  .chanachur-image,
+  .chatni-image,
+  .nolen-gur-image,
+  .nolen-gur-image1,
+  .doshokorma-image {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 0 !important;
+    object-fit: cover;
+    display: block;
   }
 
   .doshokorma-image {

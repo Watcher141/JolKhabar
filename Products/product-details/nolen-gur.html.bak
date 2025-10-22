@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#f05a28">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Favicon -->
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nolen Gur - JolKhabar</title>
+  <link rel="stylesheet" href="../../Styles/style.css">
+  <link rel="stylesheet" href="../../Styles/style4.css">
+  <link rel="stylesheet" href="../../Styles/style5.css">
+  <script src="../../scripts/product.js" defer></script>
+  <script src="../../js/backToTop.js" defer></script>
+    <link rel="stylesheet" href="../Styles/whatsapp-float.css" />
+  </head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="sidebar-active" />
+            <label for="sidebar-active" class="open-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
+            </label>
+            <label id="overlay" for="sidebar-active"></label>
+            <div class="links-container">
+                <label for="sidebar-active" class="close-sidebar-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg>
+                </label>
+                <a class="home-link" href="../../index.html">Home</a>
+                <a href="../AboutUs.html">About Us</a>
+                <a href="../Product1.html">Achar</a>
+                <a href="../Product2.html">Aamsotto</a>
+                <a href="../Product3.html">Chanachur</a>
+                <a href="../Product4.html">Chatni</a>
+                <a href="../Product5.html">Kasundi</a>
+                <a href="../Product7.html">Rice</a>
+                <a href="../Product6.html">Delicacies</a>
+                <a href="../Product8.html">Dashakarma</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="product-images-container">
+                <div class="main-image-container">
+                    <img id="main-product-image" src="../../images/Nolen Gur.png" alt="Nolen Gur" class="main-image">
+                </div>
+                <div class="thumbnail-container">
+                    <img src="../../images/Nolen Gur.png" alt="Nolen Gur" class="thumbnail active"
+                        onclick="changeMainImage(this, '../../images/Nolen Gur.png')">
+                    <img src="../../Assets/nolengur.png" alt="Nolen Gur Package" class="thumbnail"
+                        onclick="changeMainImage(this, '../../Assets/nolengur.png')">
+                    <img src="../../Assets/gur.png" alt="Gur Close-up" class="thumbnail"
+                        onclick="changeMainImage(this, '../../Assets/gur.png')">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">NOLEN GUR</h1>
+                <div class="rating">★★★★☆ (4.9/5) <span style="color: #666">( 182 reviews )</span></div>
+
+                <div class="brand">
+                    <strong>Brand:</strong> JOLKHABAR
+                    <img src="../../Jolkahabr Logo.png" class="brand-logo" alt="JolKhabar Logo"
+                        onerror="this.style.display='none'">
+                </div>
+
+                <p class="description">
+                    JolKhabar Nolen Gur - Traditional Bengali date palm jaggery.
+                </p>
+
+                <div class="button-container">
+                    <a href="../Places.html" class="availability-btn">Check Availability</a>
+                </div>
+
+                <div class="highlights">
+                    <h3>Product Highlights:</h3>
+                    <ul>
+                        <li>Traditional</li>
+                        <li>Pure</li>
+                        <li>Assured Quality</li>
+                        <li>Authentic</li>
+                        <li>Hand-packed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logos">
+                    <a href="https://www.facebook.com/amaderjolkhabar" target="_blank" rel="noopener noreferrer">
+                        <img src="../../facebook-icon.png" alt="Facebook" onerror="this.style.display='none'">
+                    </a>
+                    <a href="https://www.instagram.com/bangalirjolkhabar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener noreferrer">
+                        <img src="../../instagram-icon.png" alt="Instagram" onerror="this.style.display='none'">
+                    </a>
+                    <a href="https://www.youtube.com/@Bangalirjolkhabar" target="_blank" rel="noopener noreferrer">
+                        <img src="../../YoutubeLogo.png" alt="YouTube" onerror="this.style.display='none'">
+                    </a>
+                </div>
+                <div class="brand-footer">
+                    <img src="../../images/Contact_logos/Siblings_logo.png" alt="JolKhabar Logo" width="120" 
+                        onerror="this.style.display='none'">
+                </div>
+            </div>
+            <div class="help">
+                <strong>Help & Support</strong><br>
+                <span>
+                    <img src="../../images/Contact_logos/Gmap Logo.png" class="contact-icon" alt="Location" onerror="this.style.display='none'">
+                    Kolkata, West Bengal
+                </span><br>
+                <a href="tel:+918100627460">
+                    <img src="../../images/Contact_logos/Phone_logo.png" class="contact-icon" alt="Call">
+                    +91 8100627460
+                </a><br>
+                <a href="https://wa.me/918100627460" target="_blank" rel="noopener noreferrer">
+                    <img src="../../images/Contact_logos/Whatsapp_logo.png" class="contact-icon" alt="WhatsApp">
+                    +91 8100627460
+                </a><br>
+                <a href="mailto:contact@jolkhabarstore.com">
+                    <img src="../../images/Contact_logos/Email_logo.png" class="contact-icon" alt="Email">
+                    contact@jolkhabarstore.com
+                </a><br>
+                &copy; 2025 Siblings Exims Pvt. Ltd. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function changeMainImage(thumbnailElement, imageUrl) {
+            document.getElementById('main-product-image').src = imageUrl;
+            const thumbnails = document.getElementsByClassName('thumbnail');
+            for (let i = 0; i < thumbnails.length; i++) {
+                thumbnails[i].classList.remove('active');
+            }
+            thumbnailElement.classList.add('active');
+        }
+    </script>
+<a href="https://wa.me/918100627460" target="_blank" class="whatsapp-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/></svg></a>
+<script src="./js/whatsapp-float.js" defer></script>
+</body>
+</html>
+
+
+

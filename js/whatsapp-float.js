@@ -33,6 +33,8 @@
       existing.setAttribute('href', href);
       existing.setAttribute('target','_blank');
       existing.setAttribute('rel','noopener noreferrer');
+      // also fix any mojibake star sequences in product pages
+      fixRatings();
       return;
     }
 
@@ -48,6 +50,29 @@
     `;
 
     document.body.appendChild(a);
+    // fix ratings after whatsapp float insertion too
+    fixRatings();
+  }
+
+  // Fix mojibake-rendered star characters (e.g. "â˜…" / "â˜†") by replacing
+  // them with proper Unicode stars so product detail pages show stars correctly.
+  function fixRatings(){
+    try{
+      var els = document.querySelectorAll('.rating');
+      els.forEach(function(el){
+        var html = el.innerHTML || '';
+        // common mojibake sequences -> convert to ★ (U+2605) and ☆ (U+2606)
+        html = html.split('â˜…').join('\u2605');
+        html = html.split('â˜†').join('\u2606');
+        // some pages may include other variants; handle common UTF-8 mojibake patterns
+        html = html.split('\u00e2\u0098\u00b3').join('\u2605');
+        html = html.split('\u00e2\u0098\u00b2').join('\u2606');
+        el.innerHTML = html;
+      });
+    }catch(e){
+      // swallow errors to avoid breaking pages
+      console.error('fixRatings error', e);
+    }
   }
 
   if(document.readyState === 'loading'){
